@@ -1,11 +1,31 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import {
+  lexicalEditor,
+  BoldFeature,
+  ItalicFeature,
+  UnderlineFeature,
+  StrikethroughFeature,
+  SubscriptFeature,
+  SuperscriptFeature,
+  InlineCodeFeature,
+  ParagraphFeature,
+  HeadingFeature,
+  AlignFeature,
+  IndentFeature,
+  UnorderedListFeature,
+  OrderedListFeature,
+  ChecklistFeature,
+  LinkFeature,
+  BlockquoteFeature,
+  UploadFeature,
+  HorizontalRuleFeature,
+  BlocksFeature,
+} from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { Ratgeber } from './collections/Ratgeber'
-
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 
@@ -20,7 +40,30 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Ratgeber],
-  editor: lexicalEditor(),
+
+  editor: lexicalEditor({
+    features: () => [
+      ParagraphFeature(),
+      HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
+      BoldFeature(),
+      ItalicFeature(),
+      UnderlineFeature(),
+      StrikethroughFeature(),
+      SubscriptFeature(),
+      SuperscriptFeature(),
+      InlineCodeFeature(),
+      AlignFeature(),
+      IndentFeature(),
+      UnorderedListFeature(),
+      OrderedListFeature(),
+      ChecklistFeature(),
+      LinkFeature(),
+      BlockquoteFeature(),
+      HorizontalRuleFeature(),
+      UploadFeature(),
+    ],
+  }),
+
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -30,4 +73,15 @@ export default buildConfig({
   }),
   sharp,
   plugins: [],
+
+  cors: [
+    'https://peak-energy.gmbh',
+    'https://www.peak-energy.gmbh',
+    'http://localhost:3000',
+  ],
+  csrf: [
+    'https://peak-energy.gmbh',
+    'https://www.peak-energy.gmbh',
+    'http://localhost:3000',
+  ],
 })
