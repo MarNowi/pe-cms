@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    ratgeber: Ratgeber;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +79,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    ratgeber: RatgeberSelect<false> | RatgeberSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -163,6 +165,147 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ratgeber".
+ */
+export interface Ratgeber {
+  id: string;
+  titel: string;
+  /**
+   * z.B. kosten-solaranlage-einfamilienhaus (ohne Produktpräfix)
+   */
+  slug: string;
+  kategorie: 'solaranlage' | 'stromspeicher' | 'wallbox' | 'waermepumpe' | 'repowering';
+  /**
+   * Minuten
+   */
+  lesezeit?: number | null;
+  titelbild?: (string | null) | Media;
+  zusammenfassung?:
+    | {
+        punkt?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  inhalt?:
+    | (
+        | {
+            content: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'text';
+          }
+        | {
+            titel?: string | null;
+            content: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tipp';
+          }
+        | {
+            titel?: string | null;
+            content: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hinweis';
+          }
+        | {
+            titel?: string | null;
+            zeilen?:
+              | {
+                  spalte1?: string | null;
+                  spalte2?: string | null;
+                  spalte3?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tabelle';
+          }
+        | {
+            bild: string | Media;
+            beschriftung?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'bild';
+          }
+        | {
+            titel: string;
+            text?: string | null;
+            buttonText?: string | null;
+            buttonLink?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+      )[]
+    | null;
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+  };
+  status?: ('entwurf' | 'veroeffentlicht') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -192,6 +335,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'ratgeber';
+        value: string | Ratgeber;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -274,6 +421,92 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ratgeber_select".
+ */
+export interface RatgeberSelect<T extends boolean = true> {
+  titel?: T;
+  slug?: T;
+  kategorie?: T;
+  lesezeit?: T;
+  titelbild?: T;
+  zusammenfassung?:
+    | T
+    | {
+        punkt?: T;
+        id?: T;
+      };
+  inhalt?:
+    | T
+    | {
+        text?:
+          | T
+          | {
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        tipp?:
+          | T
+          | {
+              titel?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        hinweis?:
+          | T
+          | {
+              titel?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        tabelle?:
+          | T
+          | {
+              titel?: T;
+              zeilen?:
+                | T
+                | {
+                    spalte1?: T;
+                    spalte2?: T;
+                    spalte3?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        bild?:
+          | T
+          | {
+              bild?: T;
+              beschriftung?: T;
+              id?: T;
+              blockName?: T;
+            };
+        cta?:
+          | T
+          | {
+              titel?: T;
+              text?: T;
+              buttonText?: T;
+              buttonLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
