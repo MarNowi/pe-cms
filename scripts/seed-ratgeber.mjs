@@ -3,8 +3,8 @@
 
 import { MongoClient, ObjectId } from 'mongodb'
 
-const URI = process.env.DATABASE_URL
-const client = new MongoClient(URL)
+const URL = process.env.DATABASE_URL ?? "mongodb://root:NHUbjfvCiraXW4T2nkc2w5W3yM8NDfs5WUmSiVofhschdymAL6L733jKTheGryxy@nwcsw00ssswog888gsg84cgc:27017/?directConnection=true"
+const client = new MongoClient(String(URL))
 
 function p(...children) {
   return { type: 'paragraph', children, direction: null, format: '', indent: 0, version: 1, textFormat: 0, textStyle: '' }
@@ -32,7 +32,7 @@ function root(...children) {
 
 async function seed() {
   await client.connect()
-  const db = client.db('test')
+  const db = client.db('payload')
   const col = db.collection('ratgebers')
 
   await col.deleteMany({ slug: 'kosten-solaranlage-einfamilienhaus' })
