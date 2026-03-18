@@ -73,7 +73,7 @@ export default buildConfig({
   }),
   sharp,
   plugins: [],
-
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
   cors: [
     'https://peak-energy.gmbh',
     'https://www.peak-energy.gmbh',
