@@ -32,7 +32,7 @@ function root(...children) {
 
 async function seed() {
   await client.connect()
-  const db = client.db('payload')
+  const db = client.db('test')
   const col = db.collection('ratgebers')
 
   await col.deleteMany({ slug: 'kosten-solaranlage-einfamilienhaus' })
