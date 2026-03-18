@@ -3,8 +3,8 @@
 
 import { MongoClient, ObjectId } from 'mongodb'
 
-const URI = process.env.DATABASE_URI
-const client = new MongoClient(URI)
+const URI = process.env.DATABASE_URL
+const client = new MongoClient(URL)
 
 function p(...children) {
   return { type: 'paragraph', children, direction: null, format: '', indent: 0, version: 1, textFormat: 0, textStyle: '' }
