@@ -212,7 +212,7 @@ const article = createArticleBase({
       )
     ),
 
-    preset.blocks.groesseBlock,
+    preset.blocks.groessenBlock,
     preset.blocks.speicherBlock,
 
     tippBlock(
