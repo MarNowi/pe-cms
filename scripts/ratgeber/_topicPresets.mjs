@@ -22,6 +22,151 @@ function createPreisTextBlock({ title, paragraph1, paragraph2 }) {
   return textBlock(...children)
 }
 
+export function createStandardVergleichFaqPreset({
+  frageTitel,
+  optionA,
+  optionB,
+  grundsatzAntwort,
+  optionAAntwort,
+  optionBAntwort,
+  fehlerAntwort,
+  fazitAntwort,
+  extra = [],
+}) {
+  required(frageTitel, 'frageTitel')
+  required(optionA, 'optionA')
+  required(optionB, 'optionB')
+  required(grundsatzAntwort, 'grundsatzAntwort')
+  required(optionAAntwort, 'optionAAntwort')
+  required(optionBAntwort, 'optionBAntwort')
+  required(fehlerAntwort, 'fehlerAntwort')
+  required(fazitAntwort, 'fazitAntwort')
+
+  return [
+    faqItem(
+      `${frageTitel}: Was ist sinnvoller?`,
+      grundsatzAntwort
+    ),
+    faqItem(
+      `Wann ist ${optionA} sinnvoll?`,
+      optionAAntwort
+    ),
+    faqItem(
+      `Wann ist ${optionB} sinnvoll?`,
+      optionBAntwort
+    ),
+    faqItem(
+      'Was ist der häufigste Denkfehler bei diesem Vergleich?',
+      fehlerAntwort
+    ),
+    faqItem(
+      'Was ist am Ende die beste Entscheidung?',
+      fazitAntwort
+    ),
+    ...extra.map((item) => faqItem(item.frage, item.antwort)),
+  ]
+}
+
+export function createVergleichPreset({
+  summary,
+  grundsatz,
+  unterschiede,
+  optionA,
+  optionB,
+  wannA,
+  wannB,
+  fehler,
+  fazit,
+  cta = {},
+  faq,
+}) {
+  required(summary, 'summary')
+  required(grundsatz, 'grundsatz')
+  required(unterschiede, 'unterschiede')
+  required(optionA, 'optionA')
+  required(optionB, 'optionB')
+  required(wannA, 'wannA')
+  required(wannB, 'wannB')
+  required(fehler, 'fehler')
+  required(fazit, 'fazit')
+  required(faq, 'faq')
+
+  const grundsatzBlock = textBlock(
+    h('h2', t(grundsatz.title ?? '1. Worum geht es bei diesem Vergleich?')),
+    ...((grundsatz.paragraphs ?? []).map((text) => p(t(text))))
+  )
+
+  const unterschiedeBlock = textBlock(
+    h('h2', t(unterschiede.title ?? '2. Wo liegt der eigentliche Unterschied?')),
+    ...((unterschiede.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(unterschiede.list?.length ? [ul(...unterschiede.list)] : [])
+  )
+
+  const optionABlock = textBlock(
+    h('h2', t(optionA.title ?? '3. Vorteile von Option A')),
+    ...((optionA.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(optionA.list?.length ? [ul(...optionA.list)] : [])
+  )
+
+  const optionBBlock = textBlock(
+    h('h2', t(optionB.title ?? '4. Vorteile von Option B')),
+    ...((optionB.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(optionB.list?.length ? [ul(...optionB.list)] : [])
+  )
+
+  const wannABlock = textBlock(
+    h('h2', t(wannA.title ?? '5. Wann ist Option A sinnvoll?')),
+    ...((wannA.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(wannA.list?.length ? [ul(...wannA.list)] : [])
+  )
+
+  const wannBBlock = textBlock(
+    h('h2', t(wannB.title ?? '6. Wann ist Option B sinnvoll?')),
+    ...((wannB.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(wannB.list?.length ? [ul(...wannB.list)] : [])
+  )
+
+  const fehlerBlock = createStandardFehlerBlock({
+    title: fehler.title ?? '7. Typische Denkfehler bei diesem Vergleich',
+    lead:
+      fehler.lead ??
+      'Die meisten Fehlentscheidungen entstehen nicht, weil eine der beiden Optionen grundsätzlich schlecht ist, sondern weil pauschal statt passend entschieden wird.',
+    errors: fehler.errors ?? [],
+    outro:
+      fehler.outro ??
+      'Die richtige Entscheidung ergibt sich nicht aus Schlagworten, sondern aus Dach, Verbrauch, Alltag und technischer Zielsetzung.',
+  })
+
+  const fazitBlock = textBlock(
+    h('h2', t(fazit.title ?? '8. Fazit')),
+    ...((fazit.paragraphs ?? []).map((text) => p(t(text))))
+  )
+
+  const ctaBlock = createStandardKostenCta({
+    titel: cta.titel ?? 'Lass uns deine Situation realistisch einordnen',
+    text:
+      cta.text ??
+      'Wir schauen uns Verbrauch, Dach, Technik und spätere Erweiterungen gemeinsam an – ehrlich, praxisnah und ohne Verkaufsdruck.',
+    buttonText: cta.buttonText,
+    buttonLink: cta.buttonLink,
+  })
+
+  return {
+    zusammenfassung: createStandardKostenSummary(summary),
+    blocks: {
+      grundsatzBlock,
+      unterschiedeBlock,
+      optionABlock,
+      optionBBlock,
+      wannABlock,
+      wannBBlock,
+      fehlerBlock,
+      fazitBlock,
+      ctaBlock,
+    },
+    faq: createStandardVergleichFaqPreset(faq),
+  }
+}
 export function createStandardPlanungsFaqPreset({
   hauptbegriff = 'PV-Anlage',
   planungAntwort,
