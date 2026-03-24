@@ -22,6 +22,56 @@ function createPreisTextBlock({ title, paragraph1, paragraph2 }) {
   return textBlock(...children)
 }
 
+export function createFaqOnlyFaqPreset(items = []) {
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error('faq fehlt')
+  }
+
+  return items.map((item) => faqItem(item.frage, item.antwort))
+}
+
+export function createFaqOnlyPreset({
+  summary,
+  intro,
+  faq,
+  outro,
+  cta = {},
+}) {
+  required(summary, 'summary')
+  required(intro, 'intro')
+  required(faq, 'faq')
+
+  const introBlock = textBlock(
+    h('h2', t(intro.title ?? '1. Kurz erklärt')),
+    ...((intro.paragraphs ?? []).map((text) => p(t(text))))
+  )
+
+  const outroBlock = outro
+    ? textBlock(
+        h('h2', t(outro.title ?? '2. Fazit')),
+        ...((outro.paragraphs ?? []).map((text) => p(t(text))))
+      )
+    : null
+
+  const ctaBlock = createStandardKostenCta({
+    titel: cta.titel ?? 'Lass uns deine Situation ehrlich einordnen',
+    text:
+      cta.text ??
+      'Wir schauen uns Verbrauch, Dach, Speicher und technische Ausgangslage gemeinsam an – praxisnah und ohne Verkaufsdruck.',
+    buttonText: cta.buttonText,
+    buttonLink: cta.buttonLink,
+  })
+
+  return {
+    zusammenfassung: createStandardKostenSummary(summary),
+    blocks: {
+      introBlock,
+      outroBlock,
+      ctaBlock,
+    },
+    faq: createFaqOnlyFaqPreset(faq),
+  }
+}
 export function createStandardVergleichFaqPreset({
   frageTitel,
   optionA,
