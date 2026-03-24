@@ -1,4 +1,4 @@
-import { faqItem, h, p, t, textBlock } from './_helpers.mjs'
+import { faqItem, h, p, t, textBlock, ul } from './_helpers.mjs'
 import {
   createPreisTabelle,
   createStandardFehlerBlock,
@@ -72,6 +72,7 @@ export function createFaqOnlyPreset({
     faq: createFaqOnlyFaqPreset(faq),
   }
 }
+
 export function createStandardVergleichFaqPreset({
   frageTitel,
   optionA,
@@ -93,26 +94,14 @@ export function createStandardVergleichFaqPreset({
   required(fazitAntwort, 'fazitAntwort')
 
   return [
-    faqItem(
-      `${frageTitel}: Was ist sinnvoller?`,
-      grundsatzAntwort
-    ),
-    faqItem(
-      `Wann ist ${optionA} sinnvoll?`,
-      optionAAntwort
-    ),
-    faqItem(
-      `Wann ist ${optionB} sinnvoll?`,
-      optionBAntwort
-    ),
+    faqItem(`${frageTitel}: Was ist sinnvoller?`, grundsatzAntwort),
+    faqItem(`Wann ist ${optionA} sinnvoll?`, optionAAntwort),
+    faqItem(`Wann ist ${optionB} sinnvoll?`, optionBAntwort),
     faqItem(
       'Was ist der häufigste Denkfehler bei diesem Vergleich?',
       fehlerAntwort
     ),
-    faqItem(
-      'Was ist am Ende die beste Entscheidung?',
-      fazitAntwort
-    ),
+    faqItem('Was ist am Ende die beste Entscheidung?', fazitAntwort),
     ...extra.map((item) => faqItem(item.frage, item.antwort)),
   ]
 }
@@ -217,6 +206,7 @@ export function createVergleichPreset({
     faq: createStandardVergleichFaqPreset(faq),
   }
 }
+
 export function createStandardPlanungsFaqPreset({
   hauptbegriff = 'PV-Anlage',
   planungAntwort,
@@ -233,18 +223,9 @@ export function createStandardPlanungsFaqPreset({
   required(anmeldungAntwort, 'anmeldungAntwort')
 
   return [
-    faqItem(
-      `Wie plane ich eine ${hauptbegriff} richtig?`,
-      planungAntwort
-    ),
-    faqItem(
-      'Welche Dachausrichtung ist am besten?',
-      dachAntwort
-    ),
-    faqItem(
-      'Sollte ich den Speicher direkt mitplanen?',
-      speicherAntwort
-    ),
+    faqItem(`Wie plane ich eine ${hauptbegriff} richtig?`, planungAntwort),
+    faqItem('Welche Dachausrichtung ist am besten?', dachAntwort),
+    faqItem('Sollte ich den Speicher direkt mitplanen?', speicherAntwort),
     faqItem(
       'Was wird bei der Planung am häufigsten vergessen?',
       fehlerAntwort
@@ -394,12 +375,9 @@ export function createStandardKostenFaqPreset({
 
 export function createKwpKostenPreset({
   leistungLabel,
-
   summary,
-
   preisOhneSpeicher,
   preisMitSpeicher,
-
   kostenBlock = {},
   preisfaktoren = {},
   laufendeKosten = {},
@@ -457,7 +435,8 @@ export function createKwpKostenPreset({
   })
 
   const laufendeKostenBlock = createStandardLaufendeKostenBlock({
-    title: laufendeKosten.title ?? '8. Welche laufenden Kosten sollte man mitdenken?',
+    title:
+      laufendeKosten.title ?? '8. Welche laufenden Kosten sollte man mitdenken?',
     lead: laufendeKosten.lead,
     outro: laufendeKosten.outro,
   })
