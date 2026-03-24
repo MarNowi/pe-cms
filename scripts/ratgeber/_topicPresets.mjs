@@ -22,6 +22,140 @@ function createPreisTextBlock({ title, paragraph1, paragraph2 }) {
   return textBlock(...children)
 }
 
+export function createStandardPlanungsFaqPreset({
+  hauptbegriff = 'PV-Anlage',
+  planungAntwort,
+  dachAntwort,
+  speicherAntwort,
+  fehlerAntwort,
+  anmeldungAntwort,
+  extra = [],
+}) {
+  required(planungAntwort, 'planungAntwort')
+  required(dachAntwort, 'dachAntwort')
+  required(speicherAntwort, 'speicherAntwort')
+  required(fehlerAntwort, 'fehlerAntwort')
+  required(anmeldungAntwort, 'anmeldungAntwort')
+
+  return [
+    faqItem(
+      `Wie plane ich eine ${hauptbegriff} richtig?`,
+      planungAntwort
+    ),
+    faqItem(
+      'Welche Dachausrichtung ist am besten?',
+      dachAntwort
+    ),
+    faqItem(
+      'Sollte ich den Speicher direkt mitplanen?',
+      speicherAntwort
+    ),
+    faqItem(
+      'Was wird bei der Planung am häufigsten vergessen?',
+      fehlerAntwort
+    ),
+    faqItem(
+      'Gehört die Anmeldung beim Netzbetreiber zur Planung dazu?',
+      anmeldungAntwort
+    ),
+    ...extra.map((item) => faqItem(item.frage, item.antwort)),
+  ]
+}
+
+export function createPlanungsPreset({
+  summary,
+  dach,
+  groesse,
+  speicher,
+  technik,
+  buerokratie,
+  fehler,
+  ablauf,
+  cta = {},
+  faq,
+}) {
+  required(summary, 'summary')
+  required(dach, 'dach')
+  required(groesse, 'groesse')
+  required(speicher, 'speicher')
+  required(technik, 'technik')
+  required(buerokratie, 'buerokratie')
+  required(fehler, 'fehler')
+  required(ablauf, 'ablauf')
+  required(faq, 'faq')
+
+  const dachBlock = textBlock(
+    h('h2', t(dach.title ?? '2. Ist dein Dach überhaupt geeignet?')),
+    ...((dach.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(dach.list?.length ? [ul(...dach.list)] : [])
+  )
+
+  const groessenBlock = textBlock(
+    h('h2', t(groesse.title ?? '3. Wie groß sollte die PV-Anlage sein?')),
+    ...((groesse.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(groesse.list?.length ? [ul(...groesse.list)] : [])
+  )
+
+  const speicherBlock = textBlock(
+    h('h2', t(speicher.title ?? '4. Speicher direkt mitplanen – ja oder nein?')),
+    ...((speicher.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(speicher.list?.length ? [ul(...speicher.list)] : [])
+  )
+
+  const technikBlock = textBlock(
+    h('h2', t(technik.title ?? '5. Technik und Infrastruktur nicht vergessen')),
+    ...((technik.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(technik.list?.length ? [ul(...technik.list)] : [])
+  )
+
+  const buerokratieBlock = textBlock(
+    h('h2', t(buerokratie.title ?? '6. Bürokratie und Anmeldung gehören zur Planung dazu')),
+    ...((buerokratie.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(buerokratie.list?.length ? [ul(...buerokratie.list)] : [])
+  )
+
+  const fehlerBlock = createStandardFehlerBlock({
+    title: fehler.title ?? '7. Typische Fehler bei der Planung',
+    lead:
+      fehler.lead ??
+      'Die meisten Probleme entstehen nicht auf dem Dach, sondern vorher – bei falschen Annahmen, unvollständigen Angeboten oder zu kurz gedachten Systemen.',
+    errors: fehler.errors ?? [],
+    outro:
+      fehler.outro ??
+      'Eine gute PV-Anlage ist nicht die billigste auf dem Papier, sondern die, die technisch sauber geplant ist und im Alltag langfristig funktioniert.',
+  })
+
+  const ablaufBlock = textBlock(
+    h('h2', t(ablauf.title ?? '8. So läuft eine saubere PV-Planung in der Praxis ab')),
+    ...((ablauf.paragraphs ?? []).map((text) => p(t(text)))),
+    ...(ablauf.list?.length ? [ul(...ablauf.list)] : [])
+  )
+
+  const ctaBlock = createStandardKostenCta({
+    titel: cta.titel ?? 'Lass uns deine PV-Anlage sauber planen',
+    text:
+      cta.text ??
+      'Wir schauen uns Dach, Verbrauch, spätere Erweiterungen und die technische Umsetzung gemeinsam an – ehrlich, praxisnah und ohne Verkaufsdruck.',
+    buttonText: cta.buttonText,
+    buttonLink: cta.buttonLink,
+  })
+
+  return {
+    zusammenfassung: createStandardKostenSummary(summary),
+    blocks: {
+      dachBlock,
+      groessenBlock,
+      speicherBlock,
+      technikBlock,
+      buerokratieBlock,
+      fehlerBlock,
+      ablaufBlock,
+      ctaBlock,
+    },
+    faq: createStandardPlanungsFaqPreset(faq),
+  }
+}
+
 export function createStandardKostenFaqPreset({
   leistungLabel,
   ohneSpeicherAntwort,
