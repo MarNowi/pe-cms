@@ -204,7 +204,7 @@ const article = createArticleBase({
 
   faq: preset.faq,
 
-  metaTitle: 'Solaranlage mit oder ohne Speicher: Was ist sinnvoller? | PEAK.Energy',
+  metaTitle: 'Solaranlage mit oder ohne Speicher: Was ist sinnvoller? | PEAK.Energy  – WE ♥️ ENERGY',
   metaDescription:
     'Solaranlage mit oder ohne Speicher? Ehrlicher Vergleich zu Eigenverbrauch, Kosten, Alltag und typischen Denkfehlern – verständlich erklärt von PEAK.Energy.',
 })
