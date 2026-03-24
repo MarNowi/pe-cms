@@ -32,22 +32,92 @@ function extractText(value: unknown): string {
   return ''
 }
 
+function cleanZusammenfassung(value: unknown) {
+  if (!Array.isArray(value)) return []
+
+  return value.filter((item) => {
+    if (!item || typeof item !== 'object') return false
+    const entry = item as Record<string, unknown>
+    return entry.punkt != null
+  })
+}
+
+function cleanFaq(value: unknown) {
+  if (!Array.isArray(value)) return []
+
+  return value.filter((item) => {
+    if (!item || typeof item !== 'object') return false
+
+    const faq = item as Record<string, unknown>
+
+    return (
+      typeof faq.frage === 'string' &&
+      faq.frage.trim().length > 0 &&
+      typeof faq.antwort === 'string' &&
+      faq.antwort.trim().length > 0
+    )
+  })
+}
+
+function cleanZeilen(value: unknown) {
+  if (!Array.isArray(value)) return []
+
+  return value.filter((row) => {
+    if (!row || typeof row !== 'object') return false
+
+    const entry = row as Record<string, unknown>
+
+    return typeof entry.spalte1 === 'string' && entry.spalte1.trim().length > 0
+  })
+}
+
+function cleanInhalt(value: unknown) {
+  if (!Array.isArray(value)) return []
+
+  return value
+    .filter((block) => {
+      if (!block || typeof block !== 'object') return false
+
+      const entry = block as Record<string, unknown>
+
+      return typeof entry.blockType === 'string' && entry.blockType.trim().length > 0
+    })
+    .map((block) => {
+      const entry = block as Record<string, unknown>
+
+      if (entry.blockType === 'tabelle') {
+        return {
+          ...entry,
+          zeilen: cleanZeilen(entry.zeilen),
+        }
+      }
+
+      return entry
+    })
+}
+
+function sanitizeRatgeberData(data: Record<string, any>) {
+  data.zusammenfassung = cleanZusammenfassung(data.zusammenfassung)
+  data.inhalt = cleanInhalt(data.inhalt)
+  data.faq = cleanFaq(data.faq)
+  return data
+}
+
 function estimateReadingTime(data: Record<string, any>): number {
   const parts: string[] = []
 
   if (data?.titel) parts.push(String(data.titel))
   if (data?.teaser) parts.push(String(data.teaser))
 
-  if (Array.isArray(data?.zusammenfassung)) {
-    for (const item of data.zusammenfassung) {
-      if (item?.punkt) parts.push(extractText(item.punkt))
-    }
+  const zusammenfassung = cleanZusammenfassung(data?.zusammenfassung)
+  for (const item of zusammenfassung) {
+    const entry = item as Record<string, unknown>
+    if (entry?.punkt) parts.push(extractText(entry.punkt))
   }
 
-  if (Array.isArray(data?.inhalt)) {
-    for (const block of data.inhalt) {
-      parts.push(extractText(block))
-    }
+  const inhalt = cleanInhalt(data?.inhalt)
+  for (const block of inhalt) {
+    parts.push(extractText(block))
   }
 
   const text = parts.join(' ').replace(/\s+/g, ' ').trim()
@@ -314,6 +384,8 @@ export const Ratgeber: CollectionConfig = {
       ({ data }) => {
         if (!data) return data
 
+        sanitizeRatgeberData(data)
+
         if (!data.slug && data.titel) {
           data.slug = formatSlug(String(data.titel))
         }
@@ -328,6 +400,8 @@ export const Ratgeber: CollectionConfig = {
     beforeChange: [
       ({ data, originalDoc }) => {
         if (!data) return data
+
+        sanitizeRatgeberData(data)
 
         if (data.status === 'veroeffentlicht' && !data.publishedAt) {
           data.publishedAt = originalDoc?.publishedAt || new Date().toISOString()
