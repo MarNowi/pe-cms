@@ -92,7 +92,7 @@ const article = createArticleBase({
 
   faq: preset.faq,
 
-  metaTitle: 'Wallbox zu Hause laden: Worauf kommt es an? | PEAK.Energy',
+  metaTitle: 'Wallbox zu Hause laden: Worauf kommt es an? | PEAK.Energy – WE ♥️ ENERGY',
   metaDescription:
     'Wallbox zu Hause laden: Ehrliche Einordnung zu Technik, Hausanschluss, PV-Kombination und typischen Denkfehlern – von PEAK.Energy.',
 })
