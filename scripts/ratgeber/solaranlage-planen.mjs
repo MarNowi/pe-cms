@@ -231,7 +231,7 @@ const article = createArticleBase({
 
   faq: preset.faq,
 
-  metaTitle: 'PV-Anlage planen: Dach, Größe, Speicher richtig abstimmen | PEAK.Energy',
+  metaTitle: 'PV-Anlage planen: Dach, Größe, Speicher richtig abstimmen | PEAK.Energy – WE ♥️ ENERGY',
   metaDescription:
     'PV-Anlage planen ohne typische Fehler: So gehst du bei Dach, Ausrichtung, Größe, Speicher und Anmeldung richtig vor – ehrlich erklärt von PEAK.Energy.',
 })
