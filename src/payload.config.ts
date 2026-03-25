@@ -74,13 +74,12 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-     imageConverterPlugin({
-      collections: ['media'],
-      formats: ['webp', 'avif'],
-      maxWidth: 1920,
-      quality: 80,
-      oversizeThreshold: 2000
-    })
+      imageConverterPlugin({
+    collections: [Media.slug],
+    formats: ['webp', 'avif'],
+    maxWidth: 1920,
+    quality: 80,
+  }),
   ],
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
   cors: [
