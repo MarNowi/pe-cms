@@ -28,6 +28,7 @@ import sharp from 'sharp'
 import { Ratgeber } from './collections/Ratgeber'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { imageConverterPlugin } from 'payload-img-convert'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
