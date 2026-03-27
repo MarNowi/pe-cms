@@ -19,7 +19,6 @@ import {
   BlockquoteFeature,
   UploadFeature,
   HorizontalRuleFeature,
-  BlocksFeature,
 } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -39,7 +38,22 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    dependencies: {
+      payloadImgConvertFormatSelector: {
+        path: 'payload-img-convert/client#FormatSelectorComponent',
+        type: 'component',
+      },
+      payloadImgConvertImageInfoBadge: {
+        path: 'payload-img-convert/client#ImageInfoBadgeComponent',
+        type: 'component',
+      },
+      payloadImgConvertResizeSelector: {
+        path: 'payload-img-convert/client#ResizeSelectorComponent',
+        type: 'component',
+      },
+    },
   },
+
   collections: [Users, Media, Ratgeber],
 
   editor: lexicalEditor({
@@ -66,35 +80,45 @@ export default buildConfig({
   }),
 
   secret: process.env.PAYLOAD_SECRET || '',
+
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+
   db: mongooseAdapter({
     url: process.env.DATABASE_URL || '',
   }),
+
   sharp,
+
   plugins: [
-  imageConverterPlugin({
-    collections: [Media.slug],
-    defaultFormat: 'webp',
-    formats: ['webp', 'avif', 'jpeg', 'png'],
-    quality: 80,
-    maxWidth: 1920,
-    maxHeight: 1920,
-    maxFileSize: 10 * 1024 * 1024,
-    formatOptions: {
-      webp: { quality: 80, effort: 4 },
-      avif: { quality: 65, effort: 6 },
-      jpeg: { quality: 82, progressive: true, mozjpeg: true },
-    },
-  }),
-],
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
+    imageConverterPlugin({
+      collections: [Media.slug],
+      defaultFormat: 'webp',
+      formats: ['webp', 'avif', 'jpeg', 'png'],
+      quality: 80,
+      maxWidth: 1920,
+      maxHeight: 1920,
+      maxFileSize: 10 * 1024 * 1024,
+      enableFormatSelector: true,
+      enableResizeSelector: true,
+      formatOptions: {
+        webp: { quality: 80, effort: 4 },
+        avif: { quality: 65, effort: 6 },
+        jpeg: { quality: 82, progressive: true, mozjpeg: true },
+      },
+    }),
+  ],
+
+  serverURL:
+    process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
+
   cors: [
     'https://peak-energy.gmbh',
     'https://www.peak-energy.gmbh',
     'http://localhost:3000',
   ],
+
   csrf: [
     'https://peak-energy.gmbh',
     'https://www.peak-energy.gmbh',
