@@ -77,7 +77,7 @@ export default buildConfig({
   imageConverterPlugin({
     collections: [Media.slug],
     defaultFormat: 'webp',
-    formats: ['webp', 'avif', 'jpeg'],
+    formats: ['webp', 'avif', 'jpeg', 'png'],
     quality: 80,
     maxWidth: 1920,
     maxHeight: 1920,
@@ -88,7 +88,7 @@ export default buildConfig({
       jpeg: { quality: 82, progressive: true, mozjpeg: true },
     },
   }),
-]
+],
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
   cors: [
     'https://peak-energy.gmbh',
