@@ -40,15 +40,15 @@ export default buildConfig({
     },
     dependencies: {
       payloadImgConvertFormatSelector: {
-        path: 'payload-img-convert/client#FormatSelectorComponent',
+        path: './payload/custom/FormatSelector.tsx',
         type: 'component',
       },
       payloadImgConvertImageInfoBadge: {
-        path: 'payload-img-convert/client#ImageInfoBadgeComponent',
+        path: './payload/custom/ImageInfoBadge.tsx',
         type: 'component',
       },
       payloadImgConvertResizeSelector: {
-        path: 'payload-img-convert/client#ResizeSelectorComponent',
+        path: './payload/custom/ResizeSelector.tsx',
         type: 'component',
       },
     },

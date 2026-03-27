@@ -1,0 +1,1 @@
+export { ImageInfoBadgeComponent as default } from 'payload-img-convert/client'

@@ -1,0 +1,1 @@
+export { ResizeSelectorComponent as default } from 'payload-img-convert/client'
