@@ -76,12 +76,19 @@ export default buildConfig({
   plugins: [
   imageConverterPlugin({
     collections: [Media.slug],
-    formats: ['webp', 'avif'],
+    defaultFormat: 'webp',
+    formats: ['webp', 'avif', 'jpeg'],
+    quality: 80,
     maxWidth: 1920,
-    quality: 60,
-    oversizeThreshold: 2000,
+    maxHeight: 1920,
+    maxFileSize: 10 * 1024 * 1024,
+    formatOptions: {
+      webp: { quality: 80, effort: 4 },
+      avif: { quality: 65, effort: 6 },
+      jpeg: { quality: 82, progressive: true, mozjpeg: true },
+    },
   }),
-],
+]
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://cms.peak-energy.gmbh',
   cors: [
     'https://peak-energy.gmbh',
