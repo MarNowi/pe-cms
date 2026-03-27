@@ -78,7 +78,7 @@ export default buildConfig({
     collections: [Media.slug],
     formats: ['webp', 'avif'],
     maxWidth: 1920,
-    quality: 80,
+    quality: 60,
     oversizeThreshold: 2000,
   }),
 ],
