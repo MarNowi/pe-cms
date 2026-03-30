@@ -142,7 +142,7 @@ const sectionAltbauPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Nicht das Baujahr entscheidet, sondern die konkrete Gebäudesituation.'],
@@ -164,7 +164,7 @@ const sectionTechnikPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Ohne saubere Einordnung von Heizlast, Vorlauf und Heizflächen bleibt jede Bewertung zu grob.'],
@@ -186,7 +186,7 @@ const sectionHeizkoerperPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Auch mit Heizkörpern kann eine Wärmepumpe funktionieren – entscheidend ist die reale Auslegung.'],
@@ -207,7 +207,7 @@ const sectionPassendPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Viele Altbauten sind besser geeignet, als pauschale Aussagen vermuten lassen.'],
@@ -228,7 +228,7 @@ const sectionGrenzenPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Technisch möglich ist nicht automatisch sinnvoll – und Ehrlichkeit ist kein Nachteil, sondern Qualität.'],
@@ -249,7 +249,7 @@ const sectionMassnahmenPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Oft sind es nicht die ganz großen Umbauten, sondern die richtigen technischen Stellschrauben, die den Unterschied machen.'],
@@ -271,7 +271,7 @@ const sectionWirtschaftlichkeitPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Machbarkeit ist wichtig – Sinnhaftigkeit aber genauso.'],
@@ -294,7 +294,7 @@ const sectionFehlerPreset = createFaqOnlyPreset({
     ],
   },
 
-  faq: [],
+  faq,
   outro: {
     title: 'Zwischenfazit',
     paragraphs: ['Die größten Fehler entstehen meist nicht bei der Technik selbst, sondern schon in der Einordnung davor.'],
