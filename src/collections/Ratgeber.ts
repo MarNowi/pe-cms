@@ -231,7 +231,7 @@ export const Ratgeber: CollectionConfig = {
       label: 'Kurzbeschreibung / Teaser',
       type: 'textarea',
       required: true,
-      maxLength: 220,
+      maxLength: 420,
       admin: {
         description: 'Für Listen, Vorschauen und als Fallback für SEO.',
       },
