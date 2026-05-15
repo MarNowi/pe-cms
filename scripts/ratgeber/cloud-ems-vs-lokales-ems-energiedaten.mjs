@@ -4,6 +4,7 @@ import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import {
   t,
   bold,
+  link,
   p,
   h,
   ul,
@@ -371,11 +372,11 @@ const article = {
       p(
         t('PEAK.Flex ist heute noch kein anonymes Massenprodukt. Es ist unser Pilotprogramm für Kunden, die ihr Energiesystem bewusst offen und zukunftsfähig aufbauen wollen.'),
       ),
-      p(
-        t('Mehr dazu findest du hier: '),
-        bold('PEAK.Flex Pilotprogramm 2026'),
-        t(' unter /peak-flex.'),
-      ),
+     p(
+  t('Mehr dazu findest du hier: '),
+  link('PEAK.Flex Pilotprogramm 2026', '/peak-flex'),
+  t('.'),
+),
     ),
 
     textBlock(
