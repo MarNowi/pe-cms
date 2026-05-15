@@ -19,6 +19,7 @@ export function t(text, format = 0) {
 export function bold(text) {
   return t(text, 1)
 }
+
 export function link(label, url, options = {}) {
   const children =
     typeof label === 'string'
@@ -67,9 +68,30 @@ export function h(tag, ...children) {
   }
 }
 
+function isParagraphNode(node) {
+  return Boolean(
+    node &&
+      typeof node === 'object' &&
+      node.type === 'paragraph' &&
+      Array.isArray(node.children),
+  )
+}
+
 function normalizeListChildren(item) {
-  if (typeof item === 'string') return [t(item)]
-  if (Array.isArray(item)) return item
+  if (typeof item === 'string') {
+    return [t(item)]
+  }
+
+  if (Array.isArray(item)) {
+    return item.flatMap((child) =>
+      isParagraphNode(child) ? child.children : child,
+    )
+  }
+
+  if (isParagraphNode(item)) {
+    return item.children
+  }
+
   return [item]
 }
 
