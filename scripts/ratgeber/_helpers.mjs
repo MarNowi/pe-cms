@@ -19,6 +19,28 @@ export function t(text, format = 0) {
 export function bold(text) {
   return t(text, 1)
 }
+export function link(label, url, options = {}) {
+  const children =
+    typeof label === 'string'
+      ? [t(label)]
+      : Array.isArray(label)
+        ? label
+        : [label]
+
+  return {
+    type: 'link',
+    children,
+    direction: null,
+    fields: {
+      linkType: 'custom',
+      url,
+      newTab: options.newTab ?? false,
+    },
+    format: '',
+    indent: 0,
+    version: 3,
+  }
+}
 
 export function p(...children) {
   return {
