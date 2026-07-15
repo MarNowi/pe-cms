@@ -196,7 +196,21 @@ export function tabelleBlock(titel, zeilen) {
     })),
   }
 }
+export function bildBlock({
+  bild,
+  beschriftung = '',
+}) {
+  if (!bild) {
+    throw new Error('bildBlock benötigt eine Media-ID im Feld "bild".')
+  }
 
+  return {
+    id: uid(),
+    blockType: 'bild',
+    bild,
+    beschriftung,
+  }
+}
 export function ctaBlock({
   titel,
   text,
@@ -227,14 +241,4 @@ export function seo(metaTitle, metaDescription) {
     metaDescription,
   }
 }
-export function bildBlock({
-  bild,
-  beschriftung = '',
-}) {
-  return {
-    id: uid(),
-    blockType: 'bild',
-    bild,
-    beschriftung,
-  }
-}
+
