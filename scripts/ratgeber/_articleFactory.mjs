@@ -16,7 +16,7 @@ function assertRequired(article) {
 export async function upsertRatgeberArticle(article, options = {}) {
   const {
     mongoUrl = process.env.DATABASE_URL,
-    dbName = 'test',
+    dbName = process.env.PAYLOAD_DB_NAME || 'test',
     collectionName = 'ratgebers',
     log = true,
   } = options
