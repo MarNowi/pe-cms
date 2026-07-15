@@ -1,0 +1,29 @@
+--- a/scripts/articles/_helpers.mjs
++++ b/scripts/articles/_helpers.mjs
+@@
+ export function tabelleBlock(titel, zeilen) {
+   return {
+     id: uid(),
+     blockType: 'tabelle',
+     titel,
+     zeilen: zeilen.map((zeile) => ({
+       id: zeile.id ?? uid(),
+       ...zeile,
+     })),
+   }
+ }
++
++export function bildBlock({ bild, beschriftung = '' }) {
++  if (!bild) {
++    throw new Error('bildBlock benötigt eine Media-ID im Feld "bild".')
++  }
++
++  return {
++    id: uid(),
++    blockType: 'bild',
++    bild,
++    beschriftung,
++  }
++}
+ 
+ export function ctaBlock({
