@@ -227,3 +227,14 @@ export function seo(metaTitle, metaDescription) {
     metaDescription,
   }
 }
+export function bildBlock({
+  bild,
+  beschriftung = '',
+}) {
+  return {
+    id: uid(),
+    blockType: 'bild',
+    bild,
+    beschriftung,
+  }
+}
