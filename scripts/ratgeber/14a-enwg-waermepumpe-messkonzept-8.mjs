@@ -25,7 +25,7 @@ const article = {
   lesezeit: 14,
 
   seo: seo(
-    '§14a Wärmepumpe: Messkonzept 8 & Tarif | PEAK.Energy',
+    '§14a Wärmepumpe: Messkonzept 8 & Tarif | PEAK.Energy – WE ♥️ ENERGY',
     '§14a EnWG bei Wärmepumpen erklärt: 4,2-kW-Drosselung, Modul 1–3, separater Wärmepumpenzähler und Westnetz Messkonzept 8 mit PV.',
   ),
 
