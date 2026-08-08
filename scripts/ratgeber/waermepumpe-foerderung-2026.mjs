@@ -16,232 +16,313 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: 'Wärmepumpe Förderung 2026: Was BEG und KfW wirklich bieten',
+  titel: 'Wärmepumpe Förderung 2026: Neue KfW-Regeln seit Juli',
   slug: 'waermepumpe-foerderung-2026',
   kategorie: 'waermepumpe',
   status: 'veroeffentlicht',
   teaser:
-    'Bis zu 70 % Zuschuss für eine neue Wärmepumpe – das stimmt, aber nur unter bestimmten Voraussetzungen. Wer KfW 458, Klimageschwindigkeitsbonus, Einkommensbonus und Effizienzbonus richtig einordnet, weiß realistisch, was im eigenen Fall ankommt.',
-  lesezeit: 11,
+    'Seit dem 21. Juli 2026 gelten neue Regeln für die KfW-Heizungsförderung: bis zu 80 % Zuschuss, 16 % Klimageschwindigkeitsbonus, ein gestaffelter Einkommensbonus und nur noch 28.000 € förderfähige Kosten beim Einfamilienhaus. Wir erklären, was davon im eigenen Fall wirklich ankommt.',
+  lesezeit: 12,
 
   seo: seo(
-    'Wärmepumpe Förderung 2026: KfW 458 erklärt | PEAK.Energy',
-    'Wärmepumpe Förderung 2026: KfW 458, Klimageschwindigkeitsbonus, Einkommensbonus, Effizienzbonus, Antrag und typische Fehler – ehrliche Einordnung der BEG-Förderung.',
+    'Wärmepumpe Förderung 2026: neue KfW-Regeln | PEAK.Energy',
+    'Wärmepumpe Förderung 2026: Seit 21. Juli gelten neue KfW-458-Regeln. Bis zu 80 % Zuschuss, 16 % Klimabonus, Einkommensbonus, Familienzuschlag und 28.000 € Förderhöchstbetrag verständlich erklärt.',
   ),
 
   zusammenfassung: [
     summaryPoint(
-      t('Die Wärmepumpen-Förderung läuft 2026 über '),
-      bold('KfW 458 (BEG Heizungsförderung)'),
-      t(' – Zuschuss, kein Kredit. Maximal 70 % der förderfähigen Kosten, gedeckelt auf 30.000 € pro Wohneinheit. Das sind bis zu 21.000 € Zuschuss.'),
+      t('Seit dem '),
+      bold('21. Juli 2026'),
+      t(' gelten neue Bedingungen bei KfW 458. Die Grundförderung bleibt bei 30 %, der Klimageschwindigkeitsbonus beträgt aktuell 16 % und der Einkommensbonus wurde auf 10 %, 30 % oder 40 % gestaffelt.'),
     ),
     summaryPoint(
-      t('Die 70 % entstehen durch Kombination von Bausteinen: Grundförderung 30 %, Klimageschwindigkeitsbonus 20 %, Einkommensbonus 30 %, Effizienzbonus 5 %. Rechnerisch ergibt das 85 % – '),
-      bold('die KfW kappt aber bei 70 %'),
-      t('.'),
+      t('Bei einem Einfamilienhaus werden aktuell höchstens '),
+      bold('28.000 € förderfähige Kosten'),
+      t(' berücksichtigt. Die reguläre Förderobergrenze liegt bei 70 %; in der höchsten Einkommensbonus-Stufe sind für Selbstnutzer bis zu 80 % möglich. Das entspricht maximal 22.400 € Zuschuss.'),
     ),
     summaryPoint(
-      t('Der Klimageschwindigkeitsbonus ist '),
-      bold('bis Ende 2028 in voller Höhe'),
-      t(' verfügbar – ab 2029 schmilzt er alle zwei Jahre um 3 Prozentpunkte ab.'),
+      t('Der frühere '),
+      bold('5-%-Effizienzbonus und der Emissionsminderungszuschlag sind entfallen'),
+      t('. Eine Wärmepumpe mit R290 bekommt dadurch seit dem 21. Juli 2026 keinen zusätzlichen Förderbonus mehr.'),
     ),
     summaryPoint(
-      t('Antrag '),
-      bold('vor Auftragserteilung'),
-      t(' – das ist der häufigste Fehler. Wer in der falschen Reihenfolge vorgeht, verliert den Anspruch komplett.'),
+      t('Wichtig ist die Reihenfolge: Erst BzA erstellen lassen, dann einen Liefer- oder Leistungsvertrag '),
+      bold('mit aufschiebender oder auflösender Förderbedingung'),
+      t(' abschließen, anschließend den KfW-Antrag stellen – und erst nach Zusage mit den Arbeiten vor Ort beginnen.'),
     ),
   ],
 
   inhalt: [
     textBlock(
-      h('h2', t('Worum geht es eigentlich?')),
+      h('h2', t('Was hat sich bei der Wärmepumpen-Förderung geändert?')),
       p(
-        t('„Bis zu 70 % Förderung für eine Wärmepumpe" – so steht es in Werbeanzeigen, in Beratungsgesprächen, auf Anbieter-Websites. Stimmt das? Ja, aber mit Bedingungen. Die 70 % sind das obere Maximum, das nur erreicht, wer drei Boni gleichzeitig in Anspruch nehmen kann. Im Standardfall liegt die Förderung deutlich darunter – aber sie ist trotzdem substantiell.'),
+        t('Die Wärmepumpen-Förderung wurde mitten im Jahr 2026 neu geordnet. Seit dem '),
+        bold('21. Juli 2026'),
+        t(' gelten bei der KfW-Heizungsförderung für Privatpersonen neue Förderhöhen und neue Einkommensgrenzen. Wer noch mit 20 % Klimageschwindigkeitsbonus, 5 % Effizienzbonus und 30.000 € förderfähigen Kosten rechnet, rechnet mit dem alten Stand.'),
       ),
       p(
-        t('Seit der BEG-Reform Anfang 2024 ist die Förderlandschaft für Heizungen klar strukturiert. '),
-        bold('KfW 458'),
-        t(' (Heizungsförderung für Privatpersonen – Wohngebäude) ist 2026 das zentrale Programm. Es ersetzt die früheren BAFA-Heizungsprogramme. Das BAFA bleibt zuständig für Gebäudehülle (Dämmung, Fenster, Lüftung), die Heizung selbst läuft über die KfW als '),
-        bold('Zuschuss, nicht als Kredit'),
-        t('. Geld, das nicht zurückgezahlt werden muss.'),
+        t('KfW 458 bleibt das zentrale Zuschussprogramm für private Eigentümer bestehender Wohngebäude. Gefördert werden unter anderem elektrisch angetriebene Wärmepumpen, die dazugehörige Fachplanung und Baubegleitung sowie bestimmte notwendige Umfeldmaßnahmen. Voraussetzung ist grundsätzlich ein bestehendes Wohngebäude, dessen Bauantrag beziehungsweise Bauanzeige bei Antragstellung mindestens fünf Jahre zurückliegt.'),
       ),
       p(
-        t('Wer eine Wärmepumpe plant, sollte das Förderverfahren von Anfang an mitdenken. Nicht erst, wenn das Angebot vom Heizungsbauer auf dem Tisch liegt – sonst ist der Zug oft schon abgefahren.'),
+        t('Die wichtigste Botschaft lautet deshalb nicht einfach „bis zu 80 % Förderung“. Entscheidend ist, '),
+        bold('welche Bonusstufe zur konkreten Immobilie, zur alten Heizung, zur Selbstnutzung und zum Haushaltseinkommen passt'),
+        t('. Erst daraus ergibt sich der tatsächliche Zuschuss.'),
       ),
     ),
 
     textBlock(
-      h('h2', t('Wie sich die 70 % zusammensetzen')),
+      h('h2', t('So setzt sich die Förderung seit 21. Juli 2026 zusammen')),
       p(
-        t('Die KfW-Heizungsförderung ist kein einzelner Topf. Sie ist ein System aus vier Bausteinen, die kombiniert werden können – mit einer harten Obergrenze.'),
+        t('Die KfW-Förderung besteht aus einer Grundförderung und möglichen Bonusbausteinen. Nicht jeder Baustein gilt für jeden Antragsteller.'),
       ),
       p(
         bold('Grundförderung: 30 %'),
-        t('. Diese bekommt jeder, der in einem bestehenden Wohngebäude (Bauantrag mindestens 5 Jahre alt) seine Heizung gegen eine Wärmepumpe austauscht. Voraussetzungen: zertifiziertes Gerät auf der KfW-Liste, Mindesteffizienz erfüllt, hydraulischer Abgleich nach Verfahren B durchgeführt. Im Neubau gibt es diese Förderung nicht.'),
+        t('. Sie bleibt unverändert. Für eine förderfähige Wärmepumpe in einem bestehenden Wohngebäude werden grundsätzlich 30 % der berücksichtigten förderfähigen Kosten bezuschusst.'),
       ),
       p(
-        bold('Klimageschwindigkeitsbonus: +20 %'),
-        t('. Greift beim Austausch einer fossilen Bestandsheizung – also Öl, Gas (mind. 20 Jahre alt) oder Nachtspeicher. Voll bis Ende 2028, '),
-        bold('ab 2029 schmilzt der Bonus alle zwei Jahre um 3 Prozentpunkte'),
-        t(' und ist 2035 vollständig weg. Nur Selbstnutzer.'),
+        bold('Klimageschwindigkeitsbonus: aktuell +16 %'),
+        t('. Selbstnutzende Eigentümer können ihn erhalten, wenn sie unter anderem eine funktionsfähige Öl-, Kohle-, Gas-Etagen- oder Nachtspeicherheizung austauschen. Bei normalen Gas- und Biomasseheizungen muss die Inbetriebnahme mindestens 20 Jahre zurückliegen. Die alte Heizung muss fachgerecht demontiert und entsorgt werden.'),
       ),
       p(
-        bold('Einkommensbonus: +30 %'),
-        t('. Für Selbstnutzer mit einem zu versteuernden Haushaltseinkommen von maximal 40.000 € pro Jahr. Nachweis über die Einkommenssteuerbescheide der zweit- und drittletzten Jahre.'),
+        bold('Einkommensbonus: +10 %, +30 % oder +40 %'),
+        t('. Er gilt für die selbstgenutzte Haupt- oder alleinige Wohneinheit und richtet sich nach dem durchschnittlichen zu versteuernden Haushaltsjahreseinkommen. Haushalte mit mindestens einem kindergeldberechtigten minderjährigen Kind erhalten einen einmaligen Familienzuschlag von 10.000 € auf die jeweilige Einkommensgrenze.'),
       ),
       p(
-        bold('Effizienzbonus: +5 %'),
-        t('. Für besonders effiziente Wärmepumpen – Wasser, Erdreich oder Abwasser als Wärmequelle, oder Luft-Wasser-Geräte mit natürlichem Kältemittel (typisch R290/Propan).'),
+        bold('Effizienzbonus: entfallen'),
+        t('. Der bisherige zusätzliche 5-%-Bonus für bestimmte Wärmequellen oder natürliche Kältemittel wurde zum 21. Juli 2026 gestrichen. R290 kann technisch weiterhin eine sehr sinnvolle Wahl sein – einen zusätzlichen 5-%-Förderbonus gibt es dafür aktuell aber nicht mehr.'),
       ),
       p(
-        bold('Wichtig:'),
-        t(' Rechnet man alles zusammen, kommt man auf 85 %. Die KfW kappt das aber automatisch '),
-        bold('auf 70 %'),
-        t('. Das ist der harte Deckel. Wer den Maximalförderbetrag erreichen will, muss kein Mathematiker sein, sondern nur die richtige Kombination treffen.'),
+        bold('Förderobergrenze: 70 % beziehungsweise 80 %'),
+        t('. Normalerweise werden Grundförderung und Boni bei 70 % gedeckelt. Für selbstnutzende Eigentümer in der höchsten Einkommensbonus-Stufe liegt die Obergrenze bei 80 %. Ohne Kind betrifft das ein zu versteuerndes Haushaltsjahreseinkommen bis 30.000 €, mit Familienzuschlag bis 40.000 €.'),
       ),
     ),
 
-    tabelleBlock('Förderbeispiele 2026 (Einfamilienhaus, 28.000 € Investition)', [
+    tabelleBlock('Förderbeispiele seit 21.07.2026 (Einfamilienhaus, 28.000 € förderfähige Kosten)', [
       {
-        spalte1: 'Standardfall',
-        spalte2: 'Grundförderung 30 %',
+        spalte1: 'Nur Grundförderung',
+        spalte2: '30 %',
         spalte3:
-          'Bei reinem Heizungstausch ohne fossile Altanlage und ohne Einkommensgrenze – Zuschuss 8.400 € auf 28.000 €',
+          '8.400 € Zuschuss. Beispiel: förderfähige Wärmepumpe ohne Klimageschwindigkeits- oder Einkommensbonus.',
       },
       {
-        spalte1: 'Ölheizung raus, Luft-WP rein',
-        spalte2: '30 % + 20 % = 50 %',
+        spalte1: 'Alte Ölheizung raus',
+        spalte2: '30 % + 16 % = 46 %',
         spalte3:
-          'Klassischer Klimageschwindigkeitsbonus-Fall – Zuschuss 14.000 € auf 28.000 €. Solange bis Ende 2028 in voller Höhe',
+          '12.880 € Zuschuss bei Selbstnutzung und erfüllten Voraussetzungen für den Klimageschwindigkeitsbonus.',
       },
       {
-        spalte1: 'Ölheizung raus, Luft-WP mit R290',
-        spalte2: '30 % + 20 % + 5 % = 55 %',
+        spalte1: 'Alte Ölheizung + 10 % Einkommensbonus',
+        spalte2: '30 % + 16 % + 10 % = 56 %',
         spalte3:
-          'Klimageschwindigkeitsbonus + Effizienzbonus durch natürliches Kältemittel – Zuschuss 15.400 €',
+          '15.680 € Zuschuss. Ohne Kind gilt die 10-%-Stufe bei einem zu versteuernden Haushaltsjahreseinkommen von 40.001 bis 50.000 €.',
       },
       {
-        spalte1: 'Ölheizung raus + niedriges Einkommen',
-        spalte2: '30 % + 20 % + 30 % = 80 % (gedeckelt 70 %)',
+        spalte1: 'Familie + 30 % Einkommensbonus + alte Heizung',
+        spalte2: '30 % + 16 % + 30 % = 76 % → gedeckelt auf 70 %',
         spalte3:
-          'Maximale Konstellation für Selbstnutzer mit Einkommen ≤ 40.000 €. Zuschuss 19.600 € auf 28.000 € (70 %-Deckel)',
+          '19.600 € Zuschuss. Mit minderjährigem kindergeldberechtigtem Kind gilt die 30-%-Stufe bei 40.001 bis 50.000 € zu versteuerndem Haushaltsjahreseinkommen.',
       },
       {
-        spalte1: 'Erdwärmepumpe + Ölheizung-Austausch',
-        spalte2: '30 % + 20 % + 5 % = 55 %',
+        spalte1: 'Höchste Einkommensstufe + alte Heizung',
+        spalte2: '30 % + 16 % + 40 % = 86 % → gedeckelt auf 80 %',
         spalte3:
-          'Effizienzbonus automatisch durch Erdwärme – Zuschuss 15.400 €. Erschließungskosten sind Teil der förderfähigen Kosten',
+          '22.400 € maximaler Zuschuss. Die 80-%-Obergrenze gilt in der höchsten Einkommensbonus-Stufe.',
       },
     ]),
 
     hinweisBlock(
-      'Die 30.000 € sind keine Förderhöhe – sondern die Bezugsgröße',
+      '28.000 € sind die aktuelle Bezugsgröße – nicht der Zuschuss',
       p(
-        t('Förderfähig sind Kosten bis zu 30.000 € pro Wohneinheit. Wer 40.000 € investiert, bekommt den Förderprozentsatz trotzdem nur auf 30.000 € gerechnet. Bei 70 % sind das 21.000 € Zuschuss als Maximum. Zusätzlich kann ein '),
-        bold('Emissionsminderungszuschlag von 2.500 €'),
-        t(' anfallen – damit erhöht sich der maximale Zuschuss auf 23.500 €. Bei Mehrfamilienhäusern erhöht sich die Bezugsgröße um 15.000 € pro weiterer Wohneinheit.'),
+        t('Bei einem Einfamilienhaus berücksichtigt die KfW seit dem 21. Juli 2026 maximal '),
+        bold('28.000 € förderfähige Kosten'),
+        t('. Kostet die Maßnahme beispielsweise 35.000 €, wird der Fördersatz trotzdem nur auf maximal 28.000 € angewendet. Bei 70 % ergibt das höchstens 19.600 €, bei der 80-%-Obergrenze höchstens 22.400 € Zuschuss.'),
+      ),
+      p(
+        t('Bei Mehrfamilienhäusern gelten aktuell 28.000 € für die erste Wohneinheit, jeweils 15.000 € für die zweite bis sechste Wohneinheit und jeweils 8.000 € ab der siebten Wohneinheit.'),
       ),
     ),
 
     textBlock(
-      h('h2', t('Antrag stellen: Reihenfolge ist alles')),
+      h('h2', t('Der Klimageschwindigkeitsbonus sinkt jetzt deutlich schneller')),
       p(
-        t('Bei der KfW-Heizungsförderung ist der Antragsweg eng definiert – und Fehler in der Reihenfolge sind der häufigste Ablehnungsgrund.'),
+        t('Die neue Regelung macht den Zeitpunkt der Antragstellung relevanter. Der Klimageschwindigkeitsbonus beträgt aktuell 16 % und wird ab 2027 halbjährlich reduziert.'),
+      ),
+      ul(
+        p(bold('bis 31.01.2027: '), t('16 %')),
+        p(bold('ab 01.02.2027: '), t('12 %')),
+        p(bold('ab 01.08.2027: '), t('8 %')),
+        p(bold('ab 01.02.2028: '), t('4 %')),
+        p(bold('ab 01.08.2028: '), t('0 %')),
+      ),
+      p(
+        t('Für die jeweilige Bonusstufe ist der '),
+        bold('Zeitpunkt der Antragstellung'),
+        t(' entscheidend. Wer einen förderfähigen Heizungstausch ohnehin plant, kann deshalb einen konkreten Förderunterschied haben, wenn der Antrag in die nächste Absenkungsstufe rutscht.'),
+      ),
+    ),
+
+    textBlock(
+      h('h2', t('Auch die förderfähigen Kosten sinken ab 2027')),
+      p(
+        t('Nicht nur der Klimageschwindigkeitsbonus wird reduziert. Der Förderhöchstbetrag für die erste Wohneinheit sinkt erstmals zum '),
+        bold('1. Februar 2027 um 750 €'),
+        t(' und danach jeweils zum 1. Februar und 1. August eines Jahres erneut um 750 €.'),
+      ),
+      p(
+        t('Damit gelten für die erste Wohneinheit beispielsweise 28.000 € bis 31.01.2027, 27.250 € ab 01.02.2027 und 26.500 € ab 01.08.2027. Auch hier zählt der Zeitpunkt der Antragstellung.'),
+      ),
+    ),
+
+    textBlock(
+      h('h2', t('Der neue Einkommensbonus: Familien werden stärker berücksichtigt')),
+      p(
+        t('Der Einkommensbonus wurde zum 21. Juli 2026 komplett neu gestaffelt. Maßgeblich ist das zu versteuernde Haushaltsjahreseinkommen – nicht einfach das Bruttogehalt. Für einen Antrag im Jahr 2026 werden grundsätzlich die Einkommensteuerbescheide des vorletzten und vorvorletzten Jahres benötigt, also regelmäßig 2024 und 2023.'),
+      ),
+    ),
+
+    tabelleBlock('Einkommensbonus 2026', [
+      {
+        spalte1: 'bis 30.000 € zVE',
+        spalte2: '40 %',
+        spalte3: 'Ohne Kind 40 %. Mit mindestens einem berücksichtigungsfähigen minderjährigen Kind ebenfalls 40 %.',
+      },
+      {
+        spalte1: '30.001 bis 40.000 € zVE',
+        spalte2: '30 % / mit Kind 40 %',
+        spalte3: 'Durch den Familienzuschlag steigt die höchste Bonusstufe für Familien um 10.000 €.',
+      },
+      {
+        spalte1: '40.001 bis 50.000 € zVE',
+        spalte2: '10 % / mit Kind 30 %',
+        spalte3: 'Familien profitieren auch in dieser Einkommensspanne von der verschobenen Grenze.',
+      },
+      {
+        spalte1: '50.001 bis 60.000 € zVE',
+        spalte2: '0 % / mit Kind 10 %',
+        spalte3: 'Ohne Familienzuschlag gibt es hier keinen Einkommensbonus mehr.',
+      },
+      {
+        spalte1: 'ab 60.001 € zVE',
+        spalte2: '0 %',
+        spalte3: 'Kein Einkommensbonus – unabhängig vom Familienzuschlag.',
+      },
+    ]),
+
+    textBlock(
+      h('h2', t('Antrag stellen: Die richtige Reihenfolge nach aktuellem KfW-Stand')),
+      p(
+        t('Bei KfW 458 ist nicht nur entscheidend, was eingebaut wird, sondern auch in welcher Reihenfolge das Förderverfahren läuft.'),
       ),
       ul(
         p(
-          bold('Schritt 1: Liefer- oder Leistungsvertrag mit Fachbetrieb'),
-          t('. Im Vertrag muss eine '),
-          bold('aufschiebende oder auflösende Bedingung'),
-          t(' stehen – der Vertrag tritt erst in Kraft, wenn die KfW-Förderung zugesagt wird. Standardvertrag ohne Bedingung ist Förder-Aus.'),
+          bold('Schritt 1: Fachunternehmen oder Energieeffizienz-Experten einbinden und BzA erstellen lassen'),
+          t('. Die Bestätigung zum Antrag enthält die geplante Heizung, die förderfähigen Kosten und die Bestätigung, dass die technischen Mindestanforderungen eingehalten werden.'),
         ),
         p(
-          bold('Schritt 2: Bestätigung zum Antrag (BzA)'),
-          t('. Der Fachbetrieb erstellt diese mit einer 15-stelligen Kennnummer und gibt die technischen Daten ins KfW-Prüftool ein.'),
+          bold('Schritt 2: Liefer- oder Leistungsvertrag abschließen'),
+          t('. Für den KfW-Antrag muss ein Vertrag vorliegen. Dieser muss zwingend eine aufschiebende oder auflösende Bedingung in Bezug auf die KfW-Förderzusage enthalten und ein voraussichtliches Umsetzungsdatum nennen.'),
         ),
         p(
-          bold('Schritt 3: Antrag im KfW-Kundenportal „Meine KfW"'),
-          t('. Online-Antrag mit BzA-ID. Direkt bei der KfW – nicht über die Hausbank, anders als bei KfW-Krediten. Eigentümer (mit Grundbucheintrag) stellen den Antrag selbst.'),
+          bold('Schritt 3: Zuschuss bei „Meine KfW“ beantragen'),
+          t('. Dafür wird unter anderem die 15-stellige BzA-ID benötigt. Der Antrag muss vor Beginn der Arbeiten vor Ort gestellt werden.'),
         ),
         p(
-          bold('Schritt 4: Förderzusage abwarten'),
-          t('. Erst nach schriftlicher Zusage darf das Vorhaben starten. Wer früher anfängt, verliert den Anspruch komplett. 36 Monate Zeit nach Zusage zur Umsetzung.'),
+          bold('Schritt 4: Förderzusage abwarten und Vorhaben umsetzen'),
+          t('. Nach der Zusage kann die Maßnahme umgesetzt werden. Die KfW nennt dafür grundsätzlich einen Bewilligungszeitraum von 36 Monaten ab Zusage.'),
         ),
         p(
-          bold('Schritt 5: Bestätigung nach Durchführung (BnD)'),
-          t('. Nach Einbau erstellt der Fachbetrieb die BnD. Mit BnD und Rechnungen die Auszahlung im Portal anstoßen. Etwa 4 Wochen bis Geld auf dem Konto.'),
+          bold('Schritt 5: BnD und Rechnungen einreichen'),
+          t('. Nach Fertigstellung erstellt das Fachunternehmen oder der Energieeffizienz-Experte die Bestätigung nach Durchführung. Anschließend werden die Nachweise im KfW-Portal eingereicht.'),
         ),
       ),
     ),
 
     tippBlock(
-      'Aufschiebende Bedingung im Vertrag – Standard prüfen',
+      'Vertrag ohne Förderbedingung kann den Antrag verhindern',
       p(
-        t('Nicht jeder Fachbetrieb formuliert die aufschiebende Bedingung von sich aus richtig. Der Vertrag muss explizit festhalten, dass er erst in Kraft tritt, wenn die Förderzusage vorliegt – und dass das voraussichtliche Umsetzungsdatum innerhalb des Bewilligungszeitraums liegt. Ein erfahrener Anbieter hat dafür eine Standardklausel. Wer das nicht weiß, riskiert die komplette Förderung. Vor Unterschrift gegenlesen.'),
+        t('Ein normal unterschriebener Liefer- oder Leistungsvertrag ohne aufschiebende oder auflösende Förderbedingung gilt grundsätzlich als schädlicher Vorhabenbeginn. Die KfW weist ausdrücklich darauf hin, dass die Förderbedingung nicht einfach nachträglich in einen bereits abgeschlossenen Vertrag aufgenommen werden darf. Genau deshalb sollte der Förderablauf vor der Unterschrift geklärt sein.'),
       ),
     ),
 
     textBlock(
-      h('h2', t('KfW-Zuschuss oder Steuerbonus § 35c EStG?')),
+      h('h2', t('R290: technisch interessant, aber kein 5-%-Bonus mehr')),
       p(
-        t('Es gibt zwei Wege, eine Heizungsmodernisierung steuerlich oder direkt finanziell zu vergünstigen. Sie sind '),
-        bold('nicht kombinierbar'),
-        t(' – es ist ein Wahlrecht.'),
+        t('In vielen älteren Ratgebern wird R290 beziehungsweise Propan noch direkt mit einem zusätzlichen 5-%-Effizienzbonus verknüpft. Dieser Bonus ist seit dem 21. Juli 2026 entfallen.'),
       ),
       p(
-        bold('KfW 458'),
-        t(' ist der Zuschuss-Weg: 30 bis 70 % der förderfähigen Kosten, sofort ausgezahlt nach Maßnahmenabschluss. Antrag vor Auftragserteilung. Maximale Wirkung: bis 21.000 € Zuschuss bei 30.000 € Investition.'),
+        t('Das macht ein natürliches Kältemittel nicht schlechter. Die Wahl einer Wärmepumpe sollte ohnehin nicht an einem einzelnen Förderbonus hängen, sondern an Heizlast, Vorlauftemperatur, Effizienz, Schall, Aufstellort, Hydraulik und der langfristigen technischen Eignung für das Gebäude.'),
+      ),
+    ),
+
+    textBlock(
+      h('h2', t('Was ist für Wärmepumpen ab 2027 angekündigt?')),
+      p(
+        t('Die KfW kündigt für das erste Quartal 2027 zusätzlich einen '),
+        bold('Wertschöpfungsbonus für Wärmepumpen'),
+        t(' an. Nach dem derzeit veröffentlichten Plan soll die Grundförderung für Wärmepumpen dann grundsätzlich auf 15 % sinken. Wärmepumpen, die innerhalb der EU gefertigt, gebaut beziehungsweise zusammengebaut wurden, sollen zusätzlich 15 % Wertschöpfungsbonus erhalten und damit wieder auf insgesamt 30 % kommen.'),
+      ),
+      p(
+        bold('Wichtig:'),
+        t(' Das ist im August 2026 eine angekündigte Regelung für 2027. Für eine konkrete Investitionsentscheidung sollte deshalb vor Antragstellung noch einmal geprüft werden, welche endgültigen Bedingungen dann tatsächlich gelten.'),
+      ),
+    ),
+
+    textBlock(
+      h('h2', t('KfW-Zuschuss oder Steuerermäßigung nach § 35c EStG?')),
+      p(
+        t('Für selbstgenutzte ältere Gebäude kann neben der KfW-Förderung grundsätzlich auch die Steuerermäßigung nach § 35c EStG interessant sein. Für dieselbe öffentlich geförderte Maßnahme mit steuerfreiem Zuschuss oder zinsverbilligtem Darlehen kann § 35c jedoch nicht zusätzlich genutzt werden.'),
       ),
       p(
         bold('§ 35c EStG'),
-        t(' (Steuerbonus für energetische Sanierungen) erlaubt 20 % der Kosten über drei Jahre verteilt steuerlich abzusetzen – maximal 40.000 € absetzbare Kosten. Kein Antrag vor der Maßnahme nötig, läuft über die Steuererklärung.'),
+        t(' verteilt die Steuerermäßigung über drei Jahre: 7 % im Jahr des Abschlusses, 7 % im Folgejahr und 6 % im dritten Jahr. Insgesamt sind damit 20 % der begünstigten Aufwendungen möglich; der Höchstbetrag der Steuerermäßigung beträgt 40.000 € je begünstigtem Objekt. Voraussetzung ist unter anderem, dass das selbstgenutzte Gebäude älter als zehn Jahre ist und die gesetzlichen technischen Anforderungen erfüllt werden.'),
       ),
       p(
-        t('In den meisten Fällen ist '),
-        bold('KfW 458 wirtschaftlich klar besser'),
-        t('. Die 30 % Grundförderung als Zuschuss schlagen die 20 % Steuerbonus über drei Jahre. Erst wenn der KfW-Antrag aus Reihenfolge-Gründen nicht mehr möglich ist – z. B. weil schon vor Antragstellung gebaut wurde – wird der Steuerbonus zur sinnvollen Alternative.'),
+        t('Ob KfW 458 oder § 35c wirtschaftlich sinnvoller ist, hängt vom Einzelfall ab – unter anderem von förderfähigen Kosten, Bonusstufen und der tatsächlich vorhandenen Einkommensteuerbelastung. Für die meisten Wärmepumpenprojekte sollte diese Entscheidung '),
+        bold('vor Beginn der Maßnahme'),
+        t(' getroffen werden.'),
       ),
     ),
 
     textBlock(
-      h('h2', t('Was viele bei der Förderung falsch einschätzen')),
+      h('h2', t('Was viele bei der neuen Förderung falsch einschätzen')),
       p(
-        t('Bei der KfW-Heizungsförderung tauchen immer wieder dieselben Denkfehler auf.'),
+        t('Nach der Umstellung zum 21. Juli 2026 kursieren alte und neue Förderregeln parallel. Das führt schnell zu falschen Erwartungen.'),
       ),
       ul(
-        p(t('„Ich bekomme automatisch 70 %." Stimmt nicht. 70 % ist das Maximum für eine spezifische Konstellation aus drei Boni. Der typische Standardfall liegt bei 30 bis 50 %.')),
-        p(t('Der Antrag wird nach Vertragsabschluss gestellt. Falsch – bzw. nur dann gültig, wenn der Vertrag eine aufschiebende oder auflösende Bedingung enthält. Wer einen Standardvertrag unterschreibt und dann den Antrag stellt, verliert die komplette Förderung.')),
-        p(t('Förderfähige Kosten = Gesamtkosten. Stimmt nicht. Die 30.000 € Bezugsgröße ist gedeckelt. Eine 40.000-€-Investition wird mit 21.000 € (70 % von 30.000 €) als Maximum bezuschusst – nicht mit 70 % von 40.000 €.')),
-        p(t('Klimageschwindigkeitsbonus läuft ewig. Stimmt nicht. Voll nur bis Ende 2028. Ab 2029 alle zwei Jahre minus 3 Prozentpunkte. 2035 weg.')),
-        p(t('„Ich nehme den Steuerbonus, das ist einfacher." In den meisten Fällen finanziell schlechter. KfW 458 mit 30 % Zuschuss schlägt § 35c EStG mit 20 % Steuerbonus deutlich.')),
-        p(t('Förderprogramme der Stadt obendrauf? Selten – die meisten Kommunen haben ihre Wärmepumpen-Förderung wegen der hohen KfW-Bundesförderung eingestellt. Vorher prüfen, aber nicht darauf bauen.')),
+        p(t('„Jede Wärmepumpe bekommt 80 %.“ Falsch. 30 % Grundförderung ist der Ausgangspunkt. Die 80-%-Obergrenze gilt nur in der höchsten Einkommensbonus-Stufe und nur bei entsprechend kombinierbaren Boni.')),
+        p(t('„R290 bringt weiterhin 5 % extra.“ Falsch. Der Effizienzbonus ist seit 21. Juli 2026 entfallen.')),
+        p(t('„Es werden weiterhin 30.000 € beim Einfamilienhaus angesetzt.“ Falsch. Aktuell sind es 28.000 € für die erste Wohneinheit.')),
+        p(t('„Der Klimageschwindigkeitsbonus beträgt bis Ende 2028 20 %.“ Falsch. Aktuell sind es 16 %; ab Februar 2027 sinkt der Bonus halbjährlich und entfällt für Antragstellungen ab 1. August 2028.')),
+        p(t('„Ich darf erst nach dem KfW-Antrag einen Vertrag unterschreiben.“ So pauschal ebenfalls falsch. Für die Antragstellung muss bereits ein Liefer- oder Leistungsvertrag vorliegen – allerdings zwingend mit der vorgeschriebenen Förderbedingung.')),
+        p(t('„Entscheidend ist die spätere Inbetriebnahme.“ Für die Höhe des Klimageschwindigkeitsbonus und des sinkenden Förderhöchstbetrags ist nach aktuellem KfW-Stand der Zeitpunkt der Antragstellung entscheidend.')),
       ),
       p(
-        bold('Eine ehrliche Förderprognose braucht den Blick auf die konkrete Konstellation'),
-        t(' – Bestandsheizung, Einkommen, gewünschte Wärmepumpe, Zeitplan. Nicht das Werbeversprechen „bis zu 70 %".'),
+        bold('Eine belastbare Förderprognose braucht deshalb immer den aktuellen KfW-Stand'),
+        t(' und die konkrete Situation des Haushalts. Alte Fördertabellen aus dem Frühjahr 2026 sind für neue Anträge nicht mehr geeignet.'),
       ),
     ),
 
     textBlock(
       h('h2', t('Unser Fazit')),
       p(
-        t('Die Wärmepumpen-Förderung 2026 ist substantiell und planbar. Wer eine Bestandsheizung – idealerweise Öl oder alte Gasheizung – durch eine Wärmepumpe ersetzt, kommt im Standardfall auf 50 % Zuschuss (Grundförderung plus Klimageschwindigkeitsbonus). Bei niedrigem Einkommen oder mit einem effizienten Gerät kann die Förderung auf bis zu 70 % steigen.'),
+        t('Die neue Wärmepumpen-Förderung ist nicht einfach großzügiger oder schlechter als vorher – sie verteilt die Förderung anders. Die Grundförderung bleibt bei 30 %, während der Klimageschwindigkeitsbonus gesunken und der Effizienzbonus weggefallen ist. Gleichzeitig können Haushalte mit geringerem Einkommen und Familien durch die neue Staffelung stärker profitieren.'),
       ),
       p(
-        t('Entscheidend ist die Reihenfolge: '),
-        bold('Vertrag mit aufschiebender Bedingung, BzA, Antrag, Förderzusage, dann erst Beauftragung'),
-        t('. Wer das durcheinanderbringt, verliert den kompletten Anspruch – und das ist 2026 der häufigste Fehler. Ein erfahrener Fachbetrieb kennt diesen Ablauf und liefert die nötigen Unterlagen, statt mit Förderversprechen zu werben, die er nicht halten kann.'),
+        t('Für einen typischen selbstnutzenden Eigentümer, der aktuell eine förderfähige alte Öl- oder Gasheizung ersetzt und keinen Einkommensbonus erhält, sind '),
+        bold('46 % Förderung'),
+        t(' ein realistischer Rechenwert. Bei 28.000 € förderfähigen Kosten entspricht das 12.880 € Zuschuss. Die beworbenen 80 % sind möglich – aber eben keine Standardförderung.'),
       ),
       p(
-        bold('Wer 2026 eine Wärmepumpe plant und auf den vollen Klimageschwindigkeitsbonus setzt, sollte nicht bis 2028 warten'),
-        t(' – die Auftragsbücher der Heizungsbauer sind voll, und ab 2029 schmilzt der Bonus jedes zweite Jahr ab. Wer den Bonus mitnehmen will, plant am besten 2026 oder 2027 – mit Umsetzung bis Ende 2028.'),
+        t('Und bei aller Förderung gilt: '),
+        bold('Eine schlechte Wärmepumpenplanung wird durch einen hohen Zuschuss nicht gut.'),
+        t(' Heizlast, Vorlauftemperatur, Heizflächen, Hydraulik, Schall, Elektroinstallation und die Einbindung in Photovoltaik und Energiemanagement müssen zuerst technisch passen. Die Förderung kommt danach obendrauf.'),
       ),
     ),
 
     ctaBlock({
-      titel: 'Wärmepumpe mit Förderung sauber planen',
+      titel: 'Wärmepumpe und Förderung sauber planen',
       text:
-        'Wir prüfen für deinen Fall, welche Förderbausteine in Frage kommen, und stellen den Vertrag mit der korrekten aufschiebenden Bedingung – damit der Antragsweg läuft und kein Anspruch verloren geht.',
+        'Wir prüfen nicht nur den möglichen KfW-Zuschuss, sondern ob die Wärmepumpe technisch zu deinem Gebäude passt. Dazu gehören Heizlast, Hydraulik, Aufstellort, Elektroinstallation und auf Wunsch die Einbindung von Photovoltaik, Speicher und Energiemanagement.',
       buttonText: 'Beratung anfragen',
       buttonLink: '/kontakt',
     }),
@@ -249,28 +330,36 @@ const article = {
 
   faq: [
     faqItem(
-      'Wie hoch ist die maximale Förderung für eine Wärmepumpe 2026?',
-      'Maximal 70 % der förderfähigen Kosten, gedeckelt auf 30.000 € pro Wohneinheit. Das ergibt bis zu 21.000 € Zuschuss. Mit Emissionsminderungszuschlag (2.500 €) sind insgesamt bis zu 23.500 € möglich. Bei Mehrfamilienhäusern erhöht sich die Bezugsgröße um 15.000 € pro weiterer Wohneinheit.',
+      'Wie hoch ist die maximale Wärmepumpen-Förderung seit Juli 2026?',
+      'Seit dem 21. Juli 2026 sind für selbstnutzende Eigentümer in der höchsten Einkommensbonus-Stufe bis zu 80 % der förderfähigen Kosten möglich. Bei einem Einfamilienhaus werden aktuell maximal 28.000 € berücksichtigt. Damit liegt der maximale Zuschuss derzeit bei 22.400 €. In den übrigen Bonuskonstellationen gilt grundsätzlich eine Obergrenze von 70 %.',
     ),
     faqItem(
-      'Wann läuft der Klimageschwindigkeitsbonus aus?',
-      'Voll mit 20 % bis Ende 2028. Ab 2029 schmilzt er alle zwei Jahre um 3 Prozentpunkte ab und ist 2035 vollständig weg. Wichtig: Nicht der Antrag, sondern die Inbetriebnahme der Wärmepumpe muss innerhalb der Frist liegen.',
+      'Wie hoch ist der Klimageschwindigkeitsbonus aktuell?',
+      'Bis zum 31. Januar 2027 beträgt der Klimageschwindigkeitsbonus 16 %. Ab 1. Februar 2027 sinkt er auf 12 %, ab 1. August 2027 auf 8 %, ab 1. Februar 2028 auf 4 %. Für Antragstellungen ab 1. August 2028 wird kein Klimageschwindigkeitsbonus mehr gewährt.',
     ),
     faqItem(
-      'Kann ich KfW-Förderung und Steuerbonus § 35c EStG kombinieren?',
-      'Nein. Es ist ein Wahlrecht – entweder KfW 458 (Zuschuss bis 70 %) oder § 35c EStG (Steuerbonus 20 % über drei Jahre). KfW 458 ist in den meisten Fällen finanziell deutlich besser. § 35c wird zur Alternative, wenn der KfW-Weg aus Reihenfolge-Gründen nicht mehr möglich ist.',
+      'Gibt es noch 5 % extra Förderung für R290-Wärmepumpen?',
+      'Nein. Der bisherige Effizienzbonus von 5 % ist zum 21. Juli 2026 entfallen. Ein natürliches Kältemittel wie R290 kann technisch weiterhin sinnvoll sein, führt aktuell aber nicht mehr zu einem zusätzlichen 5-%-KfW-Bonus.',
     ),
     faqItem(
-      'Wer bekommt den Einkommensbonus?',
-      'Selbstnutzende Eigentümer mit einem zu versteuernden Haushaltseinkommen von maximal 40.000 € pro Jahr. Nachweis über die Einkommenssteuerbescheide der zweit- und drittletzten Jahre vor Antragstellung. Für 2026 also die Bescheide für 2023 und 2024.',
+      'Wie funktioniert der neue Einkommensbonus?',
+      'Für Selbstnutzer beträgt der Einkommensbonus 40 % bei einem zu versteuernden Haushaltsjahreseinkommen bis 30.000 €, 30 % bis 40.000 € und 10 % bis 50.000 €. Lebt mindestens ein kindergeldberechtigtes minderjähriges Kind im Haushalt, werden die Einkommensgrenzen pauschal um 10.000 € angehoben.',
     ),
     faqItem(
-      'Muss der Antrag vor oder nach Vertragsabschluss gestellt werden?',
-      'Nach Vertragsabschluss – aber der Vertrag muss eine aufschiebende oder auflösende Bedingung enthalten, die ihn von der KfW-Förderzusage abhängig macht. Erst nach schriftlicher Förderzusage darf das Vorhaben starten. Wer ohne diese Bedingung unterschreibt oder vor Förderzusage baut, verliert den kompletten Anspruch.',
+      'Welche förderfähigen Kosten gelten beim Einfamilienhaus?',
+      'Seit dem 21. Juli 2026 berücksichtigt die KfW bei einem Einfamilienhaus maximal 28.000 € förderfähige Kosten. Ab 1. Februar 2027 sinkt dieser Förderhöchstbetrag erstmals um 750 € und danach halbjährlich jeweils zum 1. Februar und 1. August erneut um 750 €.',
     ),
     faqItem(
-      'Was passiert, wenn ich vor dem Antrag baue?',
-      'Die Förderung ist endgültig verloren. Es gibt keine Heilungsmöglichkeit – auch nicht mit nachträglich eingefügten Klauseln im Vertrag. Die KfW prüft den Beginn der Maßnahme als Datum der ersten Lieferung oder Installation. Wer schon vor Förderzusage Material liefert oder mit der Montage beginnt, fällt aus dem Programm.',
+      'Muss der KfW-Antrag vor oder nach dem Vertrag gestellt werden?',
+      'Für den KfW-Antrag muss bereits ein Liefer- oder Leistungsvertrag vorliegen. Dieser Vertrag muss zwingend eine aufschiebende oder auflösende Bedingung enthalten, die ihn von der KfW-Förderzusage abhängig macht. Vorher sollte die BzA erstellt werden. Der Antrag selbst muss vor Beginn der Arbeiten vor Ort gestellt werden.',
+    ),
+    faqItem(
+      'Welche Einkommensteuerbescheide braucht die KfW 2026?',
+      'Die KfW verlangt grundsätzlich die Einkommensteuerbescheide des vorletzten und vorvorletzten Jahres vor Antragstellung. Bei einem Antrag im Jahr 2026 sind das regelmäßig die Bescheide für 2024 und 2023. Maßgeblich ist das zu versteuernde Einkommen.',
+    ),
+    faqItem(
+      'Kann ich KfW 458 und § 35c EStG für dieselbe Wärmepumpe kombinieren?',
+      'Nein. Für eine öffentlich geförderte energetische Maßnahme, für die ein steuerfreier Zuschuss oder ein zinsverbilligtes Darlehen genutzt wird, kann die Steuerermäßigung nach § 35c EStG für dieselben Aufwendungen nicht zusätzlich beansprucht werden.',
     ),
   ],
 }
