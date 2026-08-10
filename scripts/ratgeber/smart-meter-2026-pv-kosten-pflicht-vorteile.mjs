@@ -21,7 +21,7 @@ import {
 const article = {
   titel: 'Smart Meter 2026: Wer einen braucht, was er kostet – und was er bei PV wirklich bringt',
   slug: 'smart-meter-2026-pv-kosten-pflicht-vorteile',
-  kategorie: 'strom & energiemanagement',
+  kategorie: 'strom-energiemanagement',
   status: 'veroeffentlicht',
   teaser:
     'Smart Meter werden bei Photovoltaik, Wärmepumpe, Wallbox und dynamischen Stromtarifen immer wichtiger. Trotzdem herrscht viel Verwirrung: Digitaler Zähler, intelligentes Messsystem und HEMS sind nicht dasselbe. Wir erklären, wer 2026 zum Pflichteinbau gehört, welche Preisobergrenzen gelten, warum der Rollout trotzdem dauern kann – und wann ein Smart Meter im Energiesystem wirklich einen Mehrwert bringt.',
