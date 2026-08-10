@@ -197,6 +197,7 @@ export const Ratgeber: CollectionConfig = {
             { label: 'Wallbox', value: 'wallbox' },
             { label: 'Wärmepumpe', value: 'waermepumpe' },
             { label: 'Repowering', value: 'repowering' },
+            { label: 'Strom & Energiemanagement', value: 'strom & energiemanagement' },
           ],
           required: true,
           admin: {
