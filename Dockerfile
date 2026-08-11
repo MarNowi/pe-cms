@@ -60,12 +60,15 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# One-time content migration. The migration records its completion in MongoDB
+# and skips itself on subsequent container starts.
+COPY --from=builder --chown=nextjs:nodejs /app/scripts/ratgeber ./scripts/ratgeber
+
 USER nextjs
 
 EXPOSE 3000
 
 ENV PORT 3000
 
-# server.js is created by next build from the standalone output
-# https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+# Do not block the application start if the content migration cannot run.
+CMD sh -c 'node scripts/ratgeber/run-waermepumpe-cluster-2026-once.mjs || echo "⚠️ Wärmepumpen-Content-Migration konnte nicht ausgeführt werden"; HOSTNAME="0.0.0.0" node server.js'

@@ -30,38 +30,56 @@ export async function upsertRatgeberArticle(article, options = {}) {
   const now = new Date()
   const client = new MongoClient(String(mongoUrl))
 
-  const doc = {
-    _id: article._id ?? new ObjectId(),
-    titel: article.titel,
-    slug: article.slug,
-    kategorie: article.kategorie,
-    teaser: article.teaser,
-    lesezeit: article.lesezeit ?? 10,
-    status: article.status ?? 'veroeffentlicht',
-    publishedAt: article.publishedAt ?? now,
-    createdAt: article.createdAt ?? now,
-    updatedAt: now,
-
-    titelbild: article.titelbild ?? null,
-    relatedArticles: article.relatedArticles ?? [],
-
-    zusammenfassung: article.zusammenfassung ?? [],
-    inhalt: article.inhalt ?? [],
-    faq: article.faq ?? [],
-    seo: article.seo,
-  }
-
   try {
     await client.connect()
 
     const db = client.db(dbName)
     const col = db.collection(collectionName)
 
-    await col.deleteMany({ slug: doc.slug })
-    await col.insertOne(doc)
+    const setDoc = {
+      titel: article.titel,
+      slug: article.slug,
+      kategorie: article.kategorie,
+      teaser: article.teaser,
+      lesezeit: article.lesezeit ?? 10,
+      status: article.status ?? 'veroeffentlicht',
+      updatedAt: now,
+      zusammenfassung: article.zusammenfassung ?? [],
+      inhalt: article.inhalt ?? [],
+      faq: article.faq ?? [],
+      seo: article.seo,
+    }
+
+    if (article.publishedAt !== undefined) setDoc.publishedAt = article.publishedAt
+    if (article.createdAt !== undefined) setDoc.createdAt = article.createdAt
+    if (article.titelbild !== undefined) setDoc.titelbild = article.titelbild
+    if (article.relatedArticles !== undefined) setDoc.relatedArticles = article.relatedArticles
+
+    const setOnInsert = {
+      _id: article._id ?? new ObjectId(),
+      createdAt: article.createdAt ?? now,
+      publishedAt: article.publishedAt ?? now,
+      titelbild: article.titelbild ?? null,
+      relatedArticles: article.relatedArticles ?? [],
+    }
+
+    for (const key of Object.keys(setDoc)) {
+      delete setOnInsert[key]
+    }
+
+    await col.updateOne(
+      { slug: article.slug },
+      {
+        $set: setDoc,
+        $setOnInsert: setOnInsert,
+      },
+      { upsert: true },
+    )
+
+    const doc = await col.findOne({ slug: article.slug })
 
     if (log) {
-      console.log(`✅ Artikel erfolgreich angelegt: ${doc.slug}`)
+      console.log(`✅ Artikel erfolgreich aktualisiert: ${article.slug}`)
     }
 
     return doc
