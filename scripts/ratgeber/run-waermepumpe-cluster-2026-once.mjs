@@ -1,16 +1,14 @@
 import { MongoClient } from 'mongodb'
+import { resolvePayloadDbName } from './_db.mjs'
 
 const migrationId = 'ratgeber-waermepumpe-cluster-2026-08-11'
 const mongoUrl = process.env.DATABASE_URL
-const dbName = process.env.PAYLOAD_DB_NAME
 
 if (!mongoUrl) {
   throw new Error('DATABASE_URL fehlt – Migration wird nicht ausgeführt')
 }
 
-if (!dbName) {
-  throw new Error('PAYLOAD_DB_NAME fehlt – Migration wird aus Sicherheitsgründen nicht gegen die Default-Datenbank ausgeführt')
-}
+const dbName = resolvePayloadDbName(mongoUrl)
 
 async function withMigrationCollection(callback) {
   const client = new MongoClient(String(mongoUrl))
@@ -33,7 +31,7 @@ if (alreadyDone) {
   process.exit(0)
 }
 
-console.log(`🚀 Starte einmalige Content-Migration ${migrationId} …`)
+console.log(`🚀 Starte einmalige Content-Migration ${migrationId} in Datenbank ${dbName} …`)
 
 await import('./run-waermepumpe-cluster-2026.mjs')
 
