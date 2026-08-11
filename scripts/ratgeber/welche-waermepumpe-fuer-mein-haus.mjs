@@ -2,6 +2,7 @@ import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import {
   t,
   bold,
+  link,
   p,
   h,
   ul,
@@ -75,7 +76,9 @@ const article = {
       p(
         t('Typische Anschaffungskosten 2026 inklusive Installation: '),
         bold('22.000 € bis 35.000 €'),
-        t(' für ein Einfamilienhaus, je nach Größe, Aufstellung und Hydraulikaufwand. Es gibt zwei Bauformen: Monoblock (alles im Außengerät) und Split (Außen- und Innengerät). Monoblock ist meist einfacher, Split eignet sich für eingeschränkten Aufstellungsplatz.'),
+        t(' für ein Einfamilienhaus, je nach Größe, Aufstellung und Hydraulikaufwand. Es gibt zwei Bauformen: Monoblock und Split. Welche Unterschiede für Planung, Frostschutz und Kältekreis wichtig sind, erklären wir ausführlich in '),
+        link('Monoblock oder Split-Wärmepumpe?', '/waermepumpe/monoblock-oder-split-waermepumpe'),
+        t('.'),
       ),
       p(
         bold('Stärken'),
@@ -140,7 +143,7 @@ const article = {
         spalte2:
           'Luft: 22.000–35.000 € · Sole: 30.000–45.000 € · Wasser: 30.000–50.000 €',
         spalte3:
-          'Inkl. Erschließung und Installation. Förderfähige Kosten (KfW 458) sind auf 30.000 € pro WE gedeckelt – größere Anlagen werden anteilig bezuschusst',
+          'Inkl. Erschließung und Installation. Bei KfW 458 werden seit dem 21.07.2026 beim Einfamilienhaus aktuell höchstens 28.000 € förderfähige Kosten berücksichtigt; ab Februar 2027 sinkt der Betrag für die erste Wohneinheit halbjährlich weiter',
       },
       {
         spalte1: 'Jahresarbeitszahl (JAZ) typisch',
@@ -157,11 +160,11 @@ const article = {
           'Luft-WP ist genehmigungsfrei, Sole und Wasser brauchen behördlichen Bescheid. Standort und Geologie sind ausschlaggebend',
       },
       {
-        spalte1: 'Effizienzbonus KfW (5 %)',
+        spalte1: 'Kältemittel / Förderung',
         spalte2:
-          'Luft: nur mit R290 · Sole: ja · Wasser: ja',
+          'R290 und andere natürliche Kältemittel bleiben technisch und regulatorisch interessant',
         spalte3:
-          'Sole und Wasser bekommen den Bonus automatisch. Luft-WP nur, wenn das Kältemittel ein natürliches ist (z. B. Propan/R290)',
+          'Der frühere 5-%-Effizienzbonus der KfW ist seit dem 21.07.2026 entfallen. Die Kältemittelwahl sollte deshalb technisch und langfristig bewertet werden – nicht wegen eines alten Förderbonus',
       },
     ]),
 
@@ -206,7 +209,9 @@ const article = {
     tippBlock(
       'Vor der Auswahl Heizlast bestimmen',
       p(
-        t('Wer eine Wärmepumpe plant, sollte vor der Typenwahl eine Heizlastberechnung nach DIN EN 12831 machen lassen – nicht den Durchsatz der alten Heizung als Maßstab nehmen. Das alte Gerät war oft überdimensioniert. Eine korrekte Heizlast zeigt, welche Leistung wirklich gebraucht wird, und gibt Aufschluss darüber, ob eine Luft-WP ausreicht oder ob die Effizienz einer Sole-WP wirtschaftlich besser ist.'),
+        t('Wer eine Wärmepumpe plant, sollte vor der Typenwahl eine Heizlastberechnung nach DIN EN 12831 machen lassen – nicht den Durchsatz der alten Heizung als Maßstab nehmen. Das alte Gerät war oft überdimensioniert. Warum das so wichtig ist, erklären wir in '),
+        link('Heizlastberechnung für Wärmepumpen', '/waermepumpe/heizlastberechnung-waermepumpe'),
+        t('.'),
       ),
     ),
 
@@ -221,7 +226,12 @@ const article = {
         p(t('Der COP-Wert wird mit der JAZ verwechselt. Ein Datenblatt-COP von 4,5 ist Marketing, die echte JAZ liegt in der Praxis oft 1,0 bis 1,3 darunter.')),
         p(t('„Wasser-WP ist machbar, weil ich einen Brunnen im Garten habe." Falsch. Ein Hausbrunnen ist meist nicht ergiebig genug – und braucht trotzdem eine wasserrechtliche Genehmigung als Grundwasserentnahme.')),
         p(t('„Sole bedeutet immer Tiefenbohrung." Nicht zwingend. Erdkollektoren werden flach im Garten verlegt – brauchen aber je nach Wärmebedarf 200 bis 400 m² unbebaute Fläche.')),
-        p(t('Der Effizienzbonus 5 % der KfW wird übersehen. Sole und Wasser bekommen ihn automatisch, Luft nur mit natürlichem Kältemittel (typisch R290) – das verändert den Förderbetrag spürbar.')),
+        p(t('„Mit R290 gibt es automatisch 5 % mehr KfW-Förderung." Das ist veraltet. Der frühere Effizienzbonus ist seit dem 21.07.2026 entfallen. R290 bleibt technisch interessant, sollte aber nicht mit einem nicht mehr existierenden Förderbonus begründet werden.')),
+      ),
+      p(
+        t('Den aktuellen Förderstand mit 28.000 € förderfähigen Kosten für die erste Wohneinheit, 16 % Klimageschwindigkeitsbonus und den neuen Einkommensstufen erklären wir in '),
+        link('Wärmepumpen-Förderung 2026', '/waermepumpe/waermepumpe-foerderung-2026'),
+        t('.'),
       ),
       p(
         bold('Eine ehrliche Wahl der Wärmepumpe braucht den Blick auf das ganze Bild'),
@@ -232,7 +242,7 @@ const article = {
     textBlock(
       h('h2', t('Unser Fazit')),
       p(
-        t('Für die meisten Einfamilienhäuser am Niederrhein ist 2026 die Luft-Wasser-Wärmepumpe die richtige Wahl: günstige Anschaffung, einfache Installation, ausreichend effizient bei moderner Auslegung. Mit dem Effizienzbonus (R290) und korrekter Heizlast-Auslegung ist sie auch wirtschaftlich solide.'),
+        t('Für die meisten Einfamilienhäuser am Niederrhein ist 2026 die Luft-Wasser-Wärmepumpe die richtige Wahl: günstige Anschaffung, einfache Installation, ausreichend effizient bei moderner Auslegung. Mit R290, korrekter Heizlast-Auslegung und niedrigen Systemtemperaturen kann sie technisch und wirtschaftlich sehr solide sein – einen zusätzlichen 5-%-KfW-Bonus gibt es dafür seit dem 21.07.2026 nicht mehr.'),
       ),
       p(
         t('Sole-Wasser-Wärmepumpen sind die richtige Wahl für höhere Heizbedarfe, schwierige Bestände oder Hauseigentümer, die langfristig auf maximale Effizienz und Geräuschfreiheit setzen – mit dem Bewusstsein, dass die Mehrkosten nicht in fünf Jahren reinkommen, sondern über 15 bis 20 Jahre.'),
