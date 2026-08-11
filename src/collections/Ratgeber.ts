@@ -1,4 +1,4 @@
-import type { Access, CollectionConfig } from 'payload'
+import type { Access, CollectionConfig, Where } from 'payload'
 
 function formatSlug(value: string): string {
   return value
@@ -131,7 +131,7 @@ const publicRatgeberRead: Access = ({ req }) => {
 
   const now = new Date().toISOString()
 
-  return {
+  const where: Where = {
     and: [
       {
         status: {
@@ -159,6 +159,8 @@ const publicRatgeberRead: Access = ({ req }) => {
       },
     ],
   }
+
+  return where
 }
 
 export const Ratgeber: CollectionConfig = {
