@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload'
+import type { Access, CollectionConfig } from 'payload'
 
 function formatSlug(value: string): string {
   return value
@@ -126,10 +126,45 @@ function estimateReadingTime(data: Record<string, any>): number {
   return Math.max(1, Math.ceil(words / 180))
 }
 
+const publicRatgeberRead: Access = ({ req }) => {
+  if (req.user) return true
+
+  const now = new Date().toISOString()
+
+  return {
+    and: [
+      {
+        status: {
+          equals: 'veroeffentlicht',
+        },
+      },
+      {
+        or: [
+          {
+            publishedAt: {
+              less_than_equal: now,
+            },
+          },
+          {
+            publishedAt: {
+              exists: false,
+            },
+          },
+          {
+            publishedAt: {
+              equals: null,
+            },
+          },
+        ],
+      },
+    ],
+  }
+}
+
 export const Ratgeber: CollectionConfig = {
   slug: 'ratgeber',
   access: {
-    read: () => true,
+    read: publicRatgeberRead,
     create: ({ req }) => !!req.user,
     update: ({ req }) => !!req.user,
     delete: ({ req }) => !!req.user,
@@ -216,12 +251,15 @@ export const Ratgeber: CollectionConfig = {
         },
         {
           name: 'publishedAt',
-          label: 'Veröffentlicht am',
+          label: 'Veröffentlichen am',
           type: 'date',
           admin: {
             width: '25%',
+            description:
+              'Liegt der Zeitpunkt in der Zukunft, bleibt der Artikel öffentlich unsichtbar und wird automatisch ab diesem Zeitpunkt ausgeliefert.',
             date: {
-              pickerAppearance: 'dayOnly',
+              pickerAppearance: 'dayAndTime',
+              displayFormat: 'dd.MM.yyyy HH:mm',
             },
           },
         },
