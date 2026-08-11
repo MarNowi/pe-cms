@@ -1,4 +1,5 @@
 import { MongoClient, ObjectId } from 'mongodb'
+import { resolvePayloadDbName } from './_db.mjs'
 
 function assertRequired(article) {
   const required = ['titel', 'slug', 'kategorie', 'teaser']
@@ -16,7 +17,7 @@ function assertRequired(article) {
 export async function upsertRatgeberArticle(article, options = {}) {
   const {
     mongoUrl = process.env.DATABASE_URL,
-    dbName = process.env.PAYLOAD_DB_NAME || 'test',
+    dbName = resolvePayloadDbName(mongoUrl),
     collectionName = 'ratgebers',
     log = true,
   } = options
