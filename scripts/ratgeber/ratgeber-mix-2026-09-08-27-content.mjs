@@ -9,10 +9,12 @@ import {
   textBlock,
   hinweisBlock,
   tippBlock,
+  tabelleBlock,
   ctaBlock,
   faqItem,
   seo,
 } from './_helpers.mjs'
+import { articleDepth } from './ratgeber-mix-2026-09-08-27-depth.mjs'
 
 const commonCta = {
   titel: 'Energiesystem passend zum Gebäude planen',
@@ -240,7 +242,17 @@ const definitions = [
 ]
 
 function buildArticle(definition) {
+  const depth = articleDepth[definition.slug]
+
+  if (!depth) {
+    throw new Error(`Vertiefungsinhalte fehlen für ${definition.slug}`)
+  }
+
   const internalLinks = definition.links.map(([label, url]) => p(link(label, url)))
+  const depthSections = depth.sections.map(([title, first, second]) =>
+    textBlock(h('h2', t(title)), p(t(first)), p(t(second))),
+  )
+  const sourceLinks = depth.sources.map(([label, url]) => p(link(label, url, { newTab: true })))
 
   return {
     titel: definition.titel,
@@ -248,22 +260,32 @@ function buildArticle(definition) {
     kategorie: definition.kategorie,
     status: 'veroeffentlicht',
     teaser: definition.teaser,
-    lesezeit: definition.lesezeit,
+    lesezeit: definition.lesezeit + 3,
     seo: seo(definition.metaTitle, definition.metaDescription),
     zusammenfassung: definition.summary.map((item) => summaryPoint(t(item))),
     inhalt: [
       textBlock(
         h('h2', t('Die kurze Antwort')),
         p(t(definition.teaser)),
-        p(t('Entscheidend ist eine Betrachtung des gesamten Systems. Einzelne App-Werte oder pauschale Faustregeln reichen für eine belastbare Entscheidung nicht aus.')),
+        p(t(definition.summary[1])),
       ),
       ...definition.sections.map(([title, first, second]) =>
         textBlock(h('h2', t(title)), p(t(first)), p(t(second))),
+      ),
+      ...depthSections,
+      tabelleBlock(
+        depth.table[0],
+        depth.table[1].map(([spalte1, spalte2, spalte3]) => ({ spalte1, spalte2, spalte3 })),
       ),
       tippBlock('Darauf sollte die Prüfung aufbauen', ul(...definition.checklist.map((item) => p(t(item))))),
       hinweisBlock(
         'Sicherheit und Herstellerfreigaben gehen vor',
         p(t('Arbeiten an elektrischen Anlagen, PV-Strings, Batteriespeichern und festen Ladeeinrichtungen gehören in qualifizierte Fachhände. Maßgeblich sind die konkrete Anlage, Herstellerunterlagen und die zum Zeitpunkt der Umsetzung geltenden Anschluss- und Sicherheitsregeln.')),
+      ),
+      textBlock(
+        h('h2', t('Quellen und weiterführende Fachinformationen')),
+        p(t('Für technische Details und die Planung einer konkreten Anlage sind aktuelle Herstellerunterlagen sowie die einschlägigen Fachinformationen maßgeblich.')),
+        ...sourceLinks,
       ),
       textBlock(
         h('h2', t('Passende Ratgeber zum Weiterlesen')),
@@ -272,11 +294,11 @@ function buildArticle(definition) {
       textBlock(
         h('h2', t('Unser Fazit')),
         p(t(definition.summary[0] + ' ' + definition.summary.at(-1))),
-        p(bold('Gute Planung macht Annahmen sichtbar, prüft Messwerte im Kontext und lässt genug Spielraum für den realen Betrieb.')),
+        p(bold(`Der nächste sinnvolle Schritt: ${definition.checklist[0]}.`)),
       ),
       ctaBlock(commonCta),
     ],
-    faq: definition.faq.map(([frage, antwort]) => faqItem(frage, antwort)),
+    faq: [...definition.faq, ...depth.faq].map(([frage, antwort]) => faqItem(frage, antwort)),
   }
 }
 

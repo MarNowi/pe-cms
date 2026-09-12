@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 import { resolvePayloadDbName } from './_db.mjs'
 
-const migrationId = 'ratgeber-mix-2026-09-08-27'
+const migrationId = 'ratgeber-mix-2026-09-08-27-depth-v2'
 const mongoUrl = process.env.DATABASE_URL
 
 if (!mongoUrl) throw new Error('DATABASE_URL fehlt – Migration wird nicht ausgeführt')
@@ -23,7 +23,7 @@ try {
 
   await migrations.updateOne(
     { _id: migrationId },
-    { $set: { completedAt: new Date(), description: 'Ratgeber-Mix für den 08.–27.09.2026 eingespielt' } },
+    { $set: { completedAt: new Date(), description: 'Ratgeber-Mix 08.–27.09.2026 fachlich vertieft und aktualisiert' } },
     { upsert: true },
   )
   console.log(`✅ Content-Migration ${migrationId} abgeschlossen.`)
