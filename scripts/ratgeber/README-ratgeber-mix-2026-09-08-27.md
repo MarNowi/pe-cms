@@ -4,6 +4,8 @@
 
 Die Inhalte liegen in `ratgeber-mix-2026-09-08-27-content.mjs`. Die einmaligen Content- und Terminmigrationen sind idempotent über `_content_migrations` abgesichert. Vor dem Terminieren prüft das Scheduling-Skript auf fehlende und doppelte Slugs.
 
+Die 20 Titelbilder liegen optimiert als WebP unter `media/2026-09-08-27`. `attach-ratgeber-images-2026-09-08-27-once.mjs` kopiert sie idempotent in das Payload-Medienverzeichnis, legt beziehungsweise aktualisiert die Media-Dokumente und ordnet jedes Bild über `titelbild` seinem Ratgeber zu. Alle Motive sind text- und logofrei; die Farbwelt orientiert sich am bereitgestellten PEAK.Energy-Logo, ohne ein KI-generiertes Markenlogo einzublenden.
+
 | Datum | Kategorie | Slug |
 | --- | --- | --- |
 | 08.09.2026 | Repowering | `alten-wechselrichter-tauschen-moderne-wechselrichter-alte-pv-module` |
