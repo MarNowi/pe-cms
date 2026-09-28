@@ -30,18 +30,7 @@ export const TEXT_CORRECTIONS = {
       neu: 'damit du weißt, wann sich deine Anlage bezahlt gemacht hat.',
     },
   ],
-  'einspeiseverguetung-photovoltaik-2026': [
-    {
-      feld: 'teaser',
-      alt: 'Hier findest du eine ehrliche Einordnung zu Überschusseinspeisung, Anlagengröße und typischen Denkfehlern.',
-      neu: 'Hier geht es um Überschusseinspeisung, Anlagengröße und typische Denkfehler.',
-    },
-    {
-      feld: 'seo.metaDescription',
-      alt: 'Einspeisevergütung Photovoltaik 2026: ehrliche Einordnung zu Überschusseinspeisung, Anlagengröße und Wirtschaftlichkeit – von PEAK.Energy.',
-      neu: 'Einspeisevergütung Photovoltaik 2026: Überschusseinspeisung, Anlagengröße und Wirtschaftlichkeit – von PEAK.Energy.',
-    },
-  ],
+  // einspeiseverguetung-photovoltaik-2026: ersetzt durch die Fassung ab 1. August 2026 (ohne Floskel)
   'garantie-vs-gewaehrleistung-pv-anlage': [
     {
       feld: 'teaser',

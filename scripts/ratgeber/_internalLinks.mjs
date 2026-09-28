@@ -79,9 +79,14 @@ export const INTERNAL_LINKS = {
     { url: "/stromspeicher/wie-gross-sollte-ein-stromspeicher-sein", anchor: "Speichergröße", context: "Aber Speichergröße und Autarkie wachse" },
     { url: "/solaranlage/solarmodule-dach-voll-belegen-dachflaeche-freilassen", anchor: "größere PV-Anlage", context: "Eine größere PV-Anlage erzeugt morgens, ab" },
   ],
+  // Fassung mit den EEG-Sätzen ab 1. August 2026
   'einspeiseverguetung-photovoltaik-2026': [
-    { url: "/solaranlage/pv-anlage-planen", anchor: "saubere Planung", context: "tschaftlichkeit, aber sie ersetzt keine saubere Planung. Entscheidend bleib" },
-    { url: "/solaranlage/wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein", anchor: "Größe der Anlage", context: "lem das genaue Inbetriebnahmedatum, die Größe der Anlage und die Frage, ob Ü" },
+    { url: "/solaranlage/wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein", anchor: "sinnvolle Dachbelegung", context: "falsch, eine sinnvolle Dachbelegung nur deshalb zu verkleinern" },
+    { url: "/solaranlage/solaranlage-mit-oder-ohne-speicher", anchor: "Batteriespeicher", context: "Gerade mit Batteriespeicher, E-Auto oder Wärmepumpe ist die Überschusseinspeisung" },
+    { url: "/solaranlage/pv-anlage-anmelden-marktstammdatenregister", anchor: "gegenüber dem Netzbetreiber erklären", context: "die Zuordnung rechtzeitig gegenüber dem Netzbetreiber erklären." },
+    { url: "/strom-energiemanagement/smart-meter-2026-pv-kosten-pflicht-vorteile", anchor: "intelligentes Messsystem", context: "Bis ein intelligentes Messsystem und die erforderliche Steuerungstechnik" },
+    { url: "/solaranlage/solaranlage-gewerbedach", anchor: "Gewerbedächer", context: "Für Gewerbedächer ist deshalb nicht nur die Höhe der Vergütung" },
+    { url: "/solaranlage/amortisation-pv-anlage", anchor: "Wirtschaftlichkeitsrechnung", context: "Für eine Wirtschaftlichkeitsrechnung sollte deshalb derzeit nicht" },
   ],
   'garantie-vs-gewaehrleistung-pv-anlage': [
     { url: "/solaranlage/solarmodule-40-jahre-garantie-produkt-leistung", anchor: "Leistungsgarantie", context: "Wenn der Modulhersteller 25 Jahre Leistungsgarantie gibt, ist das eine " },
