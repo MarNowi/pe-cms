@@ -424,3 +424,42 @@ Geschrieben wird das wieder über `migrate-2026-09-30-redaktion.mjs`. Die Vorsch
 | `waermepumpe-im-altbau` | Welche Rolle spielt die Vorlauftemperatur? | Welche Rolle spielt die Vorlauftemperatur im Altbau? |
 | `waermepumpentarif-oder-dynamischer-stromtarif` | Brauche ich für einen dynamischen Stromtarif ein Smart Meter? | Brauche ich für den dynamischen Tarif mit Wärmepumpe ein Smart Meter? |
 | `smart-meter-2026-pv-kosten-pflicht-vorteile` | Brauche ich für einen dynamischen Stromtarif ein Smart Meter? | Ist ein Smart Meter Pflicht, wenn ich einen dynamischen Stromtarif will? |
+
+## Teil 5: Einspeisevergütung – Fassung ab 1. August 2026
+
+Du hast entschieden, dass die Fassung vom 10.08. live geht (EEG-Sätze ab 1. August 2026). Den Text habe ich inhaltlich nicht verändert. Vorher habe ich das Script gegen alles geprüft, was in den Schritten 1–4 gebaut wurde.
+
+**Behoben im Script (nur Form):**
+
+- **Kaputter Block:** Der Absatz „Wichtig: Die Werte in der Tabelle sind Leistungsstufen …“ stand direkt im Inhalt statt in einem Textblock. Ohne `blockType` kann Payload ihn nicht anzeigen. Er steckt jetzt in einem `textBlock`.
+- **Doppeltes Satzzeichen:** „Mehr dazu: Negative Strompreise 2026: … Speicher und E-Auto?.“ endet jetzt ohne das zusätzliche „.“.
+
+**Interne Links** (`_internalLinks.mjs`): Die beiden alten Anker („saubere Planung“, „Größe der Anlage“) gibt es im neuen Text nicht mehr. Ich habe sie durch sechs Links an Stellen ersetzt, deren Wortlaut im neuen Text steht:
+
+| Anker | Ziel |
+|---|---|
+| sinnvolle Dachbelegung | wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein |
+| Batteriespeicher | solaranlage-mit-oder-ohne-speicher |
+| gegenüber dem Netzbetreiber erklären | pv-anlage-anmelden-marktstammdatenregister |
+| intelligentes Messsystem | smart-meter-2026-pv-kosten-pflicht-vorteile |
+| Gewerbedächer | solaranlage-gewerbedach |
+| Wirtschaftlichkeitsrechnung | amortisation-pv-anlage |
+
+Dazu kommen die drei Links, die schon im Script stehen: Eigenverbrauch optimieren, Solarspitzengesetz und Negative Strompreise. Insgesamt sind es 9 Links, vorher waren es 2.
+
+**Textkorrekturen:** Die zwei Floskel-Korrekturen für die alte Fassung (Teaser, metaDescription) sind entfernt. Die neue Fassung enthält keine Floskel, keine Sie-Form und keinen Slogan im metaTitle.
+
+**Geprüft:**
+
+- 12 FAQ-Fragen, keine davon steht wortgleich in einem anderen Artikel.
+- Der Cluster bleibt `pv-recht`.
+- Slug, Titelbild, Veröffentlichungsdatum und Dokument-ID bleiben erhalten, weil das Script über `upsertRatgeberArticle` schreibt.
+- Das Titelbild zeigt 7,70 ct/kWh. Das passt jetzt zum Text.
+
+**Ausführen (nach dem Deploy):**
+
+```
+node scripts/ratgeber/einspeiseverguetung-photovoltaik-2026.mjs
+```
+
+Das Script hat keine Vorschau. Es ersetzt den Artikel direkt. Getestet habe ich es gegen eine Kopie der Live-Daten: Danach meldeten die Redaktions- und die Link-Migration jeweils 0 Änderungen und 0 nicht gefundene Stellen. Ein zweiter Lauf des Scripts ergibt denselben Inhalt.
