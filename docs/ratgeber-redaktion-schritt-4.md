@@ -382,3 +382,45 @@ Damit haben alle Titelbilder im Ratgeber einen Alt-Text, der das Bild beschreibt
 | Solaranlage in voerde.webp | kosten-10-kwp-solaranlage-mit-speicher, pv-anlage-planen | Planung einer Solaranlage | Flachdach eines Hauses in Voerde mit Solarmodulen, Luftaufnahme |
 | Solaranlage-in-Goch.webp | ab-wieviel-qm-lohnt-sich-eine-solaranlage | ein Dach mit einer Solaranlage in Goch | Walmdach in Goch mit schwarzen Solarmodulen, Luftaufnahme |
 | Solaranlage_in_Xanten.webp | kosten-solaranlage-mit-speicher-einfamilienhaus | ein Dach mit einer Solaranlage in Xanten | Satteldach in Xanten mit schwarzer Solaranlage im Gegenlicht |
+
+## Teil 4: doppelte FAQ-Fragen
+
+9 Fragen standen wortgleich in mehreren Artikeln, insgesamt 28-mal. Das betrifft auch das FAQ-Schema für Google. Die Antworten unterscheiden sich je Artikel, deshalb wird nur die Frage auf das Thema des Artikels zugespitzt. Die Antwort bleibt unverändert, und jede neue Frage passt zur bestehenden Antwort.
+
+Wo ein Artikel der naheliegende Ort für die allgemeine Frage ist, behält er den ursprünglichen Wortlaut:
+
+- `pv-anlage-planen`: Speicher mitplanen, Planung vergessen, Anmeldung
+- `wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein`: Dachausrichtung
+- `dynamischer-stromtarif-pv-speicher-lohnt-sich`: Smart Meter
+- `waermepumpe-mit-heizkoerpern`: Vorlauftemperatur
+- `braucht-man-einen-stromspeicher`: Speicher nachrüsten
+
+„Was ist der häufigste Denkfehler bei diesem Vergleich?“ und „Was ist am Ende die beste Entscheidung?“ ergeben ohne den Artikel drumherum keinen Sinn. Diese beiden Fragen sind deshalb in allen drei Artikeln zugespitzt.
+
+Nach der Änderung kommt keine FAQ-Frage mehr doppelt vor.
+
+Geschrieben wird das wieder über `migrate-2026-09-30-redaktion.mjs`. Die Vorschau sollte „9 Artikel · 21 Textstellen“ zeigen.
+
+| Artikel | vorher | nachher |
+|---|---|---|
+| `ost-west-oder-sueddach-solaranlage` | Was ist der häufigste Denkfehler bei diesem Vergleich? | Was ist der häufigste Denkfehler beim Vergleich von Ost-West- und Süddach? |
+| `ost-west-oder-sueddach-solaranlage` | Was ist am Ende die beste Entscheidung? | Wie entscheide ich mich zwischen Ost-West- und Süddach? |
+| `solaranlage-fuer-e-auto-auslegen` | Sollte ich den Speicher direkt mitplanen? | Sollte ich bei einer Solaranlage fürs E-Auto den Speicher direkt mitplanen? |
+| `solaranlage-fuer-e-auto-auslegen` | Was wird bei der Planung am häufigsten vergessen? | Was wird bei einer Solaranlage fürs E-Auto am häufigsten vergessen? |
+| `solaranlage-fuer-e-auto-auslegen` | Gehört die Anmeldung beim Netzbetreiber zur Planung dazu? | Gehört die Anmeldung beim Netzbetreiber auch bei PV mit E-Auto zur Planung? |
+| `solaranlage-fuer-e-auto-auslegen` | Welche Dachausrichtung ist am besten? | Welche Dachausrichtung passt am besten zum Laden des E-Autos? |
+| `solaranlage-fuer-waermepumpe-auslegen` | Sollte ich den Speicher direkt mitplanen? | Sollte ich bei einer Solaranlage für die Wärmepumpe den Speicher direkt mitplanen? |
+| `solaranlage-fuer-waermepumpe-auslegen` | Was wird bei der Planung am häufigsten vergessen? | Was wird bei einer Solaranlage für die Wärmepumpe am häufigsten vergessen? |
+| `solaranlage-fuer-waermepumpe-auslegen` | Gehört die Anmeldung beim Netzbetreiber zur Planung dazu? | Gehört die Anmeldung beim Netzbetreiber auch bei PV mit Wärmepumpe zur Planung? |
+| `solaranlage-fuer-waermepumpe-auslegen` | Welche Dachausrichtung ist am besten? | Welche Dachausrichtung passt am besten zum Betrieb mit Wärmepumpe? |
+| `solaranlage-mit-oder-ohne-speicher` | Was ist der häufigste Denkfehler bei diesem Vergleich? | Was ist der häufigste Denkfehler bei der Frage mit oder ohne Speicher? |
+| `solaranlage-mit-oder-ohne-speicher` | Was ist am Ende die beste Entscheidung? | Wie entscheide ich mich zwischen Solaranlage mit und ohne Speicher? |
+| `solaranlage-mit-oder-ohne-speicher` | Kann man einen Speicher später nachrüsten? | Kann ich erst ohne Speicher starten und ihn später nachrüsten? |
+| `wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein` | Sollte ich den Speicher direkt mitplanen? | Sollte ich bei der Anlagengröße den Speicher direkt mitplanen? |
+| `wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein` | Was wird bei der Planung am häufigsten vergessen? | Was wird bei der Wahl der Anlagengröße am häufigsten vergessen? |
+| `wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein` | Gehört die Anmeldung beim Netzbetreiber zur Planung dazu? | Gehört neben der Größe auch die Anmeldung beim Netzbetreiber zur Planung? |
+| `notstrom-oder-ersatzstrom` | Was ist der häufigste Denkfehler bei diesem Vergleich? | Was ist der häufigste Denkfehler bei Notstrom und Ersatzstrom? |
+| `notstrom-oder-ersatzstrom` | Was ist am Ende die beste Entscheidung? | Wie finde ich heraus, ob ich Notstrom oder Ersatzstrom brauche? |
+| `waermepumpe-im-altbau` | Welche Rolle spielt die Vorlauftemperatur? | Welche Rolle spielt die Vorlauftemperatur im Altbau? |
+| `waermepumpentarif-oder-dynamischer-stromtarif` | Brauche ich für einen dynamischen Stromtarif ein Smart Meter? | Brauche ich für den dynamischen Tarif mit Wärmepumpe ein Smart Meter? |
+| `smart-meter-2026-pv-kosten-pflicht-vorteile` | Brauche ich für einen dynamischen Stromtarif ein Smart Meter? | Ist ein Smart Meter Pflicht, wenn ich einen dynamischen Stromtarif will? |
