@@ -1,3 +1,11 @@
+// ⚠️ NICHT AUSFÜHREN – dieses Script wurde nie eingespielt und würde eine Dublette erzeugen zu:
+//    solaranlage/kosten-solaranlage-einfamilienhaus (übergeordneter Kostenartikel)
+//    Siehe docs/ratgeber-audit.md, Abschnitt 1.1 und 7. Nur nach bewusster Entscheidung mit --trotzdem starten.
+if (!process.argv.includes('--trotzdem')) {
+  console.error('⛔ was-kostet-eine-solaranlage-ohne-speicher-fuer-einfamilienhaus.mjs ist gesperrt (Dublette). Siehe Kommentar am Dateianfang.')
+  process.exit(1)
+}
+
 import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import {
   h,

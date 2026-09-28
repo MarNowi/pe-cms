@@ -1,3 +1,11 @@
+// ⚠️ NICHT AUSFÜHREN – dieses Script wurde nie eingespielt und würde eine Dublette erzeugen zu:
+//    solaranlage/solaranlage-mit-oder-ohne-speicher und stromspeicher/lohnt-sich-ein-stromspeicher
+//    Siehe docs/ratgeber-audit.md, Abschnitt 1.1 und 7. Nur nach bewusster Entscheidung mit --trotzdem starten.
+if (!process.argv.includes('--trotzdem')) {
+  console.error('⛔ lohnt-sich-eine-solaranlage-ohne-speicher.mjs ist gesperrt (Dublette). Siehe Kommentar am Dateianfang.')
+  process.exit(1)
+}
+
 import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import { createArticleBase } from './_templates.mjs'
 import { createFaqOnlyPreset } from './_topicPresets.mjs'
