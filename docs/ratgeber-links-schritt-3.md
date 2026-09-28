@@ -332,13 +332,14 @@ Format: … Text mit **Ankertext** … → Ziel. Die Artikel sind nach Kategorie
 - Wichtig ist vor allem, dass **Wechselrichter**, Verkabelung, Platzverhältnisse und die gesamte Systemarchi… → [Hybrid-Wechselrichter oder getrennte Geräte: Was ist sinnvoller bei PV mit Speicher?](/solaranlage/hybrid-wechselrichter-oder-getrennte-geraete)
 
 
+**Stromspeicher + Wärmepumpe: Kann die Batterie die Wärmepumpe nachts wirklich versorgen?** · `/stromspeicher/stromspeicher-waermepumpe-nachts-versorgen`
+
 - …malen Netzparallelbetrieb kommt diese Differenz typischerweise aus dem Netz. Im **Ersatzstrombetrieb** kann die Leistungsgrenze dagegen darüber entscheiden, ob be… → [Notstrom oder Ersatzstrom: Was ist der Unterschied?](/stromspeicher/notstrom-oder-ersatzstrom)
 - In der Praxis kommen **Umwandlungsverluste**, Reservebereiche, Warmwasserbereitung, Abtauvorgänge und sc… → [Speicherwirkungsgrad erklärt: Warum aus 10 kWh geladen nicht 10 kWh nutzbar werden](/stromspeicher/speicherwirkungsgrad-verluste-geladen-nutzbar)
 
 **Wie groß sollte ein Stromspeicher sein?** · `/stromspeicher/wie-gross-sollte-ein-stromspeicher-sein`
 
 - …tromspeicher gibt es keine pauschale Idealgröße. Entscheidend ist nicht nur die **Kapazität in kWh**, sondern wie gut der Speicher zur PV-Anlage und zum tatsäch… → [Stromspeicher: kW oder kWh? Warum Kapazität und Leistung zwei völlig verschiedene Dinge sind](/stromspeicher/stromspeicher-kapazitaet-leistung-kw-kwh)
-- …om du tatsächlich sinnvoll verschieben kannst und wie gut PV-Anlage, Verbrauch, **Wärmepumpe**, E-Auto und Alltag zusammenpassen. → [Stromspeicher + Wärmepumpe: Kann die Batterie die Wärmepumpe nachts wirklich versorgen?](/stromspeicher/stromspeicher-waermepumpe-nachts-versorgen)
 - …ielen Fällen ist ein sauber abgestimmtes System wirtschaftlich stärker als eine **überdimensionierte Variante**. → [Eigenverbrauch optimieren: Warum 100 % Autarkie nicht das richtige Ziel ist](/strom-energiemanagement/eigenverbrauch-optimieren-100-prozent-autarkie)
 
 **Wie lange hält ein Stromspeicher?** · `/stromspeicher/wie-lange-haelt-ein-stromspeicher`
