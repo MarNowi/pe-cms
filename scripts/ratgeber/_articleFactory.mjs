@@ -3,6 +3,7 @@ import { resolvePayloadDbName } from './_db.mjs'
 import { isClusterOfKategorie, resolveCluster } from './_clusters.mjs'
 import { transformArticleLinks } from './_linkTransform.mjs'
 import { applyTextCorrections } from './_textCorrections.mjs'
+import { applyMergeContent, mergedInto } from './_merges.mjs'
 
 function assertRequired(article) {
   const required = ['titel', 'slug', 'kategorie', 'teaser']
@@ -32,7 +33,16 @@ export async function upsertRatgeberArticle(article, options = {}) {
   assertRequired(article)
 
   // Redaktionelle Korrekturen aus _textCorrections.mjs (Floskeln, Du-Form, Tippfehler, metaTitle)
-  const text = applyTextCorrections(article.slug, article).article
+  const korrigiert = applyTextCorrections(article.slug, article).article
+
+  // Zusammenlegung (_merges.mjs): Inhalte aus aufgelösten Artikeln im Ziel ergänzen
+  const text = applyMergeContent(article.slug, korrigiert).article
+
+  // Aufgelöste Artikel bleiben Entwurf – kein Ursprungs-Script darf sie wieder veröffentlichen
+  const merge = mergedInto(article.slug)
+  if (merge && article.status !== 'entwurf') {
+    console.warn(`⚠️ ${article.slug} ist in ${merge.ziel.slug} aufgegangen – wird als Entwurf gespeichert`)
+  }
 
   const now = new Date()
   const client = new MongoClient(String(mongoUrl))
@@ -49,7 +59,7 @@ export async function upsertRatgeberArticle(article, options = {}) {
       kategorie: article.kategorie,
       teaser: text.teaser,
       lesezeit: article.lesezeit ?? 10,
-      status: article.status ?? 'veroeffentlicht',
+      status: merge ? 'entwurf' : article.status ?? 'veroeffentlicht',
       updatedAt: now,
       zusammenfassung: text.zusammenfassung ?? [],
       // Linklisten entfernen, interne Links aus _internalLinks.mjs im Fließtext setzen
