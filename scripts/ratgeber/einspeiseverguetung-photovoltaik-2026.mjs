@@ -117,10 +117,12 @@ const article = {
       },
     ]),
 
-    p(
-      t('Wichtig: Die Werte in der Tabelle sind '),
-      bold('Leistungsstufen'),
-      t('. Sie funktionieren ähnlich wie ein gestaffelter Tarif. Nicht die gesamte Anlage bekommt automatisch den Satz der höchsten erreichten Stufe.'),
+    textBlock(
+      p(
+        t('Wichtig: Die Werte in der Tabelle sind '),
+        bold('Leistungsstufen'),
+        t('. Sie funktionieren ähnlich wie ein gestaffelter Tarif. Nicht die gesamte Anlage bekommt automatisch den Satz der höchsten erreichten Stufe.'),
+      ),
     ),
 
     textBlock(
@@ -272,7 +274,6 @@ const article = {
       p(
         t('Mehr dazu: '),
         link('Negative Strompreise 2026: Problem für die PV-Anlage oder Chance für Speicher und E-Auto?', '/strom-energiemanagement/negative-strompreise-2026-pv-speicher-eauto'),
-        t('.'),
       ),
     ),
 
