@@ -151,6 +151,13 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
+  /**
+   * Choose the image format for this upload
+   */
+  convertFormat?: ('webp' | 'avif' | 'jpeg' | 'png') | null;
+  resizeMaxWidth?: number | null;
+  resizeMaxHeight?: number | null;
+  originalFilesize?: number | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -171,14 +178,56 @@ export interface Ratgeber {
   id: string;
   titel: string;
   /**
-   * z.B. kosten-solaranlage-einfamilienhaus (ohne Produktpräfix)
+   * z. B. kosten-solaranlage-einfamilienhaus (ohne Produktpräfix)
    */
   slug: string;
-  kategorie: 'solaranlage' | 'stromspeicher' | 'wallbox' | 'waermepumpe' | 'repowering';
+  kategorie: 'solaranlage' | 'stromspeicher' | 'wallbox' | 'waermepumpe' | 'repowering' | 'strom-energiemanagement';
   /**
-   * Minuten
+   * Minuten. Wird automatisch vorbelegt.
    */
   lesezeit?: number | null;
+  /**
+   * Liegt der Zeitpunkt in der Zukunft, bleibt der Artikel öffentlich unsichtbar und wird automatisch ab diesem Zeitpunkt ausgeliefert.
+   */
+  publishedAt?: string | null;
+  /**
+   * Unterthema innerhalb der Kategorie. Bestimmt, unter welcher Überschrift der Artikel auf der Themenseite erscheint. Pflicht für veröffentlichte Artikel.
+   */
+  cluster?:
+    | (
+        | 'pv-planung'
+        | 'pv-kosten'
+        | 'pv-ertrag'
+        | 'pv-recht'
+        | 'pv-anbieter'
+        | 'pv-gewerbe'
+        | 'speicher-nutzen'
+        | 'speicher-kosten'
+        | 'speicher-technik'
+        | 'speicher-gewerbe'
+        | 'wallbox-planung'
+        | 'wallbox-pv'
+        | 'wallbox-last'
+        | 'wp-grundlagen'
+        | 'wp-bestand'
+        | 'wp-aufstellung'
+        | 'wp-betrieb'
+        | 'wp-kosten'
+        | 'repowering-entscheidung'
+        | 'repowering-diagnose'
+        | 'repowering-umbau'
+        | 'em-markt'
+        | 'em-messung'
+        | 'em-netz'
+        | 'em-hems'
+        | 'em-architektur'
+        | 'em-eigenverbrauch'
+      )
+    | null;
+  /**
+   * Für Listen, Vorschauen und als Fallback für SEO.
+   */
+  teaser: string;
   titelbild?: (string | null) | Media;
   zusammenfassung?:
     | {
@@ -268,8 +317,8 @@ export interface Ratgeber {
             titel?: string | null;
             zeilen?:
               | {
-                  spalte1?: string | null;
-                  spalte2?: string | null;
+                  spalte1: string;
+                  spalte2: string;
                   spalte3?: string | null;
                   id?: string | null;
                 }[]
@@ -296,6 +345,14 @@ export interface Ratgeber {
           }
       )[]
     | null;
+  faq?:
+    | {
+        frage: string;
+        antwort: string;
+        id?: string | null;
+      }[]
+    | null;
+  relatedArticles?: (string | Ratgeber)[] | null;
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
@@ -410,6 +467,10 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  convertFormat?: T;
+  resizeMaxWidth?: T;
+  resizeMaxHeight?: T;
+  originalFilesize?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -431,6 +492,9 @@ export interface RatgeberSelect<T extends boolean = true> {
   slug?: T;
   kategorie?: T;
   lesezeit?: T;
+  publishedAt?: T;
+  cluster?: T;
+  teaser?: T;
   titelbild?: T;
   zusammenfassung?:
     | T
@@ -498,6 +562,14 @@ export interface RatgeberSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
+  faq?:
+    | T
+    | {
+        frage?: T;
+        antwort?: T;
+        id?: T;
+      };
+  relatedArticles?: T;
   seo?:
     | T
     | {

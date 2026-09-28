@@ -1,4 +1,5 @@
 import type { Access, CollectionConfig, Where } from 'payload'
+import { RATGEBER_CLUSTERS, isClusterOfKategorie } from '../../scripts/ratgeber/_clusters.mjs'
 
 function formatSlug(value: string): string {
   return value
@@ -191,7 +192,7 @@ export const Ratgeber: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'titel',
-    defaultColumns: ['titel', 'kategorie', 'status', 'publishedAt', 'updatedAt'],
+    defaultColumns: ['titel', 'kategorie', 'cluster', 'status', 'publishedAt', 'updatedAt'],
   },
   // versions: {
   //   drafts: true,
@@ -296,6 +297,31 @@ export const Ratgeber: CollectionConfig = {
           },
         },
       ],
+    },
+    {
+      name: 'cluster',
+      label: 'Themen-Cluster',
+      type: 'select',
+      options: RATGEBER_CLUSTERS.map(({ value, label }) => ({ value, label })),
+      filterOptions: ({ data, options }) =>
+        options.filter((option) =>
+          isClusterOfKategorie(typeof option === 'string' ? option : option.value, data?.kategorie),
+        ),
+      admin: {
+        width: '50%',
+        description:
+          'Unterthema innerhalb der Kategorie. Bestimmt, unter welcher Überschrift der Artikel auf der Themenseite erscheint. Pflicht für veröffentlichte Artikel.',
+      },
+      validate: (value: unknown, { data }: { data?: Record<string, unknown> }) => {
+        if (data?.status !== 'veroeffentlicht') return true
+        if (typeof value !== 'string' || !value) {
+          return 'Veröffentlichte Artikel brauchen einen Themen-Cluster.'
+        }
+        if (!isClusterOfKategorie(value, data?.kategorie)) {
+          return 'Der Cluster gehört zu einer anderen Kategorie.'
+        }
+        return true
+      },
     },
     {
       name: 'teaser',
