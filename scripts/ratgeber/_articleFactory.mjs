@@ -2,6 +2,7 @@ import { MongoClient, ObjectId } from 'mongodb'
 import { resolvePayloadDbName } from './_db.mjs'
 import { isClusterOfKategorie, resolveCluster } from './_clusters.mjs'
 import { transformArticleLinks } from './_linkTransform.mjs'
+import { applyTextCorrections } from './_textCorrections.mjs'
 
 function assertRequired(article) {
   const required = ['titel', 'slug', 'kategorie', 'teaser']
@@ -30,6 +31,9 @@ export async function upsertRatgeberArticle(article, options = {}) {
 
   assertRequired(article)
 
+  // Redaktionelle Korrekturen aus _textCorrections.mjs (Floskeln, Du-Form, Tippfehler, metaTitle)
+  const text = applyTextCorrections(article.slug, article).article
+
   const now = new Date()
   const client = new MongoClient(String(mongoUrl))
 
@@ -40,18 +44,18 @@ export async function upsertRatgeberArticle(article, options = {}) {
     const col = db.collection(collectionName)
 
     const setDoc = {
-      titel: article.titel,
+      titel: text.titel,
       slug: article.slug,
       kategorie: article.kategorie,
-      teaser: article.teaser,
+      teaser: text.teaser,
       lesezeit: article.lesezeit ?? 10,
       status: article.status ?? 'veroeffentlicht',
       updatedAt: now,
-      zusammenfassung: article.zusammenfassung ?? [],
+      zusammenfassung: text.zusammenfassung ?? [],
       // Linklisten entfernen, interne Links aus _internalLinks.mjs im Fließtext setzen
-      inhalt: transformArticleLinks(article.slug, article.inhalt ?? []).inhalt,
-      faq: article.faq ?? [],
-      seo: article.seo,
+      inhalt: transformArticleLinks(article.slug, text.inhalt ?? []).inhalt,
+      faq: text.faq ?? [],
+      seo: text.seo,
     }
 
     // Cluster aus dem Artikel oder aus der zentralen Zuordnung in _clusters.mjs
