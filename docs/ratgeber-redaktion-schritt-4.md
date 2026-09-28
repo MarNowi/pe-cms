@@ -85,7 +85,7 @@ Ich habe mir alle 15 Bilder angesehen. Wo ein Bild in zwei Artikeln steckt, besc
 Offen bleiben:
 
 - **Motive, die nicht zum Thema passen.** Der Zählerschrank bei den Ertragsartikeln und das Haus in der Dämmerung beim Notstrom-Artikel lassen sich nur mit einem anderen Bild lösen.
-- **64 Artikel, deren Alt-Text der Artikeltitel ist.** Das ist nicht falsch, aber auch keine Bildbeschreibung. Ich kann diese Bilder genauso durchgehen, wenn du willst.
+- ~~64 Artikel, deren Alt-Text der Artikeltitel ist~~ → erledigt in Teil 2 (unten).
 
 ## Weitere Befunde
 
@@ -252,3 +252,78 @@ Live war der Slogan schon unsichtbar, weil das Frontend ihn herausfiltert. Jetzt
 | `kosten-solaranlage-mit-speicher-einfamilienhaus` | Was kostet eine Solaranlage mit Speicher fürs Einfamilienhaus? \| PEAK.Energy – WE ♥️ ENERGY |
 | `pv-anlage-planen` | PV-Anlage planen: Dach, Größe, Speicher richtig abstimmen \| PEAK.Energy – WE ♥️ ENERGY |
 | `kosten-solaranlage-einfamilienhaus` | Was kostet eine Solaranlage? Ehrliche Preise vom Meisterbetrieb \| PEAK.Energy – WE ♥️ ENERGY |
+
+## Teil 2: Alt-Texte, die nur den Artikeltitel wiederholten
+
+Ich habe mir alle 59 Bilder angesehen (63 Artikel). Die neuen Alt-Texte beschreiben das Motiv. Bei Grafiken mit großer Überschrift steht deren Text in Anführungszeichen dabei, weil er auf dem Bild zu lesen ist.
+
+Die Texte stehen in `_mediaAlt.mjs`. Das Script aus Teil 1 schreibt sie. Es läuft einfach noch einmal, bereits korrigierte Texte überspringt es:
+
+```
+node scripts/ratgeber/migrate-2026-09-30-redaktion.mjs            # Vorschau: 59 Alt-Texte
+node scripts/ratgeber/migrate-2026-09-30-redaktion.mjs --apply
+```
+
+Zwei Bilder sind geteilt: `Smart Meter auslesen …` (2 Artikel) und `stromspeicher.webp` (4 Artikel). Beide Beschreibungen passen zu allen Artikeln.
+
+| Bild | Artikel | vorher | nachher |
+|---|---|---|---|
+| pid-hotspots-mikrorisse-delamination-pv-module.webp | pid-hotspots-mikrorisse-delamination-pv-module | Hotspot, Mikrorisse und Alterung an einem PV-Modul | Nahaufnahme eines gealterten PV-Moduls mit Hotspot, Mikrorissen und Verfärbungen |
+| zwei-e-autos-zuhause-laden-wallboxen-hausanschluss.webp | zwei-e-autos-zuhause-laden-wallboxen-hausanschluss | Zwei Elektroautos laden an zwei koordinierten Wallboxen | Zwei Elektroautos laden an zwei Wallboxen vor der Garage eines Einfamilienhauses |
+| EEG2027.webp | eeg-2027-dach-pv-unter-25-kw | Was der Kabinettsentwurf für neue Dach-PV unter 25 kW vorsieht | Grafik „EEG 2027“ zum Kabinettsentwurf für neue Dach-PV unter 25 kW, im Hintergrund ein Haus mit Solaranlage |
+| Warum ein gutes HEMS in die Zukunft schaut.webp | hems-wetterprognose-strompreis-ladezustand | Warum ein gutes HEMS in die Zukunft schaut | Grafik „Warum ein gutes HEMS in die Zukunft schaut“: Smartphone mit HEMS-App vor einem Haus mit PV-Anlage, Speicher und E-Auto, dazu Wetterprognose, Strompreis und Ladezustand |
+| Dienstwagen zuhause laden.webp | dienstwagen-zuhause-laden-wallbox-stromkosten-arbeitgeber | Dienstwagen zuhause laden | Grafik „Dienstwagen zuhause laden“: Firmenwagen an der Wallbox vor dem Haus, dazu Hinweise zu MID-Zähler, PV-Strom und Erstattung |
+| Wo darf ein Stromspeicher stehen.webp | stromspeicher-aufstellort-keller-garage-brandschutz | Wo darf ein Stromspeicher stehen? | Grafik „Wo darf ein Stromspeicher stehen?“: Stromspeicher im Hauswirtschaftsraum mit Hinweisen zu Temperatur, Feuchtigkeit, Brandschutz und Abständen |
+| Warum eine Wärmepumpe vereist.webp | waermepumpe-abtauung-vereisung-kondensat | Warum eine Wärmepumpe vereist | Grafik „Warum eine Wärmepumpe vereist“: Techniker prüft mit dem Hausbesitzer das vereiste Außengerät einer Wärmepumpe im Winter |
+| Verschattung bei Photovoltaik.webp | pv-verschattung-leistungsoptimierer-stringdesign | Verschattung bei Photovoltaik | Grafik „Verschattung bei Photovoltaik“: Haus mit teilverschatteter Solaranlage, Vergleich von Ertragsverlust und optimiertem Stringdesign |
+| Gewerbespeicher richtig auslegen.webp | gewerbespeicher-richtig-auslegen-lastgang-kw-kwh | Gewerbespeicher richtig auslegen | Gewerbespeicher in Schrankbauweise vor einer Halle mit PV-Dach, eingeblendet eine Lastkurve |
+| Dynamischer Stromtarif trifft § 14a.webp | dynamischer-stromtarif-paragraf-14a-netzentgelt | Dynamischer Stromtarif trifft § 14a | Haus mit PV-Anlage, Stromspeicher, Wärmepumpe, Wallbox und Zählerschrank, verbunden durch eingeblendete Steuersignale |
+| PV-Anlage und Dachsanierung.webp | pv-anlage-dachsanierung-demontage-repowering | PV-Anlage und Dachsanierung | Schrägdach während der Sanierung: alte PV-Module teilweise abgebaut, daneben neu belegte Dachfläche |
+| 1-phasig oder 3-phasig laden.webp | wallbox-phasenumschaltung-pv-ueberschussladen | 1-phasig oder 3-phasig laden | Wallbox an der Hauswand lädt ein E-Auto, eingeblendete Linien stehen für die Stromphasen |
+| Stromspeicher + Wärmepumpe.webp | stromspeicher-waermepumpe-nachts-versorgen | Stromspeicher + Wärmepumpe | Stromspeicher an der Hauswand und Luft-Wärmepumpe im Garten am Abend, verbunden durch eine leuchtende Linie |
+| Wärmepumpe richtig aufstellen.webp | waermepumpe-richtig-aufstellen-standort-schall | Wärmepumpe richtig aufstellen | Außengerät einer Luft-Wärmepumpe auf einem Sockel neben der Hauswand |
+| 40 Jahre Garantie auf Solarmodule.webp | solarmodule-40-jahre-garantie-produkt-leistung | 40 Jahre Garantie auf Solarmodule | Schrägdach mit schwarzen Solarmodulen im Abendlicht |
+| Smart Meter auslesen So kommst du an Verbrauchsdaten.webp | westnetz-smart-meter-steuerbox-2026, smart-meter-auslesen-verbrauchsdaten-trudi | Smart Meter auslesen: So kommst du an Verbrauchsdaten | Geöffneter Zählerschrank mit Smart Meter, die Verbrauchsdaten erscheinen auf einem Tablet |
+| Lastgang verstehen.webp | lastgang-15-minuten-werte-verstehen | Lastgang verstehen | Tablet zeigt den Tagesverlauf von PV-Erzeugung und Verbrauch, im Hintergrund ein Haus mit Solaranlage und Stromspeicher |
+| Mieterstrom oder gemeinschaftliche Gebäudeversorgung.webp | mieterstrom-gemeinschaftliche-gebaeudeversorgung-2026 | Mieterstrom oder gemeinschaftliche Gebäudeversorgung | Schnittbild eines Mehrfamilienhauses mit PV-Anlage auf dem Dach und Stromverteilung an die Wohnungen |
+| Zählerschrank für PV, Wärmepumpe und Smart Meter.webp | zaehlerschrank-pv-waermepumpe-smart-meter | Zählerschrank für PV, Wärmepumpe und Smart Meter | Geöffneter Zählerschrank mit Zählern und Schutztechnik, verbunden mit PV-Anlage und Wärmepumpe eines Einfamilienhauses |
+| Steuerbox nach § 14a.webp | steuerbox-paragraf-14a-smart-meter-hems | Steuerbox nach § 14a | Haus mit Wärmepumpe, Wallbox und Speicher, im Zählerschrank eine Steuerbox mit Verbindung zum Stromnetz |
+| Lebensdauer und Wartung einer Wärmepumpe.webp | waermepumpe-lebensdauer-wartung | Lebensdauer und Wartung einer Wärmepumpe | Techniker wartet das Außengerät einer Wärmepumpe, daneben der Hausbesitzer, eingeblendet eine Zeitleiste mit 10, 15 und 20 Jahren |
+| Monoblock oder Split-Wärmepumpe.webp | monoblock-oder-split-waermepumpe | Monoblock oder Split-Wärmepumpe | Zweigeteiltes Bild: Berater erklärt einem Paar am Laptop Monoblock- und Split-Wärmepumpe, jeweils mit Schema der Leitungsführung |
+| Wärmepumpentarif oder dynamischer Stromtarif.webp | waermepumpentarif-oder-dynamischer-stromtarif | Wärmepumpentarif oder dynamischer Stromtarif | Berater zeigt einem Paar am Laptop Wärmepumpentarif und dynamischen Stromtarif, eingeblendet eine schwankende Preiskurve |
+| Pufferspeicher bei Wärmepumpen.webp | pufferspeicher-waermepumpe | Pufferspeicher bei Wärmepumpen | Berater erklärt einem Paar den Pufferspeicher, eingeblendet der Weg von der Wärmepumpe über den Pufferspeicher in die Heizkreise |
+| Hydraulischer Abgleich bei Wärmepumpen.webp | hydraulischer-abgleich-waermepumpe | Hydraulischer Abgleich bei Wärmepumpen | Techniker mit Tablet am Heizungsverteiler, daneben Schnittbild eines Hauses mit Heizkörpern und Fußbodenheizung |
+| Wärmepumpe richtig einstellen Heizkurve, Takten und Nachtabsenkung.webp | waermepumpe-richtig-einstellen | Wärmepumpe richtig einstellen: Heizkurve, Takten und Nachtabsenkung | Berater zeigt einer Kundin am Tablet Heizkurve, Taktung und Nachtabsenkung der Wärmepumpe |
+| Heizlastberechnung für Wärmepumpen.webp | heizlastberechnung-waermepumpe | Heizlastberechnung für Wärmepumpen | Berater bespricht mit einem Paar die Heizlast, eingeblendet Grundriss und Wärmeverluste des Hauses |
+| Einspeisevergütung Photovoltaik 2026.webp | einspeiseverguetung-photovoltaik-2026 | Einspeisevergütung Photovoltaik 2026 | Berater mit Tablet vor einem Haus mit Solaranlage, eingeblendet der Vergütungssatz 7,70 ct/kWh |
+| Strommarkt einfach erklärt.webp | strommarkt-einfach-erklaert-boersenstrompreis-netzentgelt-strompreis | Strommarkt einfach erklärt | Haus mit Solaranlage und Speicher, im Hintergrund Kraftwerk, Windräder und Strommast, eingeblendet Erzeugung, Netz und Haushalt |
+| Eigenverbrauch optimieren.webp | eigenverbrauch-optimieren-100-prozent-autarkie | Eigenverbrauch optimieren | Familie im Haus mit Solaranlage, eingeblendete Stromflüsse zu Speicher, E-Auto und Haushaltsgeräten |
+| PV, Speicher, Wallbox und Wärmepumpe intelligent steuern.webp | pv-speicher-wallbox-waermepumpe-intelligent-steuern | PV, Speicher, Wallbox und Wärmepumpe intelligent steuern | Einfamilienhaus mit Solaranlage, Stromspeicher, Wallbox und Wärmepumpe, verbunden durch eingeblendete Energieflüsse |
+| Was ein Home Energy Management System wirklich macht.webp | hems-home-energy-management-system-hersteller-app | Was ein Home Energy Management System wirklich macht | Haus mit PV-Anlage, Speicher, Wallbox und Wärmepumpe, in der Mitte ein HEMS-Symbol, das alle Geräte verbindet |
+| Stromspeicher aus dem Netz laden.webp | stromspeicher-aus-netz-laden-dynamisch-sinnvoll | Stromspeicher aus dem Netz laden | Stromspeicher und Wechselrichter in der Garage, über eine eingeblendete Preiskurve mit dem Stromnetz verbunden |
+| Zeitvariable Netzentgelte nach Paragraf 14a.webp | zeitvariable-netzentgelte-paragraph-14a-modul-3 | Zeitvariable Netzentgelte nach § 14a | Mann lädt ein E-Auto an der Wallbox, darüber ein Tagesbogen mit Uhr zwischen teurer und günstiger Netzzeit |
+| Negative Strompreise 2026.webp | negative-strompreise-2026-pv-speicher-eauto | Negative Strompreise 2026 | E-Auto an der Wallbox und Stromspeicher am Haus, eingeblendet eine Preiskurve, die unter null fällt |
+| Dynamischer Stromtarif mit PV und Speicher.webp | dynamischer-stromtarif-pv-speicher-lohnt-sich | Dynamischer Stromtarif mit PV und Speicher | Haus mit PV-Anlage, Speicher und Wallbox, eingeblendet eine Strompreiskurve und eine Smartphone-App |
+| Solarspitzengesetz 2026 60-Prozent-Regel.webp | solarspitzengesetz-2026-60-prozent-negative-strompreise-smart-meter | Solarspitzengesetz 2026: 60-%-Regel | Haus mit Solaranlage und Technikraum, eingeblendet der Weg vom PV-Modul ins Netz mit der 60-%-Grenze |
+| Rückbau und Montage So läuft der Umbau einer PV-Anlage ab.webp | pv-anlage-rueckbau-montage | Rückbau und Montage: So läuft der Umbau einer PV-Anlage ab | Zweigeteiltes Bild: Monteure bauen alte PV-Module vom Dach ab und montieren neue |
+| HEMS und Monitoring nachrüsten Die Altanlage endlich sichtbar machen.webp | hems-monitoring-nachruesten | HEMS und Monitoring nachrüsten: Die Altanlage endlich sichtbar machen | Grafik „HEMS und Monitoring nachrüsten“: Techniker mit Tablet vor einem Haus mit älterer PV-Anlage, eingeblendet Erzeugung, Verbrauch und Speicherstand |
+| PV-Module entsorgen Recycling, Pflichten und was Altmodule noch wert sind.webp | pv-module-entsorgen-recycling | PV-Module entsorgen: Recycling, Pflichten und was Altmodule noch wert sind | Grafik „PV-Module entsorgen“: Arbeiter sortieren ausgebaute Solarmodule auf einem Recyclinghof |
+| Komponenten-Tausch Wenn nicht die ganze Anlage neu muss.webp | komponenten-tausch-pv-anlage | Komponenten-Tausch: Wenn nicht die ganze Anlage neu muss | Grafik „Komponenten-Tausch“: Techniker tauscht ein Bauteil am Wechselrichter, eingeblendet die Kette aus PV-Modulen, Wechselrichter, Speicher und Monitoring |
+| JAZ, COP und SCOP Was die Effizienz-Kennzahlen der Wärmepumpe wirklich aussagen.webp | jaz-wirkungsgrad | JAZ, COP und SCOP: Was die Effizienz-Kennzahlen der Wärmepumpe wirklich aussagen | Techniker mit Tablet vor dem Außengerät einer Wärmepumpe, eingeblendet Kennzahlen zu JAZ, COP und SCOP |
+| Wie funktioniert eine Wärmepumpe Das Prinzip verständlich erklärt.webp | wie-funktioniert-eine-waermepumpe | Wie funktioniert eine Wärmepumpe? Das Prinzip verständlich erklärt | Berater erklärt einem Paar eine Luft-Wärmepumpe, eingeblendet der Kreislauf von der Außenluft über den Verdichter zu Heizkörper, Fußbodenheizung und Warmwasserspeicher |
+| Bidirektionales Laden Wenn das E-Auto zum Stromspeicher wird.webp | bidirektionales-laden | Bidirektionales Laden: Wenn das E-Auto zum Stromspeicher wird | E-Auto an der Wallbox, eingeblendete Energieflüsse zwischen Autobatterie und Hausspeicher in beide Richtungen |
+| Photovoltaik-Förderung 2026 Was es wirklich gibt – und was nur gut klingt.webp | photovoltaik-foerderung | Photovoltaik-Förderung 2026: Was es wirklich gibt – und was nur gut klingt | Mann prüft Unterlagen zur PV-Förderung mit Tablet und Checkliste vor einem Haus mit Solaranlage |
+| Photovoltaik und Steuern 0 Prozent Mehrwertsteuer, Einkommensteuer und was 2026 gilt.webp | photovoltaik-steuern | Photovoltaik und Steuern: 0 % Mehrwertsteuer, Einkommensteuer und was 2026 gilt | Berater am Laptop vor einem Haus mit Solaranlage, eingeblendet „0 % MwSt.“, daneben Unterlagen vom Finanzamt und ein Taschenrechner |
+| Amortisation der PV-Anlage Wann sie sich wirklich bezahlt gemacht hat.webp | amortisation-pv-anlage | Amortisation der PV-Anlage: Wann sie sich wirklich bezahlt gemacht hat | Berater rechnet mit einer Kundin die Amortisation einer PV-Anlage durch, eingeblendet die Kurve der aufsummierten Ersparnis über die Jahre |
+| Solarteur insolvent.webp | solarteur-insolvent-was-tun | Solarteur insolvent | Grafik „Solarteur insolvent“: Paar mit Unterlagen vor einem Haus mit unfertiger Solaranlage, daneben erste Schritte zu Anlage, Anzahlung und Garantie |
+| Garantie vs. Gewährleistung.webp | garantie-vs-gewaehrleistung-pv-anlage | Garantie vs. Gewährleistung | Grafik „Garantie vs. Gewährleistung“: Paar prüft Vertragsunterlagen, daneben die Gegenüberstellung von Herstellergarantie und gesetzlicher Gewährleistung |
+| Multi-Use bei Stromspeichern.webp | multi-use-stromspeicher | Multi-Use bei Stromspeichern | Grafik „Multi-Use bei Stromspeichern“: Gewerbespeicher vor einer Halle mit PV-Dach, daneben Peak Shaving, Eigenverbrauch, Notstrom, Ladeinfrastruktur und Tarifoptimierung |
+| Lastspitzenkappung.webp | lastspitzenkappung-stromspeicher-gewerbe | Lastspitzenkappung | Gewerbespeicher vor einer Halle mit PV-Dach, eingeblendet ein Lastprofil mit und ohne Peak Shaving |
+| Wirtschaftlichkeitsrechnung.webp | pv-gewerbe-wirtschaftlichkeit-beispielrechnung | Wirtschaftlichkeitsrechnung | Grafik „Lohnt sich PV auf dem Gewerbedach?“: Gewerbehalle mit PV-Anlage, daneben Kennzahlen der Beispielrechnung |
+| PV-in-der-Landwirtschaft.webp | pv-landwirtschaft-stalldach | PV in der Landwirtschaft | Grafik „PV in der Landwirtschaft“: Stall mit PV-Dach und Traktor, daneben Hinweise zu Stalldach, Asbest und Lastprofil |
+| cloud-speicher.webp | cloud-speicher-stromspeicher-vergleich | Cloud-Speicher | Leuchtende Wolke mit Batteriesymbol über einer Stadt bei Nacht |
+| stromspeicher.webp | lohnt-sich-ein-stromspeicher, wie-gross-sollte-ein-stromspeicher-sein, wie-lange-haelt-ein-stromspeicher, solaranlage-mit-oder-ohne-speicher | Stromspeicher | Weißer Heimspeicher an einer Hauswand auf der Terrasse |
+| Waermepumpe-im-Altbau.webp | waermepumpe-im-altbau | Wärmepumpe im Altbau | Älteres Einfamilienhaus mit PV-Anlage und Luft-Wärmepumpe im Garten |
+| waermepumpe.webp | solaranlage-fuer-waermepumpe-auslegen | Wärmepumpe | Außengerät einer Luft-Wärmepumpe im Schnee vor einer Holzfassade |
+| Autarkie.webp | wie-viel-autarkie-ist-realistisch | Autarkie | Screenshot eines PV-Monitorings mit Produktion, Verbrauch und Ladezustand über drei Tage |
+| Solaranlage-im-Winter.webp | was-bringt-eine-solaranlage-im-winter | Solaranlage im Winter | Verschneites Dach mit teilweise schneebedeckter Solaranlage |
