@@ -4,7 +4,7 @@ Stand: 29.09.2026 · Grundlage: Live-Inhalte aus dem CMS nach Schritt 2. Umsetzu
 
 ## Zusammenfassung
 
-- **337 neue Links** in 123 Artikeln, jeweils 1–4 pro Artikel.
+- **336 neue Links** in 123 Artikeln, jeweils 1–4 pro Artikel.
 - Jeder Link sitzt auf einem Wortlaut, der **schon im Text steht**. Am Text ändert sich nichts: kein neuer Satz, keine Umformulierung.
 - **20 Linklisten „Passende Ratgeber zum Weiterlesen“ werden entfernt.** Jedes Ziel aus diesen Listen ist danach im Fließtext desselben Artikels verlinkt.
 - Nicht verlinkt werden die Artikel, deren Zusammenlegung beschlossen oder noch offen ist: `braucht-man-einen-stromspeicher`, `lokales-hems-hersteller-cloud-server-internet-ausfall`, `wie-viel-autarkie-ist-realistisch`. Sie bekommen keine neuen Links und sind kein Linkziel.
@@ -15,7 +15,7 @@ Stand: 29.09.2026 · Grundlage: Live-Inhalte aus dem CMS nach Schritt 2. Umsetzu
 | Artikel ohne ausgehenden Ratgeber-Link | 68 | 0 |
 | Artikel mit weniger als 2 ausgehenden Links | 76 | 14 |
 | Artikel ohne eingehenden Link | 62 | 15 |
-| Ratgeber-Links im Fließtext gesamt | 142 | 442 |
+| Ratgeber-Links im Fließtext gesamt | 142 | 441 |
 
 In „vorher“ zählen die Linklisten noch mit.
 
@@ -222,7 +222,7 @@ Format: … Text mit **Ankertext** … → Ziel. Die Artikel sind nach Kategorie
 
 **Was bringt eine Solaranlage im Winter?** · `/solaranlage/was-bringt-eine-solaranlage-im-winter`
 
-- Gerade bei **Wärmepumpe** oder hohem Strombedarf ist der Winter trotzdem ein wichtige… → [Solaranlage für Wärmepumpe auslegen: Worauf kommt es an?](/solaranlage/solaranlage-fuer-waermepumpe-auslegen)
+- Gerade bei **Wärmepumpe oder hohem Strombedarf** ist der Winter trotzdem ein wichtige… → [Solaranlage für Wärmepumpe auslegen: Worauf kommt es an?](/solaranlage/solaranlage-fuer-waermepumpe-auslegen)
 - Ja, eine Solaranlage bringt auch im Winter Strom. Allerdings liegt der **Ertrag** in den dunkleren Monaten deutlich unter dem Niveau der sonn… → [Wie viel Strom erzeugt eine 10 kWp Solaranlage?](/solaranlage/wie-viel-strom-erzeugt-eine-10-kwp-solaranlage)
 
 **Wer darf Photovoltaikanlagen installieren?** · `/solaranlage/wer-darf-photovoltaikanlagen-installieren`
@@ -331,7 +331,6 @@ Format: … Text mit **Ankertext** … → Ziel. Die Artikel sind nach Kategorie
 
 - Wichtig ist vor allem, dass **Wechselrichter**, Verkabelung, Platzverhältnisse und die gesamte Systemarchi… → [Hybrid-Wechselrichter oder getrennte Geräte: Was ist sinnvoller bei PV mit Speicher?](/solaranlage/hybrid-wechselrichter-oder-getrennte-geraete)
 
-**Stromspeicher + Wärmepumpe: Kann die Batterie die Wärmepumpe nachts wirklich versorgen?** · `/stromspeicher/stromspeicher-waermepumpe-nachts-versorgen`
 
 - …malen Netzparallelbetrieb kommt diese Differenz typischerweise aus dem Netz. Im **Ersatzstrombetrieb** kann die Leistungsgrenze dagegen darüber entscheiden, ob be… → [Notstrom oder Ersatzstrom: Was ist der Unterschied?](/stromspeicher/notstrom-oder-ersatzstrom)
 - In der Praxis kommen **Umwandlungsverluste**, Reservebereiche, Warmwasserbereitung, Abtauvorgänge und sc… → [Speicherwirkungsgrad erklärt: Warum aus 10 kWh geladen nicht 10 kWh nutzbar werden](/stromspeicher/speicherwirkungsgrad-verluste-geladen-nutzbar)
@@ -368,7 +367,7 @@ Format: … Text mit **Ankertext** … → Ziel. Die Artikel sind nach Kategorie
 - Im Gegenzug zur Steuerbarkeit bekommt der Betreiber eine Vergünstigung beim **Netzentgelt**. Hier gibt es zwei Modelle zur Wahl, die sich grundlegend u… → [Zeitvariable Netzentgelte nach § 14a: Was Modul 3 bringt – und für wen es sich lohnt](/strom-energiemanagement/zeitvariable-netzentgelte-paragraph-14a-modul-3)
 - … Verbrauchseinrichtungen mit mehr als 4,2 kW Anschlussleistung müssen über eine **Steuerbox** kommunikationsfähig angeschlossen werden → [Steuerbox nach § 14a: Was Smart Meter, Steuerbox und HEMS jeweils machen](/strom-energiemanagement/steuerbox-paragraf-14a-smart-meter-hems)
 - … gebaut. Wenn in einer Straße gleichzeitig drei Wallboxen mit 11 kW laden, zwei **Wärmepumpen** heizen und mehrere Klimaanlagen laufen, gerät die Niederspa… → [§ 14a EnWG bei Wärmepumpen: Drosselung, Wärmepumpentarif und Messkonzept 8](/waermepumpe/14a-enwg-waermepumpe-messkonzept-8)
-- Wer ab 2024 eine neue Wallbox, Wärmepumpe oder einen **Speicher** mit über 4,2 kW Leistung in Betrieb nimmt, kann nicht entsc… → [§14a EnWG für Stromspeicher: Was die Pflicht zur Steuerbarkeit bedeutet](/stromspeicher/paragraf-14a-enwg-stromspeicher)
+- Wer ab 2024 eine neue Wallbox, Wärmepumpe oder einen **Speicher mit über 4,2 kW Leistung** in Betrieb nimmt, kann nicht entsc… → [§14a EnWG für Stromspeicher: Was die Pflicht zur Steuerbarkeit bedeutet](/stromspeicher/paragraf-14a-enwg-stromspeicher)
 
 **PV-Überschussladen funktioniert nicht: Die häufigsten Ursachen und wie man sie findet** · `/wallbox/pv-ueberschussladen-funktioniert-nicht-ursachen` · Linkliste wird entfernt
 
@@ -402,7 +401,7 @@ Format: … Text mit **Ankertext** … → Ziel. Die Artikel sind nach Kategorie
 **Wallbox zu Hause laden: Worauf kommt es an?** · `/wallbox/wallbox-zu-hause-laden`
 
 - …fgestellt als mit provisorischen Lösungen. Entscheidend ist dabei nicht nur die **Ladegeschwindigkeit**, sondern vor allem Sicherheit, Alltagstauglichkeit und eine… → [11 kW oder 22 kW Wallbox? Was im Einfamilienhaus wirklich sinnvoll ist](/wallbox/wallbox-11-oder-22-kw)
-- Gerade wenn zusätzlich eine **Solaranlage** vorhanden ist oder später geplant wird, lohnt es sich, die … → [Wallbox mit PV laden: Wann es sich lohnt und worauf es wirklich ankommt](/wallbox/wallbox-mit-pv-laden)
+- Gerade wenn zusätzlich eine **Solaranlage vorhanden ist oder später geplant wird**, lohnt es sich, die … → [Wallbox mit PV laden: Wann es sich lohnt und worauf es wirklich ankommt](/wallbox/wallbox-mit-pv-laden)
 - Wichtig ist: Nicht jede Wallbox passt automatisch zu jedem Haus. **Hausanschluss**, Leitungsweg, Absicherung und spätere Erweiterungen sollten… → [Lastmanagement bei Wallboxen: Wie verhindert man, dass der Hausanschluss überlastet wird?](/wallbox/lastmanagement-wallbox-hausanschluss-ueberlastung)
 
 **Zwei E-Autos zuhause laden: Brauche ich zwei Wallboxen oder einen größeren Hausanschluss?** · `/wallbox/zwei-e-autos-zuhause-laden-wallboxen-hausanschluss` · Linkliste wird entfernt
