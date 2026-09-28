@@ -1,3 +1,6 @@
+// Zusammengelegt: Dieser Artikel ist in /stromspeicher/lohnt-sich-ein-stromspeicher aufgegangen (siehe _merges.mjs)
+// und bleibt Entwurf. Die alte URL leitet per 301 auf das Ziel weiter.
+
 import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import { createArticleBase } from './_templates.mjs'
 import { createFaqOnlyPreset } from './_topicPresets.mjs'
@@ -77,6 +80,7 @@ const preset = createFaqOnlyPreset({
 const article = createArticleBase({
   titel: 'Braucht man einen Stromspeicher?',
   slug: 'braucht-man-einen-stromspeicher',
+  status: 'entwurf',
   teaser:
     'Ist ein Stromspeicher bei einer Solaranlage Pflicht oder oft eher optional? Hier findest du eine ehrliche Einordnung zu Nutzen, Alltag und typischen Denkfehlern.',
   lesezeit: 7,
