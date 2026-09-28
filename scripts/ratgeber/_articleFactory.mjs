@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb'
 import { resolvePayloadDbName } from './_db.mjs'
+import { isClusterOfKategorie, resolveCluster } from './_clusters.mjs'
 
 function assertRequired(article) {
   const required = ['titel', 'slug', 'kategorie', 'teaser']
@@ -49,6 +50,16 @@ export async function upsertRatgeberArticle(article, options = {}) {
       inhalt: article.inhalt ?? [],
       faq: article.faq ?? [],
       seo: article.seo,
+    }
+
+    // Cluster aus dem Artikel oder aus der zentralen Zuordnung in _clusters.mjs
+    const cluster = resolveCluster(article.slug, article.cluster)
+    if (cluster && isClusterOfKategorie(cluster, article.kategorie)) {
+      setDoc.cluster = cluster
+    } else if (cluster) {
+      console.warn(`⚠️ Cluster ${cluster} passt nicht zur Kategorie ${article.kategorie} – Cluster von ${article.slug} nicht gesetzt`)
+    } else if (setDoc.status === 'veroeffentlicht') {
+      console.warn(`⚠️ ${article.slug} hat keinen Cluster – bitte in _clusters.mjs eintragen, sonst fehlt der Artikel in der Gruppierung der Themenseite`)
     }
 
     if (article.publishedAt !== undefined) setDoc.publishedAt = article.publishedAt
