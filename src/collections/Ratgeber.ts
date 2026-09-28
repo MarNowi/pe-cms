@@ -14,6 +14,23 @@ function formatSlug(value: string): string {
     .replace(/^-|-$/g, '')
 }
 
+// Slugs, unter denen das Frontend (MarNowi/pe) statische Seiten ausliefert.
+// Ein veröffentlichter Artikel mit gleichem Slug in dieser Kategorie wäre nie
+// erreichbar, weil Next.js die statische Route bevorzugt.
+const RESERVED_SLUGS: Record<string, string[]> = {
+  solaranlage: ['aiko-solarmodule', 'pv-anlage-finanzieren'],
+  repowering: [
+    'diagnose-check',
+    'entsorgung-recycling',
+    'hems-monitoring',
+    'komponenten-tausch',
+    'notstrom-backup',
+    'rueckbau-montage',
+    'speicher-nachruesten',
+    'wirtschaftlichkeit-eeg',
+  ],
+}
+
 function extractText(value: unknown): string {
   if (!value) return ''
 
@@ -202,6 +219,19 @@ export const Ratgeber: CollectionConfig = {
           admin: {
             width: '30%',
             description: 'z. B. kosten-solaranlage-einfamilienhaus (ohne Produktpräfix)',
+          },
+          validate: (value: unknown, { data }: { data?: Record<string, unknown> }) => {
+            const kategorie = typeof data?.kategorie === 'string' ? data.kategorie : ''
+            const slug = typeof value === 'string' ? formatSlug(value) : ''
+
+            if (
+              data?.status === 'veroeffentlicht' &&
+              RESERVED_SLUGS[kategorie]?.includes(slug)
+            ) {
+              return `/${kategorie}/${slug} ist eine statische Seite im Frontend. Bitte einen anderen Slug wählen.`
+            }
+
+            return true
           },
           hooks: {
             beforeValidate: [
