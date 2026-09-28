@@ -748,3 +748,54 @@ Unter 500 Wörtern, Gerüst „1. [Frage] / 2. Fazit“: `braucht-man-einen-stro
 8. **Doppelte FAQ-Fragen und doppelte Abschnitte (9.8):** in diesem Projekt bereinigen oder separat?
 9. **Vier nicht veröffentlichte Scripts (1.1):** Status klären – dafür bitte einmal `export-ratgeber.mjs` ausführen.
 10. **Umsetzungsweg:** Migrations-Scripts ändern die DB direkt. Wird danach ein ursprüngliches Artikel-Script erneut ausgeführt, überschreibt es die Änderungen. Soll ich in Phase 3 zusätzlich die Ursprungs-Scripts in `scripts/ratgeber/` anpassen, damit sie den neuen Stand enthalten? (Empfehlung: ja, bei Artikeln mit eigenem Script; bei den Sammel-Scripts `ratgeber-mix-…` schwieriger – dann Hinweis im README, sie nicht erneut auszuführen.)
+
+---
+
+## 11. Entscheidungen (Stand 28.09.2026)
+
+**Reihenfolge**
+
+1. Technische Fehler: 404-Links, verdeckte Repowering-Artikel, Routing
+2. Cluster-Feld im CMS und Wissensbereiche auf den Themenseiten
+3. Interne Verlinkung
+4. Zusammenlegungen und redaktionelles Aufräumen
+
+Vor jeder 301 einer heute sichtbaren Seite werden die Search-Console-Daten geprüft.
+
+**URL-Struktur**
+
+- `/{kategorie}/{slug}` bleibt. Es gibt keine neue Ebene `/ratgeber/<kategorie>`.
+- Kategorien werden nur geändert, wenn es wirklich nötig ist, denn die Kategorie ist Teil der URL.
+- Die Themenseiten `/solaranlage`, `/stromspeicher`, `/wallbox`, `/waermepumpe` und `/repowering` bekommen unterhalb des Leistungsteils einen Wissensbereich, gruppiert nach Cluster. `/strom-energiemanagement` bleibt reine Hub-Seite.
+- `/ratgeber` wird das Wissensportal mit den sechs Themenwelten und verweist auf die Themenseiten.
+
+**Cluster**
+
+Freigegeben wie in Abschnitt 5.
+
+**Zusammenlegungen**
+
+| Gruppe | Entscheidung |
+|---|---|
+| `braucht-man-einen-stromspeicher` → `lohnt-sich-ein-stromspeicher` | ja |
+| `lokales-hems-hersteller-cloud-server-internet-ausfall` → `cloud-ems-vs-lokales-ems-energiedaten` | ja |
+| `wie-viel-autarkie-ist-realistisch` → `eigenverbrauch-optimieren-100-prozent-autarkie` | erst nach Prüfung der Search-Console-Daten |
+| `kosten-solaranlage-einfamilienhaus` → `kosten-solaranlage-mit-speicher-einfamilienhaus` | **nein**. Der generische Artikel wird der übergeordnete Kostenartikel und verlinkt auf 10 kWp, 15 kWp und „mit Speicher“. |
+
+**Title**
+
+„WE ♥️ ENERGY“ kommt aus den SEO-Titeln heraus, „| PEAK.Energy“ bleibt. Beispiel: `Was kostet eine 10 kWp Solaranlage mit Speicher? | PEAK.Energy`
+
+**„ehrlich“**
+
+- Nur die Serienformulierungen („ehrlich eingeordnet“, „ehrlich erklärt“, „ehrliche Einordnung“) fallen weg, und zwar in Teasern, Metas und Standardsätzen.
+- Im Fließtext darf „ehrlich“ bleiben.
+
+**Interne Verlinkung**
+
+- Links stehen im Fließtext mit aussagekräftigem Ankertext.
+- Die Listen „Passende Ratgeber zum Weiterlesen“ werden in den Fließtext überführt.
+
+**Ursprungs-Scripts**
+
+Jede Migration zieht die Ursprungs-Scripts in `scripts/ratgeber/` mit. Es darf kein Script liegen bleiben, das den alten Stand wiederherstellt.
