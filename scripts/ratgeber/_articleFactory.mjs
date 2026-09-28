@@ -1,6 +1,7 @@
 import { MongoClient, ObjectId } from 'mongodb'
 import { resolvePayloadDbName } from './_db.mjs'
 import { isClusterOfKategorie, resolveCluster } from './_clusters.mjs'
+import { transformArticleLinks } from './_linkTransform.mjs'
 
 function assertRequired(article) {
   const required = ['titel', 'slug', 'kategorie', 'teaser']
@@ -47,7 +48,8 @@ export async function upsertRatgeberArticle(article, options = {}) {
       status: article.status ?? 'veroeffentlicht',
       updatedAt: now,
       zusammenfassung: article.zusammenfassung ?? [],
-      inhalt: article.inhalt ?? [],
+      // Linklisten entfernen, interne Links aus _internalLinks.mjs im Fließtext setzen
+      inhalt: transformArticleLinks(article.slug, article.inhalt ?? []).inhalt,
       faq: article.faq ?? [],
       seo: article.seo,
     }
