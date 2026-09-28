@@ -543,6 +543,62 @@ export const TEXT_CORRECTIONS = {
   ],
 }
 
+// ─── Doppelte FAQ-Fragen (Schritt 4, Teil 4) ───────────────────────────────────
+// Dieselbe Frage stand wortgleich in mehreren Artikeln (FAQ-Schema). Die Antworten unterscheiden
+// sich je Artikel – die Frage wird deshalb auf das Thema des Artikels zugespitzt, die Antwort bleibt.
+// Der Artikel, zu dem die Frage am besten passt, behält den ursprünglichen Wortlaut.
+const FAQ_FRAGEN = {
+  // „Sollte ich den Speicher direkt mitplanen?“, „Was wird bei der Planung am häufigsten vergessen?“ und
+  // „Gehört die Anmeldung beim Netzbetreiber zur Planung dazu?“ bleiben in pv-anlage-planen.
+  // „Welche Dachausrichtung ist am besten?“ bleibt in wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein.
+  'solaranlage-fuer-e-auto-auslegen': [
+    ['Sollte ich den Speicher direkt mitplanen?', 'Sollte ich bei einer Solaranlage fürs E-Auto den Speicher direkt mitplanen?'],
+    ['Was wird bei der Planung am häufigsten vergessen?', 'Was wird bei einer Solaranlage fürs E-Auto am häufigsten vergessen?'],
+    ['Gehört die Anmeldung beim Netzbetreiber zur Planung dazu?', 'Gehört die Anmeldung beim Netzbetreiber auch bei PV mit E-Auto zur Planung?'],
+    ['Welche Dachausrichtung ist am besten?', 'Welche Dachausrichtung passt am besten zum Laden des E-Autos?'],
+  ],
+  'solaranlage-fuer-waermepumpe-auslegen': [
+    ['Sollte ich den Speicher direkt mitplanen?', 'Sollte ich bei einer Solaranlage für die Wärmepumpe den Speicher direkt mitplanen?'],
+    ['Was wird bei der Planung am häufigsten vergessen?', 'Was wird bei einer Solaranlage für die Wärmepumpe am häufigsten vergessen?'],
+    ['Gehört die Anmeldung beim Netzbetreiber zur Planung dazu?', 'Gehört die Anmeldung beim Netzbetreiber auch bei PV mit Wärmepumpe zur Planung?'],
+    ['Welche Dachausrichtung ist am besten?', 'Welche Dachausrichtung passt am besten zum Betrieb mit Wärmepumpe?'],
+  ],
+  'wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein': [
+    ['Sollte ich den Speicher direkt mitplanen?', 'Sollte ich bei der Anlagengröße den Speicher direkt mitplanen?'],
+    ['Was wird bei der Planung am häufigsten vergessen?', 'Was wird bei der Wahl der Anlagengröße am häufigsten vergessen?'],
+    ['Gehört die Anmeldung beim Netzbetreiber zur Planung dazu?', 'Gehört neben der Größe auch die Anmeldung beim Netzbetreiber zur Planung?'],
+  ],
+  // „Brauche ich für einen dynamischen Stromtarif ein Smart Meter?“ bleibt in dynamischer-stromtarif-pv-speicher-lohnt-sich
+  'waermepumpentarif-oder-dynamischer-stromtarif': [
+    ['Brauche ich für einen dynamischen Stromtarif ein Smart Meter?', 'Brauche ich für den dynamischen Tarif mit Wärmepumpe ein Smart Meter?'],
+  ],
+  'smart-meter-2026-pv-kosten-pflicht-vorteile': [
+    ['Brauche ich für einen dynamischen Stromtarif ein Smart Meter?', 'Ist ein Smart Meter Pflicht, wenn ich einen dynamischen Stromtarif will?'],
+  ],
+  // „… bei diesem Vergleich?“ und „… die beste Entscheidung?“ ergeben ohne Artikelkontext keinen Sinn –
+  // in allen drei Artikeln zugespitzt
+  'notstrom-oder-ersatzstrom': [
+    ['Was ist der häufigste Denkfehler bei diesem Vergleich?', 'Was ist der häufigste Denkfehler bei Notstrom und Ersatzstrom?'],
+    ['Was ist am Ende die beste Entscheidung?', 'Wie finde ich heraus, ob ich Notstrom oder Ersatzstrom brauche?'],
+  ],
+  'ost-west-oder-sueddach-solaranlage': [
+    ['Was ist der häufigste Denkfehler bei diesem Vergleich?', 'Was ist der häufigste Denkfehler beim Vergleich von Ost-West- und Süddach?'],
+    ['Was ist am Ende die beste Entscheidung?', 'Wie entscheide ich mich zwischen Ost-West- und Süddach?'],
+  ],
+  'solaranlage-mit-oder-ohne-speicher': [
+    ['Was ist der häufigste Denkfehler bei diesem Vergleich?', 'Was ist der häufigste Denkfehler bei der Frage mit oder ohne Speicher?'],
+    ['Was ist am Ende die beste Entscheidung?', 'Wie entscheide ich mich zwischen Solaranlage mit und ohne Speicher?'],
+    // „Kann man einen Speicher später nachrüsten?“ bleibt in braucht-man-einen-stromspeicher
+    ['Kann man einen Speicher später nachrüsten?', 'Kann ich erst ohne Speicher starten und ihn später nachrüsten?'],
+  ],
+  // „Welche Rolle spielt die Vorlauftemperatur?“ bleibt in waermepumpe-mit-heizkoerpern
+  'waermepumpe-im-altbau': [['Welche Rolle spielt die Vorlauftemperatur?', 'Welche Rolle spielt die Vorlauftemperatur im Altbau?']],
+}
+
+for (const [slug, fragen] of Object.entries(FAQ_FRAGEN)) {
+  TEXT_CORRECTIONS[slug] = [...(TEXT_CORRECTIONS[slug] ?? []), ...fragen.map(([alt, neu]) => ({ feld: 'faq', alt, neu }))]
+}
+
 // Bewusst NICHT geändert (Fließtext mit eigener Aussage, keine Floskel):
 // cloud-speicher-stromspeicher-vergleich („… selten ehrlich stehen“), pv-gewerbe-wirtschaftlichkeit-beispielrechnung
 // („wie der Steuerhebel ehrlich wirkt“), repowering-solaranlage („die ehrliche Bewertung des Bestands“),
