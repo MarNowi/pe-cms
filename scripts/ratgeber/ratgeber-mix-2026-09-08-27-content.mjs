@@ -229,6 +229,8 @@ const definitions = [
     links: [['PV-Fehlerdiagnose', '/repowering/pv-anlage-fehlerdiagnose-stringmessung-isolation-hotspots'], ['Entsorgung und Recycling', '/repowering/pv-module-entsorgen-recycling']],
     faq: [['Muss jedes Modul mit Mikroriss ersetzt werden?', 'Nicht automatisch. Elektrische Aktivität, Entwicklung, Leistung und Sicherheitsrisiko bestimmen die Maßnahme.'], ['Kann man Hotspots mit einer Wärmebildkamera sicher erkennen?', 'Thermografie ist hilfreich, benötigt aber geeignete Einstrahlung, Perspektive und Interpretation. Reflexionen oder ungleiche Bedingungen können täuschen.']],
   },
+  // Zusammengelegt mit /strom-energiemanagement/cloud-ems-vs-lokales-ems-energiedaten (siehe _merges.mjs):
+  // upsertRatgeberArticle speichert diesen Artikel als Entwurf.
   {
     titel: 'Lokales HEMS oder Hersteller-Cloud: Was funktioniert noch, wenn Server oder Internet ausfallen?', slug: 'lokales-hems-hersteller-cloud-server-internet-ausfall', kategorie: 'strom-energiemanagement', lesezeit: 11,
     teaser: 'Lokale und cloudbasierte Energiemanagementsysteme unterscheiden sich vor allem bei Datenweg, Reaktionszeit, Ausfallverhalten und Herstellerbindung.',

@@ -1,3 +1,6 @@
+// Zusammengelegt: Dieser Artikel ist in /strom-energiemanagement/eigenverbrauch-optimieren-100-prozent-autarkie aufgegangen (siehe _merges.mjs)
+// und bleibt Entwurf. Die alte URL leitet per 301 auf das Ziel weiter.
+
 import { upsertRatgeberArticle } from './_articleFactory.mjs'
 import { createArticleBase } from './_templates.mjs'
 import { createFaqOnlyPreset } from './_topicPresets.mjs'
@@ -77,6 +80,7 @@ const preset = createFaqOnlyPreset({
 const article = createArticleBase({
   titel: 'Wie viel Autarkie ist realistisch?',
   slug: 'wie-viel-autarkie-ist-realistisch',
+  status: 'entwurf',
   kategorie: 'solaranlage',
   teaser:
     'Wie unabhängig kann man mit einer Solaranlage wirklich werden? Hier findest du eine ehrliche Einordnung zu Autarkie, Speicher, Wintergrenzen und typischen Denkfehlern.',
