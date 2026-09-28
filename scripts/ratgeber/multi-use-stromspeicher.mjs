@@ -231,7 +231,7 @@ const article = {
         t('Diese Daten werden idealerweise '),
         bold('lokal verarbeitet'),
         t(' – externe Signale kommen ins Haus, die Entscheidungen bleiben dort. Mehr zum Daten- und Steuerungsaspekt: '),
-        link('Cloud-EMS vs. lokales EMS', '/stromspeicher/cloud-ems-vs-lokales-ems-energiedaten'),
+        link('Cloud-EMS vs. lokales EMS', '/strom-energiemanagement/cloud-ems-vs-lokales-ems-energiedaten'),
         t('.'),
       ),
     ),
@@ -332,7 +332,7 @@ const article = {
       ),
       p(
         t('Dazu kommt der Daten-Aspekt: Wer die Steuerung kontrolliert, kennt das Verbrauchsverhalten des Kunden im Detail. Das ist – wie wir im '),
-        link('Cloud-EMS-Artikel', '/stromspeicher/cloud-ems-vs-lokales-ems-energiedaten'),
+        link('Cloud-EMS-Artikel', '/strom-energiemanagement/cloud-ems-vs-lokales-ems-energiedaten'),
         t(' beschrieben haben – aussagekräftiger, als viele Kunden denken.'),
       ),
       p(

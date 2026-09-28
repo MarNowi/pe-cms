@@ -177,7 +177,7 @@ const article = {
       ),
       p(
         t('Was ein intelligentes Messsystem technisch ist, welche Pflichteinbaufälle gelten und was der Messstellenbetrieb kostet, erklären wir ausführlich in '),
-        link('Smart Meter 2026: Pflicht, Kosten und Nutzen bei PV', '/solaranlage/smart-meter-2026-pv-kosten-pflicht-vorteile'),
+        link('Smart Meter 2026: Pflicht, Kosten und Nutzen bei PV', '/strom-energiemanagement/smart-meter-2026-pv-kosten-pflicht-vorteile'),
         t('.'),
       ),
     ),

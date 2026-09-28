@@ -17,7 +17,8 @@ import {
 
 const article = {
   titel: 'Komponenten-Tausch: Wenn nicht die ganze Anlage neu muss',
-  slug: 'komponenten-tausch',
+  // Alter Slug 'komponenten-tausch' war durch die statische Leistungsseite /repowering/komponenten-tausch verdeckt
+  slug: 'komponenten-tausch-pv-anlage',
   kategorie: 'repowering',
   status: 'veroeffentlicht',
   teaser:

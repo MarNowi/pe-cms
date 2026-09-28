@@ -17,7 +17,8 @@ import {
 
 const article = {
   titel: 'PV-Module entsorgen: Recycling, Pflichten und was Altmodule noch wert sind',
-  slug: 'entsorgung-recycling',
+  // Alter Slug 'entsorgung-recycling' war durch die statische Leistungsseite /repowering/entsorgung-recycling verdeckt
+  slug: 'pv-module-entsorgen-recycling',
   kategorie: 'repowering',
   status: 'veroeffentlicht',
   teaser:

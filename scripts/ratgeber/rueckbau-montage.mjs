@@ -17,7 +17,8 @@ import {
 
 const article = {
   titel: 'Rückbau und Montage: So läuft der Umbau einer PV-Anlage ab',
-  slug: 'rueckbau-montage',
+  // Alter Slug 'rueckbau-montage' war durch die statische Leistungsseite /repowering/rueckbau-montage verdeckt
+  slug: 'pv-anlage-rueckbau-montage',
   kategorie: 'repowering',
   status: 'veroeffentlicht',
   teaser:

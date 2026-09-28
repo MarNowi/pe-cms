@@ -71,7 +71,7 @@ const article = {
       ),
       p(
         t("Unser grundsätzlicher Einstieg zur Planung ist "),
-        link("Solaranlage richtig planen", "/solaranlage/solaranlage-planen"),
+        link("Solaranlage richtig planen", "/solaranlage/pv-anlage-planen"),
         t(". Hier gehen wir tiefer in die elektrische Seite der Verschattung."),
       ),
     ),

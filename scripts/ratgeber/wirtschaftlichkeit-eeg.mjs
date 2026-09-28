@@ -19,7 +19,8 @@ const article = {
   titel: 'Wirtschaftlichkeit nach dem EEG-Ende: Weiterbetrieb, Umrüstung oder Repowering?',
   slug: 'wirtschaftlichkeit-eeg',
   kategorie: 'repowering',
-  status: 'veroeffentlicht',
+  // Entwurf: URL gehört der statischen Leistungsseite /repowering/wirtschaftlichkeit-eeg, Thema ist als sichtbarer Artikel abgedeckt
+  status: 'entwurf',
   teaser:
     'Nach 20 Jahren endet die EEG-Vergütung – und aus der Renditeanlage wird ein Rechenexempel. Drei Wege stehen offen: weiterlaufen lassen, auf Eigenverbrauch umrüsten oder neu bauen. Welche Option wann gewinnt und welche Zahlen wirklich in die Rechnung gehören.',
   lesezeit: 9,

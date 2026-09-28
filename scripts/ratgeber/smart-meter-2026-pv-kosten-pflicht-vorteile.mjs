@@ -292,7 +292,7 @@ const article = {
       ),
       p(
         t('Genau dafür gibt es HEMS- und EMS-Systeme. Wie sich eine Bestandsanlage mit Monitoring und Energiemanagement aufrüsten lässt, erklären wir in '),
-        link('HEMS und Monitoring nachrüsten', '/repowering/hems-monitoring'),
+        link('HEMS und Monitoring nachrüsten', '/repowering/hems-monitoring-nachruesten'),
         t('.'),
       ),
     ),
