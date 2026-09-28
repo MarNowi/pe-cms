@@ -157,4 +157,82 @@ export const MEDIA_ALT = {
   'Autarkie.webp': 'Screenshot eines PV-Monitorings mit Produktion, Verbrauch und Ladezustand über drei Tage',
   // was-bringt-eine-solaranlage-im-winter
   'Solaranlage-im-Winter.webp': 'Verschneites Dach mit teilweise schneebedeckter Solaranlage',
+
+  // ─── Alt-Text zu knapp, ungenau oder Themen- statt Bildbeschreibung (Schritt 4, Teil 3) ─
+  // lokales-hems-hersteller-cloud-server-internet-ausfall – vorher: „Lokales HEMS arbeitet unabhängig von der Hersteller-Cloud“
+  'lokales-hems-hersteller-cloud-server-internet-ausfall.webp': 'Haus mit Stromspeicher, Wärmepumpe und Wallbox, alle mit einer zentralen Steuerbox verbunden, die Cloud nur gestrichelt angebunden',
+  // pv-anlage-bei-stromausfall-solarstrom-reicht-nicht – vorher: „PV-Anlage mit Batterie und Ersatzstrom bei Netzausfall“
+  'pv-anlage-bei-stromausfall-solarstrom-reicht-nicht.webp': 'Einfamilienhaus mit Solaranlage und Stromspeicher bei Nacht, einzelne Räume beleuchtet',
+  // warmwasser-waermepumpe-temperatur-legionellenschutz-kosten – vorher: „Warmwassertemperatur an einer Wärmepumpe einstellen“
+  'warmwasser-waermepumpe-temperatur-legionellenschutz-kosten.webp': 'Techniker zeigt einer Kundin die Einstellung am Warmwasserspeicher der Wärmepumpe',
+  // batteriezellen-stromspeicher-zellspannung-temperatur-balancing – vorher: „Zellspannungen und Balancing in einem Batteriespeicher“
+  'batteriezellen-stromspeicher-zellspannung-temperatur-balancing.webp': 'Geöffneter Batteriespeicher mit einer Reihe von Zellen, farbig hervorgehoben',
+  // lastmanagement-wallbox-hausanschluss-ueberlastung – vorher: „Lastmanagement verteilt Leistung auf zwei Wallboxen“
+  'lastmanagement-wallbox-hausanschluss-ueberlastung.webp': 'Schnittbild eines Hauses mit zwei E-Autos an zwei Wallboxen, die Leistung wird im Zählerschrank verteilt',
+  // offene-schnittstellen-pv-speicher-hems-hersteller-app – vorher: „Offene Schnittstellen verbinden Geräte im Energiesystem“
+  'offene-schnittstellen-pv-speicher-hems-hersteller-app.webp': 'Stromspeicher, Wechselrichter, Wärmepumpe und Wallbox, über farbige Leitungen mit einer zentralen Steuerbox verbunden',
+  // pv-anlage-liefert-weniger-als-berechnet-abweichung-normal – vorher: „Ertrag einer Photovoltaikanlage mit Prognose vergleichen“
+  'pv-anlage-liefert-weniger-als-berechnet-abweichung-normal.webp': 'Mann vergleicht auf dem Tablet den Ertrag seiner PV-Anlage mit der Prognose',
+  // waermepumpe-taktet-staendig-starts-normal – vorher: „Verdichterstarts einer Wärmepumpe fachlich auswerten“
+  'waermepumpe-taktet-staendig-starts-normal.webp': 'Techniker zeigt einer Kundin am Außengerät der Wärmepumpe eine Auswertung auf dem Tablet',
+  // speicherwirkungsgrad-verluste-geladen-nutzbar – vorher: „Energiefluss und Umwandlungsverluste eines Stromspeichers“
+  'speicherwirkungsgrad-verluste-geladen-nutzbar.webp': 'Stromspeicher und Wechselrichter an der Hauswand, eingeblendet der Energiefluss vom Dach ins Haus',
+  // internetausfall-pv-speicher-wallbox-hems – vorher: „Lokales Energiesystem arbeitet bei Internetausfall weiter“
+  'internetausfall-pv-speicher-wallbox-hems.webp': 'Haus mit Solaranlage, Speicher, Wärmepumpe und Wallbox bei Nacht, die Cloud nur gestrichelt angebunden',
+  // alte-pv-module-messen-leerlaufspannung-kurzschlussstrom-kennlinie – vorher: „Fachgerechte Kennlinienmessung an älteren PV-Modulen“
+  'alte-pv-module-messen-leerlaufspannung-kurzschlussstrom-kennlinie.webp': 'Techniker misst mit einem Kennlinien-Messgerät an älteren PV-Modulen auf einem Flachdach',
+  // solarmodule-dach-voll-belegen-dachflaeche-freilassen – vorher: „Sinnvoll voll belegtes Solardach eines Einfamilienhauses“
+  'solarmodule-dach-voll-belegen-dachflaeche-freilassen.webp': 'Einfamilienhaus mit voll belegtem Solardach',
+  // heizstab-waermepumpe-sinnvoll-stromverbrauch – vorher: „Heizstab und Hydraulik einer Wärmepumpenanlage prüfen“
+  'heizstab-waermepumpe-sinnvoll-stromverbrauch.webp': 'Techniker erklärt einer Kundin die Wärmepumpenanlage im Technikraum',
+  // stromspeicher-im-winter-oft-leer – vorher: „Stromspeicher und Photovoltaikanlage an einem Wintertag“
+  'stromspeicher-im-winter-oft-leer.webp': 'Stromspeicher und Wechselrichter im Hauswirtschaftsraum, draußen verschneite Solardächer',
+  // pv-ueberschussladen-funktioniert-nicht-ursachen – vorher: „Fehlersuche beim PV-Überschussladen an der Wallbox“
+  'pv-ueberschussladen-funktioniert-nicht-ursachen.webp': 'Techniker und Kundin prüfen am Tablet die Wallbox, an der ein E-Auto lädt',
+  // alten-wechselrichter-tauschen-moderne-wechselrichter-alte-pv-module – vorher: „Alten PV-Wechselrichter durch modernes Gerät ersetzen“
+  'alten-wechselrichter-tauschen-moderne-wechselrichter-alte-pv-module.webp': 'Techniker montiert einen neuen Wechselrichter neben dem alten Gerät in der Garage',
+  // waermepumpe-foerderung-2026 – vorher: „Stiebel-Eltron Wärmepumpe“
+  'IMG_20260610_190646891.webp': 'Außengerät einer Stiebel-Eltron-Wärmepumpe im Garten hinter Sträuchern',
+  // solardachpflicht-nrw-2026 – vorher: „Ein Einfamilienhaus mit einer Solaranlage“
+  'Solardachpflicht.webp': 'Einfamilienhaus mit Solaranlage, davor ein Klemmbrett mit den Punkten Neubau, Sanierung und Ausnahmen',
+  // welche-waermepumpe-fuer-mein-haus – vorher: „Ein Bild von unterschiedlichen Wärmequellen“
+  'Waermepumpentyp.webp': 'Dreigeteiltes Bild der Wärmequellen: Luft-Wärmepumpe am Haus, Erdkollektor im Boden und Wärmepumpe am Wasser',
+  // stromspeicher-foerderung-nrw – vorher: „eine Fahne von NRW“
+  'nrw_speicherfoerderung.webp': 'Flagge von Nordrhein-Westfalen mit Landeswappen',
+  // stromspeicher-kosten – vorher: „Sungrow Hybrid-Wechselrichter mit SBR128“
+  'Sungrow Hybrid-Wechselrichter mit SBR128.webp': 'Sungrow-Hybrid-Wechselrichter und Batteriespeicher SBR128 neben dem Zählerschrank im Hausanschlussraum',
+  // hybrid-wechselrichter-oder-getrennte-geraete – vorher: „Hybridwechselrichter“
+  'SMA_Tripower.webp': 'Hybrid-Wechselrichter SMA Sunny Tripower Smart Energy vor orangem Hintergrund',
+  // repowering-solaranlage, alte-pv-anlage-nach-20-jahren, repowering-kosten – vorher: „Repowering von PV-Anlagen“
+  'repowering.webp': 'Leuchtende Steckverbinder von PV-Kabeln in Nahaufnahme',
+  // repowering-vs-neuanlage, typische-fehler-beim-repowering – vorher: „Alter Zähler auf einer Montageplatte“
+  'Screenshot 2026-04-22 105130.webp': 'Alter Stromzähler auf einer abgenutzten Holz-Montageplatte',
+  // waermepumpe-kosten-einfamilienhaus – vorher: „Pufferspeicher im Hauswirtschaftsraum“
+  'Pufferspeicher-im-HWR.webp': 'Hauswirtschaftsraum mit Pufferspeicher, Inneneinheit der Wärmepumpe und Waschmaschinen, draußen das Außengerät',
+  // waermepumpe-vorlauftemperatur – vorher: „eine Buderus Regelung zur Anpassung der Wohnraumtemperatur“
+  'Buderus-Regelung.webp': 'Bedienteil einer Buderus-Heizungsregelung mit Temperaturanzeige',
+  // waermepumpe-mit-heizkoerpern – vorher: „eine Frau sitzt vor einem Heizkörper“
+  'Frau-vor-Heizkoerper.webp': 'Frau sitzt mit Kopfhörern und Smartphone vor einem Heizkörper',
+  // wallbox-11-oder-22-kw, wallbox-zu-hause-laden – vorher: „SMA Wallbox“
+  'SMA-Wallbox.webp': 'Modernes Holzhaus mit offener Garage, in der ein E-Auto an einer SMA-Wallbox lädt',
+  // wallbox-kosten – vorher: „Wallbox an einer Garagenwand“
+  'Sungrow-Wallbox.webp': 'Sungrow-Wallbox an einer Betonwand',
+  // typische-fehler-bei-solaranlagen – vorher: „Montagefehler“
+  'Montagefehler.webp': 'Aluminium-Montageschiene mit Modulklemme auf einem Kiesdach',
+  // solaranlage-fuer-e-auto-auslegen – vorher: „E-Auto laden“
+  'wallox2.webp': 'Frau mit Smartphone lehnt an einem E-Auto, das gerade geladen wird',
+  // ost-west-oder-sueddach-solaranlage, kosten-solaranlage-einfamilienhaus – vorher: „ein Dach mit einer Solaranlage in Moers“
+  'Solaranlage in moers.webp': 'Walmdach in Moers mit schwarzen Solarmodulen auf mehreren Dachseiten, Luftaufnahme',
+  // wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein – vorher: „Solaranlage in Geldern“
+  'Solaranlage-in-Geldern.webp': 'Klinkerhaus in Geldern mit schwarzer Solaranlage auf dem Satteldach',
+  // braucht-man-einen-stromspeicher – vorher: „Solarmodul mit einem Stromspeicher“
+  'pv-speicher.webp': 'Schwarzes Solarmodul und weißer Heimspeicher vor orangem Hintergrund',
+  // kosten-15-kwp-solaranlage-mit-speicher – vorher: „ein Dach mit einer Solaranlage in Kleve“
+  'Solaranlage-in-Kleve.webp': 'Satteldach in Kleve mit Solarmodulen und Solarthermie-Kollektoren, Luftaufnahme',
+  // kosten-10-kwp-solaranlage-mit-speicher, pv-anlage-planen – vorher: „Planung einer Solaranlage“
+  'Solaranlage in voerde.webp': 'Flachdach eines Hauses in Voerde mit Solarmodulen, Luftaufnahme',
+  // ab-wieviel-qm-lohnt-sich-eine-solaranlage – vorher: „ein Dach mit einer Solaranlage in Goch“
+  'Solaranlage-in-Goch.webp': 'Walmdach in Goch mit schwarzen Solarmodulen, Luftaufnahme',
+  // kosten-solaranlage-mit-speicher-einfamilienhaus – vorher: „ein Dach mit einer Solaranlage in Xanten“
+  'Solaranlage_in_Xanten.webp': 'Satteldach in Xanten mit schwarzer Solaranlage im Gegenlicht',
 }

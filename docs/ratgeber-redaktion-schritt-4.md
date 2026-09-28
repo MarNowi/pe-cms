@@ -327,3 +327,58 @@ Zwei Bilder sind geteilt: `Smart Meter auslesen …` (2 Artikel) und `stromspeic
 | waermepumpe.webp | solaranlage-fuer-waermepumpe-auslegen | Wärmepumpe | Außengerät einer Luft-Wärmepumpe im Schnee vor einer Holzfassade |
 | Autarkie.webp | wie-viel-autarkie-ist-realistisch | Autarkie | Screenshot eines PV-Monitorings mit Produktion, Verbrauch und Ladezustand über drei Tage |
 | Solaranlage-im-Winter.webp | was-bringt-eine-solaranlage-im-winter | Solaranlage im Winter | Verschneites Dach mit teilweise schneebedeckter Solaranlage |
+
+## Teil 3: restliche Alt-Texte
+
+Die übrigen 41 Titelbilder habe ich ebenfalls angesehen. Drei Alt-Texte passen schon und bleiben:
+
+- `PV-Testsieger.webp`
+- `alte-pv-anlage-erweitern-neue-anlage-daneben.webp`
+- `pv-anlage-abregeln-strom-nutzen-hems-einspeisebegrenzung.webp`
+
+Die anderen 38 waren zu knapp („Montagefehler“, „E-Auto laden“) oder beschrieben das Thema statt das Bild („Ertrag … mit Prognose vergleichen“). Zwei waren falsch: „Planung einer Solaranlage“ zeigt ein Flachdach in Voerde, „Repowering von PV-Anlagen“ zeigt Steckverbinder in Nahaufnahme. Ortsangaben aus den bisherigen Alt-Texten und Dateinamen bleiben erhalten.
+
+Geschrieben werden sie wieder über `migrate-2026-09-30-redaktion.mjs`. Die Vorschau sollte 38 Alt-Texte zeigen.
+
+Damit haben alle Titelbilder im Ratgeber einen Alt-Text, der das Bild beschreibt.
+
+| Bild | Artikel | vorher | nachher |
+|---|---|---|---|
+| lokales-hems-hersteller-cloud-server-internet-ausfall.webp | lokales-hems-hersteller-cloud-server-internet-ausfall | Lokales HEMS arbeitet unabhängig von der Hersteller-Cloud | Haus mit Stromspeicher, Wärmepumpe und Wallbox, alle mit einer zentralen Steuerbox verbunden, die Cloud nur gestrichelt angebunden |
+| pv-anlage-bei-stromausfall-solarstrom-reicht-nicht.webp | pv-anlage-bei-stromausfall-solarstrom-reicht-nicht | PV-Anlage mit Batterie und Ersatzstrom bei Netzausfall | Einfamilienhaus mit Solaranlage und Stromspeicher bei Nacht, einzelne Räume beleuchtet |
+| warmwasser-waermepumpe-temperatur-legionellenschutz-kosten.webp | warmwasser-waermepumpe-temperatur-legionellenschutz-kosten | Warmwassertemperatur an einer Wärmepumpe einstellen | Techniker zeigt einer Kundin die Einstellung am Warmwasserspeicher der Wärmepumpe |
+| batteriezellen-stromspeicher-zellspannung-temperatur-balancing.webp | batteriezellen-stromspeicher-zellspannung-temperatur-balancing | Zellspannungen und Balancing in einem Batteriespeicher | Geöffneter Batteriespeicher mit einer Reihe von Zellen, farbig hervorgehoben |
+| lastmanagement-wallbox-hausanschluss-ueberlastung.webp | lastmanagement-wallbox-hausanschluss-ueberlastung | Lastmanagement verteilt Leistung auf zwei Wallboxen | Schnittbild eines Hauses mit zwei E-Autos an zwei Wallboxen, die Leistung wird im Zählerschrank verteilt |
+| offene-schnittstellen-pv-speicher-hems-hersteller-app.webp | offene-schnittstellen-pv-speicher-hems-hersteller-app | Offene Schnittstellen verbinden Geräte im Energiesystem | Stromspeicher, Wechselrichter, Wärmepumpe und Wallbox, über farbige Leitungen mit einer zentralen Steuerbox verbunden |
+| pv-anlage-liefert-weniger-als-berechnet-abweichung-normal.webp | pv-anlage-liefert-weniger-als-berechnet-abweichung-normal | Ertrag einer Photovoltaikanlage mit Prognose vergleichen | Mann vergleicht auf dem Tablet den Ertrag seiner PV-Anlage mit der Prognose |
+| waermepumpe-taktet-staendig-starts-normal.webp | waermepumpe-taktet-staendig-starts-normal | Verdichterstarts einer Wärmepumpe fachlich auswerten | Techniker zeigt einer Kundin am Außengerät der Wärmepumpe eine Auswertung auf dem Tablet |
+| speicherwirkungsgrad-verluste-geladen-nutzbar.webp | speicherwirkungsgrad-verluste-geladen-nutzbar | Energiefluss und Umwandlungsverluste eines Stromspeichers | Stromspeicher und Wechselrichter an der Hauswand, eingeblendet der Energiefluss vom Dach ins Haus |
+| internetausfall-pv-speicher-wallbox-hems.webp | internetausfall-pv-speicher-wallbox-hems | Lokales Energiesystem arbeitet bei Internetausfall weiter | Haus mit Solaranlage, Speicher, Wärmepumpe und Wallbox bei Nacht, die Cloud nur gestrichelt angebunden |
+| alte-pv-module-messen-leerlaufspannung-kurzschlussstrom-kennlinie.webp | alte-pv-module-messen-leerlaufspannung-kurzschlussstrom-kennlinie | Fachgerechte Kennlinienmessung an älteren PV-Modulen | Techniker misst mit einem Kennlinien-Messgerät an älteren PV-Modulen auf einem Flachdach |
+| solarmodule-dach-voll-belegen-dachflaeche-freilassen.webp | solarmodule-dach-voll-belegen-dachflaeche-freilassen | Sinnvoll voll belegtes Solardach eines Einfamilienhauses | Einfamilienhaus mit voll belegtem Solardach |
+| heizstab-waermepumpe-sinnvoll-stromverbrauch.webp | heizstab-waermepumpe-sinnvoll-stromverbrauch | Heizstab und Hydraulik einer Wärmepumpenanlage prüfen | Techniker erklärt einer Kundin die Wärmepumpenanlage im Technikraum |
+| stromspeicher-im-winter-oft-leer.webp | stromspeicher-im-winter-oft-leer | Stromspeicher und Photovoltaikanlage an einem Wintertag | Stromspeicher und Wechselrichter im Hauswirtschaftsraum, draußen verschneite Solardächer |
+| pv-ueberschussladen-funktioniert-nicht-ursachen.webp | pv-ueberschussladen-funktioniert-nicht-ursachen | Fehlersuche beim PV-Überschussladen an der Wallbox | Techniker und Kundin prüfen am Tablet die Wallbox, an der ein E-Auto lädt |
+| alten-wechselrichter-tauschen-moderne-wechselrichter-alte-pv-module.webp | alten-wechselrichter-tauschen-moderne-wechselrichter-alte-pv-module | Alten PV-Wechselrichter durch modernes Gerät ersetzen | Techniker montiert einen neuen Wechselrichter neben dem alten Gerät in der Garage |
+| IMG_20260610_190646891.webp | waermepumpe-foerderung-2026 | Stiebel-Eltron Wärmepumpe | Außengerät einer Stiebel-Eltron-Wärmepumpe im Garten hinter Sträuchern |
+| Solardachpflicht.webp | solardachpflicht-nrw-2026 | Ein Einfamilienhaus mit einer Solaranlage | Einfamilienhaus mit Solaranlage, davor ein Klemmbrett mit den Punkten Neubau, Sanierung und Ausnahmen |
+| Waermepumpentyp.webp | welche-waermepumpe-fuer-mein-haus | Ein Bild von unterschiedlichen Wärmequellen | Dreigeteiltes Bild der Wärmequellen: Luft-Wärmepumpe am Haus, Erdkollektor im Boden und Wärmepumpe am Wasser |
+| nrw_speicherfoerderung.webp | stromspeicher-foerderung-nrw | eine Fahne von NRW | Flagge von Nordrhein-Westfalen mit Landeswappen |
+| Sungrow Hybrid-Wechselrichter mit SBR128.webp | stromspeicher-kosten | Sungrow Hybrid-Wechselrichter mit SBR128 | Sungrow-Hybrid-Wechselrichter und Batteriespeicher SBR128 neben dem Zählerschrank im Hausanschlussraum |
+| SMA_Tripower.webp | hybrid-wechselrichter-oder-getrennte-geraete | Hybridwechselrichter | Hybrid-Wechselrichter SMA Sunny Tripower Smart Energy vor orangem Hintergrund |
+| repowering.webp | repowering-solaranlage, alte-pv-anlage-nach-20-jahren, repowering-kosten | Repowering von PV-Anlagen | Leuchtende Steckverbinder von PV-Kabeln in Nahaufnahme |
+| Screenshot 2026-04-22 105130.webp | repowering-vs-neuanlage, typische-fehler-beim-repowering | Alter Zähler auf einer Montageplatte | Alter Stromzähler auf einer abgenutzten Holz-Montageplatte |
+| Pufferspeicher-im-HWR.webp | waermepumpe-kosten-einfamilienhaus | Pufferspeicher im Hauswirtschaftsraum | Hauswirtschaftsraum mit Pufferspeicher, Inneneinheit der Wärmepumpe und Waschmaschinen, draußen das Außengerät |
+| Buderus-Regelung.webp | waermepumpe-vorlauftemperatur | eine Buderus Regelung zur Anpassung der Wohnraumtemperatur | Bedienteil einer Buderus-Heizungsregelung mit Temperaturanzeige |
+| Frau-vor-Heizkoerper.webp | waermepumpe-mit-heizkoerpern | eine Frau sitzt vor einem Heizkörper | Frau sitzt mit Kopfhörern und Smartphone vor einem Heizkörper |
+| SMA-Wallbox.webp | wallbox-11-oder-22-kw, wallbox-zu-hause-laden | SMA Wallbox | Modernes Holzhaus mit offener Garage, in der ein E-Auto an einer SMA-Wallbox lädt |
+| Sungrow-Wallbox.webp | wallbox-kosten | Wallbox an einer Garagenwand | Sungrow-Wallbox an einer Betonwand |
+| Montagefehler.webp | typische-fehler-bei-solaranlagen | Montagefehler | Aluminium-Montageschiene mit Modulklemme auf einem Kiesdach |
+| wallox2.webp | solaranlage-fuer-e-auto-auslegen | E-Auto laden | Frau mit Smartphone lehnt an einem E-Auto, das gerade geladen wird |
+| Solaranlage in moers.webp | ost-west-oder-sueddach-solaranlage, kosten-solaranlage-einfamilienhaus | ein Dach mit einer Solaranlage in Moers | Walmdach in Moers mit schwarzen Solarmodulen auf mehreren Dachseiten, Luftaufnahme |
+| Solaranlage-in-Geldern.webp | wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein | Solaranlage in Geldern | Klinkerhaus in Geldern mit schwarzer Solaranlage auf dem Satteldach |
+| pv-speicher.webp | braucht-man-einen-stromspeicher | Solarmodul mit einem Stromspeicher | Schwarzes Solarmodul und weißer Heimspeicher vor orangem Hintergrund |
+| Solaranlage-in-Kleve.webp | kosten-15-kwp-solaranlage-mit-speicher | ein Dach mit einer Solaranlage in Kleve | Satteldach in Kleve mit Solarmodulen und Solarthermie-Kollektoren, Luftaufnahme |
+| Solaranlage in voerde.webp | kosten-10-kwp-solaranlage-mit-speicher, pv-anlage-planen | Planung einer Solaranlage | Flachdach eines Hauses in Voerde mit Solarmodulen, Luftaufnahme |
+| Solaranlage-in-Goch.webp | ab-wieviel-qm-lohnt-sich-eine-solaranlage | ein Dach mit einer Solaranlage in Goch | Walmdach in Goch mit schwarzen Solarmodulen, Luftaufnahme |
+| Solaranlage_in_Xanten.webp | kosten-solaranlage-mit-speicher-einfamilienhaus | ein Dach mit einer Solaranlage in Xanten | Satteldach in Xanten mit schwarzer Solaranlage im Gegenlicht |
