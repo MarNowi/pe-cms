@@ -120,8 +120,8 @@ const article = {
         t("Auch PEAK.Energy wurde bereits für Auszeichnungen wie "),
         bold("„Deutschlands Top Innovator“"),
         t(" und "),
-        bold("„Deutschlands Bestes Unternehmen“"),
-        t(" angesprochen beziehungsweise ausgewählt. Die entsprechenden Siegel hätten wir anschließend lizenzieren und für unsere Außendarstellung nutzen können. Auch aktuell erhalten wir wieder solche Einladungen. Wir hätten unsere Webseite also durchaus mit weiteren Auszeichnungen schmücken können. Genau deshalb schreiben wir diesen Artikel: nicht, weil solche Auszeichnungen grundsätzlich wertlos wären, sondern weil wir aus eigener Erfahrung wissen, wie schnell aus einem hübschen Siegel beim Betrachter eine viel größere Aussage entsteht, als tatsächlich geprüft wurde."),
+        bold("„Deutschlands Beste“"),
+        t(" nominiert beziehungsweise zu einem Prüfverfahren eingeladen. Die entsprechenden Siegel hätten wir anschließend lizenzieren und für unsere Außendarstellung nutzen können. Auch aktuell erhalten wir wieder solche Einladungen. Wir hätten unsere Webseite also durchaus mit weiteren Auszeichnungen schmücken können. Genau deshalb schreiben wir diesen Artikel: nicht, weil solche Auszeichnungen grundsätzlich wertlos wären, sondern weil wir aus eigener Erfahrung wissen, wie schnell aus einem hübschen Siegel beim Betrachter eine viel größere Aussage entsteht, als tatsächlich geprüft wurde."),
       ),
     ),
     textBlock(
