@@ -483,7 +483,7 @@ const article = {
       ),
       p(
         t('Genau diese Perspektive behandeln wir zusätzlich im Repowering-Beitrag '),
-        link('HEMS und Monitoring nachrüsten: Die Altanlage endlich sichtbar machen', '/repowering/hems-monitoring'),
+        link('HEMS und Monitoring nachrüsten: Die Altanlage endlich sichtbar machen', '/repowering/hems-monitoring-nachruesten'),
         t('.'),
       ),
     ),

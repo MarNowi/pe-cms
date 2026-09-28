@@ -146,7 +146,7 @@ const article = {
       ),
       p(
         t('Zusätzlich muss geprüft werden, ob das System ein- oder dreiphasig arbeitet, wie viel Leistung je Phase bereitsteht und ob hohe Anlaufströme zulässig sind. Mehr zu den grundsätzlichen Konzepten findest du unter '),
-        link('Notstrom und Backup bei PV-Anlagen', '/stromspeicher/notstrom-backup'),
+        link('Notstrom und Backup bei PV-Anlagen', '/repowering/notstrom-backup'),
         t('.'),
       ),
     ),

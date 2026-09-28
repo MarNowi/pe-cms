@@ -17,7 +17,8 @@ import {
 
 const article = {
   titel: 'HEMS und Monitoring nachrüsten: Die Altanlage endlich sichtbar machen',
-  slug: 'hems-monitoring',
+  // Alter Slug 'hems-monitoring' war durch die statische Leistungsseite /repowering/hems-monitoring verdeckt
+  slug: 'hems-monitoring-nachruesten',
   kategorie: 'repowering',
   status: 'veroeffentlicht',
   teaser:

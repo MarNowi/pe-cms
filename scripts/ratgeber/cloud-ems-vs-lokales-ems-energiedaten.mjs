@@ -21,7 +21,7 @@ import {
 const article = {
   titel: 'Cloud-EMS vs. lokales EMS: Wem gehören deine Energiedaten?',
   slug: 'cloud-ems-vs-lokales-ems-energiedaten',
-  kategorie: 'stromspeicher',
+  kategorie: 'strom-energiemanagement',
   status: 'veroeffentlicht',
   teaser:
     'Moderne PV-Anlagen erzeugen nicht nur Strom – sie erzeugen Daten. Wer wann Strom verbraucht, wann das Auto lädt, wann die Wärmepumpe läuft und wann jemand zu Hause ist, kann aus Energiedaten erstaunlich gut abgeleitet werden. Deshalb ist die Frage wichtig: Arbeitet dein Energiemanagement in einer Cloud – oder lokal bei dir zu Hause?',

@@ -19,7 +19,8 @@ const article = {
   titel: 'Notstrom und Backup nachrüsten: Was beim Repowering möglich wird',
   slug: 'notstrom-backup',
   kategorie: 'repowering',
-  status: 'veroeffentlicht',
+  // Entwurf: URL gehört der statischen Leistungsseite /repowering/notstrom-backup, Thema ist als sichtbarer Artikel abgedeckt
+  status: 'entwurf',
   teaser:
     'Eine klassische PV-Anlage schaltet bei Stromausfall ab – ausgerechnet dann, wenn man sie am dringendsten bräuchte. Beim Repowering lässt sich das ändern: vom Notstrom an der Steckdose bis zur automatischen Ersatzstromversorgung fürs ganze Haus. Was geht, was es braucht und was realistisch ist.',
   lesezeit: 7,

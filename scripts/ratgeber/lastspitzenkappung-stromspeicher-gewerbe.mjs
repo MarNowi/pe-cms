@@ -304,7 +304,7 @@ const article = {
         t('Der Unterschied zu klassischen Plattformmodellen: Die Steuerung läuft lokal, die Daten bleiben im Haus, die Use-Case-Priorisierung ist prognosebasiert, und Peak Shaving hat immer Vorrang vor Pool-Aufgaben. Mehr dazu: '),
         link('PEAK.Flex Pilotprogramm', '/peak-flex'),
         t(' und '),
-        link('Cloud-EMS vs. lokales EMS', '/stromspeicher/cloud-ems-vs-lokales-ems-energiedaten'),
+        link('Cloud-EMS vs. lokales EMS', '/strom-energiemanagement/cloud-ems-vs-lokales-ems-energiedaten'),
         t('.'),
       ),
     ),

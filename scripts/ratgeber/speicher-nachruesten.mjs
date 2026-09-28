@@ -19,7 +19,8 @@ const article = {
   titel: 'Speicher nachrüsten beim Repowering: AC, DC – und wann sich was rechnet',
   slug: 'speicher-nachruesten',
   kategorie: 'repowering',
-  status: 'veroeffentlicht',
+  // Entwurf: URL gehört der statischen Leistungsseite /repowering/speicher-nachruesten, Thema ist als sichtbarer Artikel abgedeckt
+  status: 'entwurf',
   teaser:
     'Für Altanlagen ist der Speicher oft der wertvollste Repowering-Baustein – besonders wenn die EEG-Vergütung ausläuft und Eigenverbrauch plötzlich mehr wert ist als Einspeisung. Welche Nachrüst-Architektur zu welcher Anlage passt, was Messkonzept und §14a bedeuten und wie groß der Speicher sein sollte.',
   lesezeit: 8,

@@ -737,14 +737,65 @@ Unter 500 Wörtern, Gerüst „1. [Frage] / 2. Fazit“: `braucht-man-einen-stro
    - [ ] `lokales-hems-hersteller-cloud-server-internet-ausfall` → `cloud-ems-vs-lokales-ems-energiedaten`
 2. **Kategorie verschieben (Phase 2, jeweils mit 301):** `cloud-ems-vs-lokales-ems-energiedaten` → Strom & EM, `paragraf-14a-enwg-steuerbare-verbrauchseinrichtungen` → Strom & EM, `pv-anlage-bei-stromausfall-solarstrom-reicht-nicht` → Stromspeicher. Einverstanden?
 3. **Verdeckte Repowering-Artikel (3):** `entsorgung-recycling` neuer Slug; `speicher-nachruesten`, `wirtschaftlichkeit-eeg`, `notstrom-backup` auf Entwurf; `hems-monitoring`, `komponenten-tausch`, `rueckbau-montage` neuer Slug oder Entwurf?
-4. **Kategorieseiten (Phase 2):** Wo soll die gruppierte Ansicht leben? Heute ist `/ratgeber?kategorie=…` die Liste, `/solaranlage` usw. sind Produktseiten. Optionen:
-   a) Gruppen auf `/ratgeber?kategorie=…` (kleinster Eingriff, aber URL mit Query-Parameter),
-   b) eigene Hub-Seiten wie `/ratgeber/solaranlage` nach dem Muster von `/strom-energiemanagement` (beste Struktur für Google, neue URLs),
-   c) Gruppen unter den Produktseiten `/solaranlage` usw. (vermischt Verkauf und Ratgeber).
-   Meine Empfehlung: b), und `/ratgeber?kategorie=…` per 301 dorthin.
+4. **Kategorieseiten (Phase 2):** ~~eigene Hubs unter `/ratgeber/<kategorie>`~~ – verworfen nach Rückmeldung vom 28.09. Neuer Vorschlag nach dem Muster von 1KOMMA5° (`/de/solaranlage/` ist Produktseite und Hub zugleich, Artikel liegen direkt darunter, z. B. `/de/solaranlage/kfw-foerderung-photovoltaik/`):
+   - Die Produktseiten `/solaranlage`, `/stromspeicher`, `/wallbox`, `/waermepumpe`, `/repowering` werden zum Hub ihrer Kategorie: unter dem Verkaufsteil folgt ein Ratgeber-Bereich, gruppiert nach Cluster, mit **allen** Artikeln der Kategorie statt heute 6 bzw. gar keinen. Die Artikel-URLs `/{kategorie}/{slug}` bleiben unverändert – sie passen bereits zu diesem Muster.
+   - `/strom-energiemanagement` bleibt wie bisher eine reine Hub-Seite; die fest verdrahteten Slug-Listen werden durch das Cluster-Feld ersetzt, „Weitere Themen“ entfällt.
+   - Die Breadcrumb im Artikel zeigt schon heute auf `/{kategorie}` – Hub und Breadcrumb passen damit zusammen.
+   - `/ratgeber` bleibt als Gesamtübersicht. `/ratgeber?kategorie=…` wird per 301 auf den Ratgeber-Bereich der Produktseite weitergeleitet (z. B. `/solaranlage#ratgeber`), damit es keine zweite Kategorieseite mit eigenem Canonical gibt.
 5. **„WE ♥️ ENERGY“:** nur für Ratgeber-Artikel entfernen, für alle Ratgeber-Seiten (inkl. Übersicht/Hubs) oder website-weit?
 6. **„ehrlich“:** nur die feste Floskel „ehrliche Einordnung / ehrlich eingeordnet / ehrlich erklärt“ ersetzen (Titel, metaTitle, Teaser, metaDescription, Kategorie-Intros), oder zusätzlich die Häufung im Fließtext reduzieren?
 7. **Link-Listen am Ende** der 20 September-Artikel: in den Fließtext überführen und die Liste entfernen?
 8. **Doppelte FAQ-Fragen und doppelte Abschnitte (9.8):** in diesem Projekt bereinigen oder separat?
 9. **Vier nicht veröffentlichte Scripts (1.1):** Status klären – dafür bitte einmal `export-ratgeber.mjs` ausführen.
 10. **Umsetzungsweg:** Migrations-Scripts ändern die DB direkt. Wird danach ein ursprüngliches Artikel-Script erneut ausgeführt, überschreibt es die Änderungen. Soll ich in Phase 3 zusätzlich die Ursprungs-Scripts in `scripts/ratgeber/` anpassen, damit sie den neuen Stand enthalten? (Empfehlung: ja, bei Artikeln mit eigenem Script; bei den Sammel-Scripts `ratgeber-mix-…` schwieriger – dann Hinweis im README, sie nicht erneut auszuführen.)
+
+---
+
+## 11. Entscheidungen (Stand 28.09.2026)
+
+**Reihenfolge**
+
+1. Technische Fehler: 404-Links, verdeckte Repowering-Artikel, Routing
+2. Cluster-Feld im CMS und Wissensbereiche auf den Themenseiten
+3. Interne Verlinkung
+4. Zusammenlegungen und redaktionelles Aufräumen
+
+Vor jeder 301 einer heute sichtbaren Seite werden die Search-Console-Daten geprüft.
+
+**URL-Struktur**
+
+- `/{kategorie}/{slug}` bleibt. Es gibt keine neue Ebene `/ratgeber/<kategorie>`.
+- Kategorien werden nur geändert, wenn es wirklich nötig ist, denn die Kategorie ist Teil der URL.
+- Die Themenseiten `/solaranlage`, `/stromspeicher`, `/wallbox`, `/waermepumpe` und `/repowering` bekommen unterhalb des Leistungsteils einen Wissensbereich, gruppiert nach Cluster. `/strom-energiemanagement` bleibt reine Hub-Seite.
+- `/ratgeber` wird das Wissensportal mit den sechs Themenwelten und verweist auf die Themenseiten.
+
+**Cluster**
+
+Freigegeben wie in Abschnitt 5.
+
+**Zusammenlegungen**
+
+| Gruppe | Entscheidung |
+|---|---|
+| `braucht-man-einen-stromspeicher` → `lohnt-sich-ein-stromspeicher` | ja |
+| `lokales-hems-hersteller-cloud-server-internet-ausfall` → `cloud-ems-vs-lokales-ems-energiedaten` | ja |
+| `wie-viel-autarkie-ist-realistisch` → `eigenverbrauch-optimieren-100-prozent-autarkie` | erst nach Prüfung der Search-Console-Daten |
+| `kosten-solaranlage-einfamilienhaus` → `kosten-solaranlage-mit-speicher-einfamilienhaus` | **nein**. Der generische Artikel wird der übergeordnete Kostenartikel und verlinkt auf 10 kWp, 15 kWp und „mit Speicher“. |
+
+**Title**
+
+„WE ♥️ ENERGY“ kommt aus den SEO-Titeln heraus, „| PEAK.Energy“ bleibt. Beispiel: `Was kostet eine 10 kWp Solaranlage mit Speicher? | PEAK.Energy`
+
+**„ehrlich“**
+
+- Nur die Serienformulierungen („ehrlich eingeordnet“, „ehrlich erklärt“, „ehrliche Einordnung“) fallen weg, und zwar in Teasern, Metas und Standardsätzen.
+- Im Fließtext darf „ehrlich“ bleiben.
+
+**Interne Verlinkung**
+
+- Links stehen im Fließtext mit aussagekräftigem Ankertext.
+- Die Listen „Passende Ratgeber zum Weiterlesen“ werden in den Fließtext überführt.
+
+**Ursprungs-Scripts**
+
+Jede Migration zieht die Ursprungs-Scripts in `scripts/ratgeber/` mit. Es darf kein Script liegen bleiben, das den alten Stand wiederherstellt.
