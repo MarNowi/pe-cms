@@ -219,7 +219,7 @@ export const INTERNAL_LINKS = {
     { url: "/strom-energiemanagement/zeitvariable-netzentgelte-paragraph-14a-modul-3", anchor: "Netzentgelt", context: "t der Betreiber eine Vergünstigung beim Netzentgelt. Hier gibt es zwei " },
     { url: "/strom-energiemanagement/steuerbox-paragraf-14a-smart-meter-hems", anchor: "Steuerbox", context: "2 kW Anschlussleistung müssen über eine Steuerbox kommunikationsfähig" },
     { url: "/waermepumpe/14a-enwg-waermepumpe-messkonzept-8", anchor: "Wärmepumpen", context: "ig drei Wallboxen mit 11 kW laden, zwei Wärmepumpen heizen und mehrere " },
-    { url: "/stromspeicher/paragraf-14a-enwg-stromspeicher", anchor: "Speicher", context: "ine neue Wallbox, Wärmepumpe oder einen Speicher mit über 4,2 kW Lei" },
+    { url: "/stromspeicher/paragraf-14a-enwg-stromspeicher", anchor: "Speicher mit über 4,2 kW Leistung", context: "eine neue Wallbox, Wärmepumpe oder einen Speicher mit über 4,2 kW Leistung in Betrieb" },
   ],
   'paragraf-14a-enwg-stromspeicher': [
     { url: "/wallbox/paragraf-14a-enwg-steuerbare-verbrauchseinrichtungen", anchor: "§14a", context: "mischen Tarifen. Damit fallen sie unter §14a, sobald die Ladelei" },
@@ -526,7 +526,7 @@ export const INTERNAL_LINKS = {
   ],
   'wallbox-zu-hause-laden': [
     { url: "/wallbox/wallbox-11-oder-22-kw", anchor: "Ladegeschwindigkeit", context: "n. Entscheidend ist dabei nicht nur die Ladegeschwindigkeit, sondern vor allem " },
-    { url: "/wallbox/wallbox-mit-pv-laden", anchor: "Solaranlage", context: "Gerade wenn zusätzlich eine Solaranlage vorhanden ist oder " },
+    { url: "/wallbox/wallbox-mit-pv-laden", anchor: "Solaranlage vorhanden ist oder später geplant wird", context: "Gerade wenn zusätzlich eine Solaranlage vorhanden ist oder später geplant wird, lohnt es sich" },
     { url: "/wallbox/lastmanagement-wallbox-hausanschluss-ueberlastung", anchor: "Hausanschluss", context: "allbox passt automatisch zu jedem Haus. Hausanschluss, Leitungsweg, Absic" },
   ],
   'warmwasser-waermepumpe-temperatur-legionellenschutz-kosten': [
@@ -535,7 +535,7 @@ export const INTERNAL_LINKS = {
     { url: "/waermepumpe/waermepumpe-vorlauftemperatur", anchor: "Vorlauftemperaturen", context: "ung arbeitet idealerweise mit niedrigen Vorlauftemperaturen. Warmwasser verlang" },
   ],
   'was-bringt-eine-solaranlage-im-winter': [
-    { url: "/solaranlage/solaranlage-fuer-waermepumpe-auslegen", anchor: "Wärmepumpe", context: "Gerade bei Wärmepumpe oder hohem Strombed" },
+    { url: "/solaranlage/solaranlage-fuer-waermepumpe-auslegen", anchor: "Wärmepumpe oder hohem Strombedarf", context: "Gerade bei Wärmepumpe oder hohem Strombedarf ist der Winter trotzdem ein wichtiger" },
     { url: "/solaranlage/wie-viel-strom-erzeugt-eine-10-kwp-solaranlage", anchor: "Ertrag", context: "h im Winter Strom. Allerdings liegt der Ertrag in den dunkleren Mo" },
   ],
   'welche-waermepumpe-fuer-mein-haus': [
@@ -557,7 +557,6 @@ export const INTERNAL_LINKS = {
   ],
   'wie-gross-sollte-ein-stromspeicher-sein': [
     { url: "/stromspeicher/stromspeicher-kapazitaet-leistung-kw-kwh", anchor: "Kapazität in kWh", context: "algröße. Entscheidend ist nicht nur die Kapazität in kWh, sondern wie gut de" },
-    { url: "/stromspeicher/stromspeicher-waermepumpe-nachts-versorgen", anchor: "Wärmepumpe", context: "annst und wie gut PV-Anlage, Verbrauch, Wärmepumpe, E-Auto und Alltag " },
     { url: "/strom-energiemanagement/eigenverbrauch-optimieren-100-prozent-autarkie", anchor: "überdimensionierte Variante", context: " System wirtschaftlich stärker als eine überdimensionierte Variante." },
   ],
   'wie-gross-sollte-eine-solaranlage-fuer-einfamilienhaus-sein': [
