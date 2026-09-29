@@ -19,17 +19,17 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: 'Garantie vs. Gewährleistung bei der Solaranlage: Wer haftet wofür – und was im Ernstfall wirklich greift',
+  titel: 'PV-Anlage: Garantie und Gewährleistung – Fristen, Haftung und Kosten',
   slug: 'garantie-vs-gewaehrleistung-pv-anlage',
   kategorie: 'solaranlage',
   status: 'veroeffentlicht',
   teaser:
-    'Garantie und Gewährleistung werden oft synonym verwendet – juristisch sind es zwei völlig verschiedene Dinge. Wer den Unterschied nicht kennt, glaubt sich abgesichert, wo er es nicht ist, und übersieht echte Ansprüche, die ihm zustehen. Eine ehrliche Einordnung mit konkreten Schadensfällen, Stolperfallen in den Garantiebedingungen und einer klaren Antwort, was im Insolvenzfall wirklich bleibt.',
+    'Wie lange gilt Gewährleistung auf eine PV-Anlage – 2 oder 5 Jahre? Und was deckt die Herstellergarantie wirklich ab? Wir erklären Vertragstyp, Fristen, Haftung, Servicekosten und was bei Insolvenz von Installateur oder Hersteller passiert.',
   lesezeit: 14,
 
   seo: seo(
-    'Garantie vs. Gewährleistung bei der Solaranlage: Wer haftet wofür | PEAK.Energy',
-    'Was Garantie und Gewährleistung bei PV-Anlagen unterscheidet, wer wofür haftet, wie lange Ansprüche laufen, was bei Insolvenz von Solarteur oder Hersteller passiert – und welche Klauseln in Verträgen am häufigsten übersehen werden.',
+    'PV-Anlage: Garantie & Gewährleistung – 2 oder 5 Jahre? | PEAK.Energy',
+    'Garantie und Gewährleistung bei PV-Anlagen: 2 oder 5 Jahre, Werk- oder Kaufvertrag, Haftung, Servicekosten und Ansprüche bei Insolvenz erklärt.',
   ),
 
   zusammenfassung: [
@@ -64,7 +64,12 @@ const article = {
 
   inhalt: [
     textBlock(
-      h('h2', t('Worum geht es eigentlich?')),
+      h('h2', t('Garantie oder Gewährleistung bei der PV-Anlage – was ist der Unterschied?')),
+      p(
+        t('Die Kurzantwort: '),
+        bold('Gewährleistung ist der gesetzliche Mängelanspruch gegen deinen Vertragspartner'),
+        t(', während eine Garantie eine zusätzliche freiwillige Zusage des jeweiligen Garantiegebers ist. Bei der Gewährleistungsfrist kommt es darauf an, ob rechtlich Kauf- oder Werkvertragsrecht greift.'),
+      ),
       p(
         t('„Auf Ihre Anlage haben Sie 25 Jahre Garantie." Solche Sätze sind in Verkaufsgesprächen Standard – und sie sind in den allermeisten Fällen entweder unpräzise oder schlicht falsch. Denn was im Alltag „Garantie" heißt, ist juristisch zwei sehr verschiedene Dinge: '),
         bold('Garantie'),
@@ -373,10 +378,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Vertrag oder Bestandsanlage prüfen lassen',
+      titel: 'PV-Vertrag oder bestehende Anlage prüfen lassen',
       text:
-        'Du planst eine PV-Anlage und willst den Vertragsentwurf vorab prüfen lassen – auf Vertragstyp, Garantieumfang, Service-Kostenregelung und Anzahlungsabsicherung? Oder du hast eine bestehende Anlage und möchtest wissen, welche Garantien aktiv sind und welche Registrierungen noch fehlen? Wir prüfen am Niederrhein und im Ruhrgebiet beides – ehrlich und ohne Verkaufsdruck.',
-      buttonText: 'Termin anfragen',
+        'Wir schauen auf Vertragstyp, Gewährleistungsfrist, Garantiebedingungen, Registrierungspflichten und mögliche Servicekosten. Bei Bestandsanlagen prüfen wir außerdem, welche Nachweise und Garantien tatsächlich vorhanden sind.',
+      buttonText: 'PV-Vertrag prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
@@ -387,7 +392,7 @@ const article = {
       'Gewährleistung ist ein gesetzlicher Anspruch nach BGB gegen den Vertragspartner (in der Regel den Installateur). Sie greift automatisch, kann nicht ausgeschlossen werden und dauert 2 Jahre (Kauf) oder 5 Jahre (Werkvertrag/Bauwerk). Garantie ist eine freiwillige zusätzliche Zusage – meist vom Hersteller, mit eigenen Bedingungen, Dauer und Umfang. Beide existieren parallel und decken unterschiedliche Dinge ab.',
     ),
     faqItem(
-      'Wie lange habe ich Gewährleistung auf meine PV-Anlage?',
+      'Wie lange gilt Gewährleistung auf eine PV-Anlage – 2 oder 5 Jahre?',
       'Bei einem Werkvertrag, der überwiegend angenommen wird, 5 Jahre nach Abnahme (PV gilt als Bauwerk). Bei einem getrennten Kaufvertrag über die Komponenten plus separatem Montagevertrag sind es 2 Jahre auf die Komponenten und 5 Jahre auf die Montageleistung. Vor Vertragsabschluss klärt sich das durch die Vertragsformulierung – idealerweise ein einheitlicher Werkvertrag.',
     ),
     faqItem(
