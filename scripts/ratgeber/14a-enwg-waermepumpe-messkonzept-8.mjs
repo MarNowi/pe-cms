@@ -16,17 +16,17 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: '§ 14a EnWG bei Wärmepumpen: Drosselung, Wärmepumpentarif und Messkonzept 8',
+  titel: 'Messkonzept 8 (Westnetz): Wärmepumpe, PV & § 14a EnWG richtig kombinieren',
   slug: '14a-enwg-waermepumpe-messkonzept-8',
   kategorie: 'waermepumpe',
   status: 'veroeffentlicht',
   teaser:
-    'Darf der Netzbetreiber eine Wärmepumpe abschalten? Nein. Wir erklären § 14a EnWG, die 4,2-kW-Regel, Modul 1 bis 3 und warum sich ein separater Wärmepumpenzähler trotz Photovoltaik lohnen kann. Besonders interessant: Mit einer Kaskadenmessung wie Westnetz Messkonzept 8 lassen sich günstiger Wärmepumpentarif und PV-Eigenverbrauch kombinieren.',
+    'Was ist Messkonzept 8 bei Westnetz und wann lohnt es sich? Wir erklären die Kaskadenmessung mit Wärmepumpe, Photovoltaik und separatem Wärmepumpentarif – inklusive § 14a EnWG, Zähleraufbau und Beispielrechnung.',
   lesezeit: 14,
 
   seo: seo(
-    '§14a Wärmepumpe: Messkonzept 8 & Tarif | PEAK.Energy – WE ♥️ ENERGY',
-    '§14a EnWG bei Wärmepumpen erklärt: 4,2-kW-Drosselung, Modul 1–3, separater Wärmepumpenzähler und Westnetz Messkonzept 8 mit PV.',
+    'Messkonzept 8 (Westnetz): PV, Wärmepumpe & §14a | PEAK.Energy',
+    'Messkonzept 8 bei Westnetz erklärt: Kaskadenmessung mit PV und Wärmepumpe, Zähler Z1/Z2, §14a, Wärmepumpentarif und Beispielrechnung.',
   ),
 
   zusammenfassung: [
@@ -53,6 +53,25 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Was ist Messkonzept 8 bei Westnetz?')),
+      p(
+        t('Das '),
+        bold('Westnetz Messkonzept 8 (MK8)'),
+        t(' ist eine Kaskadenmessung für Gebäude mit Erzeugungsanlage, Haushalt und einer separat gemessenen steuerbaren Verbrauchseinrichtung wie einer Wärmepumpe. Es ermöglicht, einen eigenen Wärmepumpentarif zu nutzen und gleichzeitig Solarstrom aus der eigenen PV-Anlage für die Wärmepumpe einzusetzen.'),
+      ),
+      p(
+        t('Vereinfacht sitzen zwei Zähler hintereinander: Der überlagerte Zähler Z1 erfasst den gesamten Netzbezug und die Einspeisung, der nachgelagerte Zähler Z2 den Haushaltsbereich. Der Netzbezug der Wärmepumpe ergibt sich rechnerisch aus '),
+        bold('Bezug Z1 minus Bezug Z2'),
+        t('.'),
+      ),
+      p(
+        t('Damit verbindet MK8 zwei Dinge, die häufig fälschlicherweise als Gegensatz betrachtet werden: '),
+        bold('PV-Eigenverbrauch und einen separaten Wärmepumpentarif'),
+        t('.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('Darf der Netzbetreiber meine Wärmepumpe abschalten?')),
       p(
@@ -152,7 +171,7 @@ const article = {
     ),
 
     textBlock(
-      h('h2', t('Westnetz Messkonzept 8: Wärmepumpentarif und PV in einer Kaskade')),
+      h('h2', t('Wie ist Messkonzept 8 aufgebaut? Z1, Z2 und die Kaskade')),
       p(
         t('Westnetz beschreibt Messkonzept 8 als „Erzeugungsanlage mit Haushalt und unterbrechbarer Verbrauchseinrichtung", zum Beispiel einer Wärmepumpe. Dabei sitzen die Zähler hintereinander in einer Kaskade. Für den Wärmepumpenbezug und den Haushaltsbezug werden zwei separate Stromlieferverträge geführt.'),
       ),
@@ -302,15 +321,23 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Wärmepumpe, PV und Messkonzept gemeinsam planen',
+      titel: 'Passt Messkonzept 8 zu deiner Anlage?',
       text:
-        'Wir prüfen nicht nur die Wärmepumpe, sondern auch §14a, Zählerschrank, verfügbaren Wärmepumpentarif und die sinnvolle Einbindung deiner PV-Anlage. So wird aus einzelnen Komponenten ein stimmiges Energiesystem.',
-      buttonText: 'Beratung anfragen',
+        'Wir prüfen Wärmepumpe, PV-Anlage, Zählerschrank, Jahresverbrauch und verfügbare Tarife gemeinsam. So sehen wir, ob sich eine MK8-Kaskade im Westnetz-Gebiet technisch und wirtschaftlich wirklich lohnt.',
+      buttonText: 'Messkonzept prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
 
   faq: [
+    faqItem(
+      'Was ist Messkonzept 8 bei Westnetz?',
+      'Messkonzept 8 ist eine Kaskadenmessung für eine Erzeugungsanlage wie Photovoltaik, den Haushaltsverbrauch und eine separat gemessene steuerbare Verbrauchseinrichtung wie eine Wärmepumpe. Dadurch können PV-Eigenverbrauch und ein separater Wärmepumpentarif miteinander kombiniert werden.',
+    ),
+    faqItem(
+      'Lohnt sich Messkonzept 8 mit Photovoltaik?',
+      'Das hängt vor allem vom Netzbezug der Wärmepumpe, dem PV-Eigenverbrauch, der Tarifdifferenz, zusätzlichen Messkosten und dem vorhandenen Zählerschrank ab. Gerade bei höherem Wärmepumpenverbrauch kann die Kombination aus PV-Eigenverbrauch und separatem Wärmepumpentarif wirtschaftlich interessant sein.',
+    ),
     faqItem(
       'Darf der Netzbetreiber meine Wärmepumpe nach § 14a EnWG abschalten?',
       'Bei neuen steuerbaren Wärmepumpen darf der Netzbetreiber den Netzbezug bei einer konkreten Netzüberlastung temporär reduzieren. Bei einer üblichen einzelnen Anlage müssen grundsätzlich mindestens 4,2 kW elektrische Netzbezugsleistung verfügbar bleiben. Der normale Haushaltsstrom ist davon nicht betroffen.',
