@@ -336,10 +336,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Anlage aus Insolvenzfall prüfen lassen',
+      titel: 'PV-Anlage nach Solarteur-Insolvenz übernehmen lassen',
       text:
-        'Du bist von der Insolvenz eines Solarteurs am Niederrhein oder im Ruhrgebiet betroffen? Wir prüfen den Bauzustand vor Ort, klären offene Garantiefragen mit den Herstellern, machen eine Bestandsaufnahme für die Fertigstellung oder Mängelbeseitigung – und sagen ehrlich, was geht und was nicht. Erstgespräch und Vor-Ort-Termin sind kostenlos.',
-      buttonText: 'Vor-Ort-Termin vereinbaren',
+        'Wir erfassen Bauzustand, Dokumentation, offene Arbeiten und erkennbare Mängel und prüfen, welche Komponenten und Herstellergarantien vorhanden sind. Danach bekommst du eine klare Einschätzung, ob und wie die Anlage fachgerecht fertiggestellt oder wieder in einen sauberen Zustand gebracht werden kann.',
+      buttonText: 'Bestandsanlage prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
