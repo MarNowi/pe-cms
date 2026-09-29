@@ -25,8 +25,8 @@ const article = {
   lesezeit: 13,
 
   seo: seo(
-    'Alte PV-Anlage nach 20 Jahren: Was jetzt? | PEAK.Energy',
-    'Alte PV-Anlage nach 20 Jahren: ehrliche Einordnung zu Weiterbetrieb, Repowering und Abbau – was sich wann lohnt, welche Fehler man vermeiden sollte und worauf es wirklich ankommt. Praxisnah von PEAK.Energy.',
+    'PV-Anlage nach 20 Jahren: Weiterbetrieb oder Repowering? | PEAK.Energy',
+    'PV-Anlage nach 20 Jahren: Was passiert nach Ende der EEG-Vergütung? Weiterbetrieb, Repowering, Speicher oder Neuaufbau verständlich erklärt.',
   ),
 
   zusammenfassung: [
@@ -47,6 +47,18 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Was tun mit einer PV-Anlage nach 20 Jahren?')),
+      p(
+        t('Eine PV-Anlage muss nach 20 Jahren nicht automatisch abgebaut werden. In der Praxis gibt es drei Wege: '),
+        bold('weiterbetreiben, gezielt repowern oder vollständig neu aufbauen'),
+        t('. Welche Variante sinnvoll ist, hängt vom technischen Zustand, dem Dach, dem bisherigen Ertrag und dem heutigen Stromverbrauch ab.'),
+      ),
+      p(
+        t('Gerade bei älteren Anlagen lohnt deshalb eine Bestandsaufnahme des Gesamtsystems statt nur ein Blick auf die Module: Wechselrichter, Leitungen, Zählerschrank, Dachzustand und mögliche neue Verbraucher gehören in dieselbe Entscheidung.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('Was passiert nach 20 Jahren EEG-Vergütung?')),
       p(
@@ -263,10 +275,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Alte PV-Anlage ehrlich bewerten lassen',
+      titel: '20 Jahre alte PV-Anlage technisch bewerten lassen',
       text:
-        'Wir schauen uns deine bestehende Anlage, das Dach und deine Verbrauchssituation gemeinsam an – und ordnen ehrlich ein, ob Weiterbetrieb, Repowering oder Neuaufbau für dich am meisten Sinn ergibt.',
-      buttonText: 'Beratung anfragen',
+        'Wir prüfen Module, Wechselrichter, Dach, Zählerschrank und Verbrauchssituation gemeinsam. Danach lässt sich sauber entscheiden, ob Weiterbetrieb, gezieltes Repowering, Speicher-Nachrüstung oder Neuaufbau sinnvoll ist.',
+      buttonText: 'Altanlage prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
