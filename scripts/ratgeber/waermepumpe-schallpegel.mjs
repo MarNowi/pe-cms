@@ -16,17 +16,17 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: 'Wärmepumpe Schallpegel: Was Nachbarschaft und Genehmigung wirklich bedeuten',
+  titel: 'TA Lärm bei Wärmepumpen: Grenzwerte, Abstand und Schallpegel',
   slug: 'waermepumpe-schallpegel',
   kategorie: 'waermepumpe',
   status: 'veroeffentlicht',
   teaser:
-    'Eine Luft-Wärmepumpe ist keine Klimaanlage und kein Kühlturm – aber sie steht draußen und macht Geräusche. Wer Schallpegel, TA Lärm und Aufstellort sauber einordnet, vermeidet Streit mit Nachbarn und Stress mit der Behörde.',
+    'Welche TA-Lärm-Grenzwerte gelten für Wärmepumpen und wie viel Abstand ist zum Nachbarn nötig? Wir erklären Schallleistung, Schalldruck, Nachtgrenzwerte und warum der richtige Aufstellort oft wichtiger ist als die reine dB-Angabe im Datenblatt.',
   lesezeit: 9,
 
   seo: seo(
-    'Wärmepumpe Schallpegel und TA Lärm: Was wirklich gilt | PEAK.Energy',
-    'Wärmepumpe Schallpegel: Schallleistung vs. Schalldruck, TA Lärm Grenzwerte, Mindestabstand zum Nachbarn und praktische Tipps für leise Aufstellung.',
+    'TA Lärm Wärmepumpe: Grenzwerte, Abstand & Schallpegel | PEAK.Energy',
+    'TA Lärm bei Wärmepumpen: Grenzwerte für Tag und Nacht, Schallleistung vs. Schalldruck, Abstand zum Nachbarn und Tipps für den Aufstellort.',
   ),
 
   zusammenfassung: [
@@ -53,6 +53,23 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Welche TA-Lärm-Grenzwerte gelten bei Wärmepumpen?')),
+      p(
+        t('Entscheidend ist nicht der Schallwert direkt an der Wärmepumpe, sondern der '),
+        bold('Schalldruckpegel am maßgeblichen Immissionsort'),
+        t(' – typischerweise am schutzbedürftigen Fenster des Nachbargebäudes.'),
+      ),
+      p(
+        t('Im allgemeinen Wohngebiet gelten nach TA Lärm '),
+        bold('55 dB(A) tagsüber und 40 dB(A) nachts'),
+        t('. Im reinen Wohngebiet sind es 50 dB(A) tagsüber und 35 dB(A) nachts. Gerade der Nachtwert ist für die Planung einer Luft-Wärmepumpe häufig entscheidend.'),
+      ),
+      p(
+        t('Wie viel Abstand dafür nötig ist, hängt nicht nur vom Gerät ab. Schallleistung, Aufstellort, Hauswände, Nischen und Reflexionen entscheiden gemeinsam darüber, was beim Nachbarn tatsächlich ankommt.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('Worum geht es eigentlich?')),
       p(
@@ -241,10 +258,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Wärmepumpe schalltechnisch sauber planen',
+      titel: 'Passt der Aufstellort deiner Wärmepumpe zur TA Lärm?',
       text:
-        'Wir prüfen Aufstellort, Mindestabstände und – wenn nötig – ein Schallgutachten, damit deine Wärmepumpe rechtskonform und nachbarschaftsverträglich läuft.',
-      buttonText: 'Beratung anfragen',
+        'Wir prüfen Gerät, Aufstellort, Abstände und mögliche Reflexionen gemeinsam. So lässt sich vor der Montage abschätzen, ob die TA-Lärm-Grenzwerte am Nachbargebäude sauber eingehalten werden können.',
+      buttonText: 'Aufstellort prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
