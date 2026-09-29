@@ -75,18 +75,18 @@ function rich(...nodes) {
 }
 
 const article = {
-  titel: 'Wallbox mit PV laden: Wann es sich lohnt und worauf es wirklich ankommt',
+  titel: 'Wallbox mit PV laden: So funktioniert PV-Überschussladen wirklich',
   slug: 'wallbox-mit-pv-laden',
   kategorie: 'wallbox',
   status: 'veroeffentlicht',
   teaser:
-    'Wallbox und Photovoltaik wirken auf den ersten Blick wie die perfekte Kombination. In der Praxis funktioniert das aber nur dann richtig gut, wenn Wallbox, PV-Anlage, Hausverbrauch und Steuerung sauber zusammenpassen.',
+    'PV-Überschussladen funktioniert dann gut, wenn Wallbox, PV-Anlage, Hausverbrauch und Steuerung zusammenspielen. Wir erklären Mindestladeleistung, 1-/3-Phasenumschaltung, Energiemanagement und worauf es bei einer wirklich PV-fähigen Wallbox ankommt.',
   lesezeit: 11,
 
   seo: {
-    metaTitle: 'Wallbox mit PV laden: So klappt Überschussladen wirklich | PEAK.Energy',
+    metaTitle: 'Wallbox mit PV laden: PV-Überschussladen richtig planen | PEAK.Energy',
     metaDescription:
-      'Wallbox mit PV laden: Wir erklären, wann Überschussladen sinnvoll ist, welche Technik nötig ist und worauf es bei Wallbox, Steuerung und Alltag wirklich ankommt.',
+      'Wallbox mit PV laden: PV-Überschussladen, Mindestladeleistung, Phasenumschaltung und Energiemanagement verständlich erklärt – inklusive Praxis-Tipps.',
   },
 
   zusammenfassung: [
@@ -107,7 +107,7 @@ const article = {
     {
       punkt: rich(
         paragraph(
-          'Besonders wichtig ist die Frage, wie flexibel die Wallbox laden kann. Je besser sie mit kleinen und schwankenden Überschüssen umgehen kann, desto sinnvoller wird das Laden mit PV im Alltag.',
+          'Besonders wichtig ist die Mindestladeleistung. Mit automatischer 1-/3-Phasenumschaltung kann die Wallbox auch kleinere und schwankende PV-Überschüsse besser nutzen, statt erst bei hoher Solarleistung mit dem Laden zu beginnen.',
         ),
       ),
     },
@@ -140,7 +140,7 @@ const article = {
     {
       blockType: 'text',
       content: rich(
-        heading('h2', 'Was bedeutet PV-Überschussladen überhaupt?'),
+        heading('h2', 'Wallbox mit PV laden: Was bedeutet echtes PV-Überschussladen?'),
         paragraph(
           'PV-Überschussladen bedeutet, dass das Elektroauto möglichst genau mit dem Strom geladen wird, den die Solaranlage gerade produziert und der im Haus im Moment nicht anderweitig gebraucht wird.',
         ),
@@ -348,10 +348,10 @@ const article = {
 
     {
       blockType: 'cta',
-      titel: 'Wallbox und PV sauber zusammendenken',
+      titel: 'PV-Überschussladen für deine Anlage richtig planen',
       text:
-        'Wenn Wallbox, PV-Anlage, Hausverbrauch und spätere Erweiterungen sinnvoll zusammen geplant werden, wird aus einer Ladebox ein echter Baustein im Energiesystem.',
-      buttonText: 'Wallbox anfragen',
+        'Wir prüfen PV-Leistung, Fahrzeug, Mindestladeleistung, Phasenumschaltung und Energiemanagement gemeinsam. So bekommst du eine Wallbox-Lösung, die vorhandenen Solarüberschuss im Alltag wirklich nutzen kann.',
+      buttonText: 'Wallbox mit PV planen',
       buttonLink: '/wallbox',
     },
   ],
