@@ -17,7 +17,7 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: '1-phasig oder 3-phasig laden: Warum die Phasenumschaltung beim PV-Überschussladen wichtig ist',
+  titel: 'Wallbox Phasenumschaltung: 1-/3-phasig beim PV-Überschussladen',
   slug: 'wallbox-phasenumschaltung-pv-ueberschussladen',
   kategorie: 'wallbox',
   status: 'veroeffentlicht',
@@ -26,8 +26,8 @@ const article = {
   lesezeit: 10,
 
   seo: seo(
-    'Wallbox Phasenumschaltung: 1- oder 3-phasig mit PV laden | PEAK.Energy',
-    'Warum PV-Überschussladen mit Phasenumschaltung effizienter ist: 6 A Mindeststrom, ca. 1,4 kW einphasig, 4,1 kW dreiphasig und wichtige Praxisregeln.',
+    'Wallbox Phasenumschaltung: 1-/3-phasig mit PV | PEAK.Energy',
+    'Wallbox mit Phasenumschaltung: Warum PV-Überschussladen einphasig ab ca. 1,4 kW und dreiphasig erst ab rund 4,1 kW startet.',
   ),
 
   zusammenfassung: [
@@ -55,6 +55,20 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Was bringt die Phasenumschaltung bei einer Wallbox?')),
+      p(
+        t('Sie senkt die praktische Einstiegsschwelle beim PV-Überschussladen. Bei typischen 6 A Mindestladestrom beginnt einphasiges Laden schon bei ungefähr '),
+        bold('1,4 kW'),
+        t(', während dreiphasig rund '),
+        bold('4,1 kW'),
+        t(' Überschuss nötig sind.'),
+      ),
+      p(
+        t('Eine automatische 1-/3-Phasenumschaltung kann deshalb gerade bei kleineren PV-Anlagen oder wechselhaftem Wetter mehr Solarstrom ins Auto bringen, ohne ständig zusätzlichen Netzstrom zu benötigen.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('2,5 kW Überschuss auf dem Dach – und das Auto lädt nicht. Warum?')),
       p(
@@ -196,10 +210,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Wallbox als Teil des Energiesystems planen',
+      titel: 'Passt 1-/3-Phasenumschaltung zu deiner PV-Anlage?',
       text:
-        'Wir betrachten PV, Speicher, Hausanschluss, Fahrzeug und Energiemanagement zusammen – damit Überschussladen nicht nur im Prospekt funktioniert.',
-      buttonText: 'Wallbox-Beratung anfragen',
+        'Wir prüfen PV-Leistung, Fahrzeug, Hausanschluss, Speicher und Energiemanagement gemeinsam. So lässt sich entscheiden, welche Wallbox kleine und schwankende Überschüsse im Alltag wirklich nutzen kann.',
+      buttonText: 'PV-Wallbox planen lassen',
       buttonLink: '/kontakt',
     }),
   ],
