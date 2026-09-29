@@ -16,17 +16,17 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: '§14a EnWG für Stromspeicher: Was die Pflicht zur Steuerbarkeit bedeutet',
+  titel: '§14a EnWG Stromspeicher: Wann Speicher mit Netzladen betroffen sind',
   slug: 'paragraf-14a-enwg-stromspeicher',
   kategorie: 'stromspeicher',
   status: 'veroeffentlicht',
   teaser:
-    'Seit 2024 müssen neue Stromspeicher unter bestimmten Voraussetzungen steuerbar an den Netzbetreiber angeschlossen werden. Was das im Alltag bedeutet, welche Speicher betroffen sind, welche nicht – und welche Module zur Netzentgeltreduzierung gewählt werden können.',
+    'Fällt mein Batteriespeicher unter §14a EnWG? Entscheidend sind Netzladen und Bezugsleistung. Wir erklären die 4,2-kW-Grenze, Steuerbarkeit, Netzentgeltreduzierung und warum reine PV-Speicher anders behandelt werden.',
   lesezeit: 10,
 
   seo: seo(
-    '§14a EnWG Stromspeicher: Steuerbarkeit erklärt | PEAK.Energy',
-    '§14a EnWG für Stromspeicher: Wann ein Speicher als steuerbare Verbrauchseinrichtung gilt, was Modul 1 bis 3 bedeuten und was die Steuerung im Alltag wirklich heißt.',
+    '§14a Stromspeicher: 4,2 kW, Netzladen & Steuerbarkeit | PEAK.Energy',
+    '§14a EnWG für Stromspeicher: Wann Netzladen und mehr als 4,2 kW Bezugsleistung relevant werden, was Steuerbarkeit und Netzentgeltreduzierung bedeuten.',
   ),
 
   zusammenfassung: [
@@ -51,6 +51,18 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Wann fällt ein Stromspeicher unter §14a EnWG?')),
+      p(
+        t('Entscheidend ist, ob der Speicher '),
+        bold('Strom aus dem öffentlichen Netz beziehen kann und die relevante Bezugsleistung über 4,2 kW liegt'),
+        t('. Ein Speicher, der ausschließlich PV-Strom aufnimmt und nicht aus dem Netz lädt, ist davon zu unterscheiden.'),
+      ),
+      p(
+        t('Für Betreiber bedeutet §14a nicht, dass der Netzbetreiber frei über den Speicher verfügen kann. Es geht um die begrenzte Steuerbarkeit des Netzbezugs in Engpasssituationen und im Gegenzug um reduzierte Netzentgelte.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('Worum geht es eigentlich?')),
       p(
@@ -205,10 +217,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Speicher §14a-konform planen lassen',
+      titel: 'Netzladenden Speicher §14a-konform planen',
       text:
-        'Wir planen Stromspeicher und Energiemanagement so, dass sie §14a-konform angemeldet werden – ohne dass die Steuerbarkeit den Alltagsbetrieb spürbar einschränkt.',
-      buttonText: 'Beratung anfragen',
+        'Wir prüfen Speicherleistung, Netzladefunktion, Zählerschrank, Smart Meter, Steuerung und Energiemanagement gemeinsam und planen die Anmeldung passend zum tatsächlichen Betriebskonzept.',
+      buttonText: '§14a-Speicher prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
