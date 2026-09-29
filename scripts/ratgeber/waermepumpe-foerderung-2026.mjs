@@ -16,17 +16,17 @@ import {
 } from './_helpers.mjs'
 
 const article = {
-  titel: 'Wärmepumpe Förderung 2026: Neue KfW-Regeln seit Juli',
+  titel: 'Wärmepumpen-Förderung 2026: KfW 458, Zuschuss und neue Regeln',
   slug: 'waermepumpe-foerderung-2026',
   kategorie: 'waermepumpe',
   status: 'veroeffentlicht',
   teaser:
-    'Seit dem 21. Juli 2026 gelten neue Regeln für die KfW-Heizungsförderung: bis zu 80 % Zuschuss, 16 % Klimageschwindigkeitsbonus, ein gestaffelter Einkommensbonus und nur noch 28.000 € förderfähige Kosten beim Einfamilienhaus. Wir erklären, was davon im eigenen Fall wirklich ankommt.',
+    'Wie hoch ist die Wärmepumpen-Förderung 2026 und was gilt bei KfW 458? Wir erklären Grundförderung, Klimageschwindigkeitsbonus, Einkommensbonus, förderfähige Kosten und die richtige Reihenfolge beim Antrag.',
   lesezeit: 12,
 
   seo: seo(
-    'Wärmepumpe Förderung 2026: neue KfW-Regeln | PEAK.Energy',
-    'Wärmepumpe Förderung 2026: Seit 21. Juli gelten neue KfW-458-Regeln. Bis zu 80 % Zuschuss, 16 % Klimabonus, Einkommensbonus, Familienzuschlag und 28.000 € Förderhöchstbetrag verständlich erklärt.',
+    'Wärmepumpen-Förderung 2026: KfW 458 & Zuschuss | PEAK.Energy',
+    'Wärmepumpen-Förderung 2026: KfW 458, Grundförderung, Klimabonus, Einkommensbonus, förderfähige Kosten und Antrag verständlich erklärt.',
   ),
 
   zusammenfassung: [
@@ -53,6 +53,18 @@ const article = {
   ],
 
   inhalt: [
+    textBlock(
+      h('h2', t('Wie hoch ist die Wärmepumpen-Förderung 2026?')),
+      p(
+        t('Die Förderung setzt sich aus mehreren Bausteinen zusammen. Entscheidend sind '),
+        bold('Grundförderung, mögliche Boni und die förderfähigen Kosten'),
+        t('. Welche Kombination im Einzelfall greift, hängt unter anderem von Gebäude, Eigentums- und Einkommenssituation ab.'),
+      ),
+      p(
+        t('Für die Planung reicht deshalb nicht die Frage nach dem maximal möglichen Prozentsatz. Wichtig ist, welche Förderung tatsächlich auf die eigene Maßnahme anwendbar ist und welche Kosten von der KfW berücksichtigt werden.'),
+      ),
+    ),
+
     textBlock(
       h('h2', t('Was hat sich bei der Wärmepumpen-Förderung geändert?')),
       p(
@@ -320,10 +332,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Wärmepumpe und Förderung sauber planen',
+      titel: 'Wärmepumpe und KfW-Förderung gemeinsam prüfen',
       text:
-        'Wir prüfen nicht nur den möglichen KfW-Zuschuss, sondern ob die Wärmepumpe technisch zu deinem Gebäude passt. Dazu gehören Heizlast, Hydraulik, Aufstellort, Elektroinstallation und auf Wunsch die Einbindung von Photovoltaik, Speicher und Energiemanagement.',
-      buttonText: 'Beratung anfragen',
+        'Wir ordnen den möglichen Förderrahmen gemeinsam mit der technischen Planung ein – Heizlast, Hydraulik, Aufstellort, Elektroinstallation und auf Wunsch auch PV, Speicher und Energiemanagement.',
+      buttonText: 'Förderung und Wärmepumpe prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
