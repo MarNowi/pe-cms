@@ -62,6 +62,23 @@ const article = {
 
   inhalt: [
     textBlock(
+      h('h2', t('Lohnt es sich, einen Stromspeicher aus dem Netz zu laden?')),
+      p(
+        t('Ja – aber nicht automatisch. Netzladen lohnt sich nur dann, wenn der spätere vermiedene Strompreis '),
+        bold('deutlich über dem vollständigen Ladepreis inklusive Speicherverlusten'),
+        t(' liegt und der Speicher die Energie später tatsächlich im Haus nutzen kann.'),
+      ),
+      p(
+        t('Bei einer PV-Anlage kommt noch eine zweite Frage dazu: '),
+        bold('Wie viel freie Speicherkapazität wird am nächsten Tag für Solarstrom gebraucht?'),
+        t(' Ein nachts vollgeladener Akku kann wirtschaftlich schlechter sein, wenn dadurch mittags eigener PV-Überschuss ins Netz geht.'),
+      ),
+      p(
+        t('Deshalb sollte ein gutes Energiemanagement Strompreis, Wirkungsgrad, PV-Prognose, Verbrauch, Ladezustand und Batteriebeanspruchung gemeinsam bewerten – statt den Speicher bei jeder kleinen Preisdifferenz aus dem Netz zu laden.'),
+      ),
+    ),
+
+    textBlock(
       h('h2', t('Warum Netzladen 2026 plötzlich interessant wird')),
       p(
         t('Klassische Heimspeicher wurden lange nach einer einfachen Logik betrieben: Tagsüber lädt die PV-Anlage den Speicher, abends und nachts versorgt der Speicher das Haus. Netzstrom wurde möglichst nicht in die Batterie geladen.'),
@@ -504,10 +521,10 @@ const article = {
     ),
 
     ctaBlock({
-      titel: 'Speicher nicht nur besitzen – sinnvoll betreiben',
+      titel: 'Lohnt sich Netzladen bei deinem Stromspeicher?',
       text:
-        'Du hast bereits einen Stromspeicher oder planst PV, Speicher, Wallbox und Wärmepumpe gemeinsam? Wir prüfen, ob dynamisches Netzladen bei deinem System technisch möglich und wirtschaftlich sinnvoll ist – mit Blick auf Smart Meter, §14a, PV-Prognose, Wirkungsgrad und offene Energiemanagement-Schnittstellen.',
-      buttonText: 'Energiesystem prüfen lassen',
+        'Wir prüfen Speichermodell, Wirkungsgrad, dynamischen Tarif, PV-Prognose, Smart Meter, §14a und die vorhandene Steuerung gemeinsam. So siehst du, ob Netzladen bei deinem System wirklich Geld spart oder nur zusätzliche Zyklen erzeugt.',
+      buttonText: 'Netzladen prüfen lassen',
       buttonLink: '/kontakt',
     }),
   ],
