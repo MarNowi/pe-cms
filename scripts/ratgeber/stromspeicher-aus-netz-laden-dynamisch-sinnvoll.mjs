@@ -350,9 +350,11 @@ const article = {
     ),
 
     hinweisBlock(
-      'MiSpeL soll Mischspeicher flexibler machen – ist aber noch nicht einfach „fertig aktiv"',
+      'MiSpeL seit 1. Oktober 2026 beschlossen – Umsetzung prüfen',
       p(
-        t('Das EEG enthält inzwischen eine Abgrenzungs- und eine Pauschaloption für gemischt geladene Speicher. Die konkrete Nutzung hängt aber von der Festlegung „Marktintegration von Speichern und Ladepunkten" (MiSpeL) der Bundesnetzagentur ab. Nach dem öffentlich dokumentierten Verfahrensstand ist MiSpeL 2026 weiterhin ein laufendes Festlegungsverfahren. Wer Netzladen mit späterer Netzeinspeisung kombinieren möchte, sollte deshalb den aktuellen Stand für sein Mess- und Vermarktungskonzept prüfen und nicht einfach eine App-Funktion aktivieren.'),
+        t('Die Bundesnetzagentur hat MiSpeL am 1. Oktober 2026 beschlossen. Damit gibt es neue Abgrenzungs- und Pauschaloptionen für gemischt geladene Speicher. In der Übergangszeit bis Ende September 2027 ist ihre Anwendung nur mit Einverständnis von Netz- und Messstellenbetreiber möglich. Die Pauschaloption benötigt zusätzlich eine beihilferechtliche Genehmigung durch die EU-Kommission. Netzladen mit späterer Netzeinspeisung sollte deshalb nicht ohne Prüfung des Mess- und Vermarktungskonzepts aktiviert werden. Mehr im '),
+        link('aktuellen MiSpeL-Ratgeber', '/strom-energiemanagement/mispel-2026-batteriespeicher-photovoltaik'),
+        t('.'),
       ),
     ),
 

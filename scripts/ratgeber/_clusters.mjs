@@ -166,6 +166,7 @@ export const CLUSTER_BY_SLUG = {
   'zeitvariable-netzentgelte-paragraph-14a-modul-3': 'em-netz',
   'steuerbox-paragraf-14a-smart-meter-hems': 'em-netz',
   'solarspitzengesetz-2026-60-prozent-negative-strompreise-smart-meter': 'em-netz',
+  'mispel-2026-batteriespeicher-photovoltaik': 'em-netz',
   'hems-home-energy-management-system-hersteller-app': 'em-hems',
   'pv-speicher-wallbox-waermepumpe-intelligent-steuern': 'em-hems',
   'hems-wetterprognose-strompreis-ladezustand': 'em-hems',
